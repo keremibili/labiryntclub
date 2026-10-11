@@ -1,5 +1,18 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import {
+  ArrowDown,
+  ArrowUp,
+  Home,
+  Image as ImageIcon,
+  LogOut,
+  ExternalLink,
+  Plus,
+  Save,
+  Trash2,
+  Type,
+  Wine,
+} from 'lucide-react'
 import { languages } from '../../i18n/languages'
 import {
   fetchContent,
@@ -8,13 +21,12 @@ import {
   setAdminToken,
   uploadImage,
 } from '../../lib/api'
-import type { Lang, Localized, MenuCategory, MenuItem, SiteContent } from '../../types/content'
+import { displayName, sameName } from '../../lib/localized'
+import type { Lang, MenuCategory, MenuItem, SiteContent } from '../../types/content'
 import { createDefaultContent } from '../../data/defaultContent'
 import './admin.css'
 
 type Section = 'home' | 'texts' | `cat:${number}`
-
-const emptyLocalized = (): Localized => ({ pl: '', en: '', ru: '', es: '', uk: '' })
 
 function moveItem<T>(arr: T[], from: number, to: number) {
   if (to < 0 || to >= arr.length) return arr
@@ -127,14 +139,14 @@ export default function AdminPanel() {
             className={section === 'home' ? 'active' : ''}
             onClick={() => setSection('home')}
           >
-            Anasayfa
+            <Home size={18} /> Anasayfa
           </button>
           <button
             type="button"
             className={section === 'texts' ? 'active' : ''}
             onClick={() => setSection('texts')}
           >
-            Yazılar
+            <Type size={18} /> Yazılar
           </button>
 
           <p className="admin-nav__label">Menü</p>
@@ -145,21 +157,22 @@ export default function AdminPanel() {
               className={section === `cat:${index}` ? 'active' : ''}
               onClick={() => setSection(`cat:${index}`)}
             >
-              <span>{index + 1}.</span> {cat.title.pl || cat.title.en || cat.id}
+              <Wine size={18} />
+              <span className="admin-nav__num">{index + 1}</span>
+              {displayName(cat.title)}
             </button>
           ))}
           <button
             type="button"
             className="admin-nav__add"
             onClick={() => {
-              const id = `cat-${Date.now()}`
               setContent((prev) => ({
                 ...prev,
                 categories: [
                   ...prev.categories,
                   {
-                    id,
-                    title: { ...emptyLocalized(), pl: 'Yeni kategori' },
+                    id: `cat-${Date.now()}`,
+                    title: sameName('Yeni kategori'),
                     image: '/images/cat-spirits.jpg',
                     items: [],
                   },
@@ -168,13 +181,13 @@ export default function AdminPanel() {
               setSection(`cat:${content.categories.length}`)
             }}
           >
-            + Kategori ekle
+            <Plus size={18} /> Kategori ekle
           </button>
         </nav>
 
         <div className="admin-nav__foot">
           <Link to="/" target="_blank">
-            Siteyi aç
+            <ExternalLink size={16} /> Siteyi aç
           </Link>
           <button
             type="button"
@@ -183,7 +196,7 @@ export default function AdminPanel() {
               navigate('/admin/login')
             }}
           >
-            Çıkış
+            <LogOut size={16} /> Çıkış
           </button>
         </div>
       </aside>
@@ -194,12 +207,12 @@ export default function AdminPanel() {
             <h1>
               {section === 'home' && 'Anasayfa'}
               {section === 'texts' && 'Yazılar'}
-              {category && (category.title.pl || 'Kategori')}
+              {category && displayName(category.title)}
             </h1>
             {status ? <p className="admin-status">{status}</p> : null}
           </div>
           <button type="button" className="btn-save" onClick={onSave} disabled={saving}>
-            {saving ? 'Kaydediliyor...' : 'Kaydet'}
+            <Save size={18} /> {saving ? 'Kaydediliyor...' : 'Kaydet'}
           </button>
         </header>
 
@@ -207,7 +220,9 @@ export default function AdminPanel() {
           <section className="admin-panel">
             <div className="admin-cards">
               <label className="photo-card">
-                <span>Hero fotoğraf</span>
+                <span>
+                  <ImageIcon size={16} /> Hero fotoğraf
+                </span>
                 <img src={content.heroImage} alt="" />
                 <input
                   type="file"
@@ -220,7 +235,9 @@ export default function AdminPanel() {
                 />
               </label>
               <label className="photo-card photo-card--logo">
-                <span>Logo</span>
+                <span>
+                  <ImageIcon size={16} /> Logo
+                </span>
                 <img src={content.logoImage} alt="" />
                 <input
                   type="file"
@@ -238,6 +255,10 @@ export default function AdminPanel() {
 
         {section === 'texts' && (
           <section className="admin-panel">
+            <p className="admin-hint">
+              Site yazıları dil seçimine göre kaydedilir. Menü ürün isimleri tek alandan tüm dillere
+              otomatik uygulanır.
+            </p>
             <div className="lang-row">
               {languages.map((l) => (
                 <button
@@ -288,7 +309,7 @@ export default function AdminPanel() {
                   if (catIndex > 0) setSection(`cat:${catIndex - 1}`)
                 }}
               >
-                Yukarı
+                <ArrowUp size={16} /> Yukarı
               </button>
               <button
                 type="button"
@@ -302,7 +323,7 @@ export default function AdminPanel() {
                   }
                 }}
               >
-                Aşağı
+                <ArrowDown size={16} /> Aşağı
               </button>
               <button
                 type="button"
@@ -316,12 +337,14 @@ export default function AdminPanel() {
                   setSection('home')
                 }}
               >
-                Sil
+                <Trash2 size={16} /> Sil
               </button>
             </div>
 
             <label className="photo-card">
-              <span>Kategori fotoğrafı</span>
+              <span>
+                <ImageIcon size={16} /> Kategori fotoğrafı
+              </span>
               <img src={category.image} alt="" />
               <input
                 type="file"
@@ -334,21 +357,15 @@ export default function AdminPanel() {
               />
             </label>
 
-            <div className="form-grid">
-              {languages.map((l) => (
-                <label key={l.code} className="field">
-                  Kategori adı ({l.label})
-                  <input
-                    value={category.title[l.code]}
-                    onChange={(e) =>
-                      updateCategory(catIndex, {
-                        title: { ...category.title, [l.code]: e.target.value },
-                      })
-                    }
-                  />
-                </label>
-              ))}
-            </div>
+            <label className="field">
+              Kategori adı
+              <input
+                value={displayName(category.title)}
+                onChange={(e) => updateCategory(catIndex, { title: sameName(e.target.value) })}
+                placeholder="Örn. Gin"
+              />
+              <small className="field-note">Tek isim tüm dillere otomatik yazılır.</small>
+            </label>
 
             <div className="list-head">
               <h2>Ürünler</h2>
@@ -358,14 +375,14 @@ export default function AdminPanel() {
                 onClick={() => {
                   const item: MenuItem = {
                     id: `item-${Date.now()}`,
-                    name: { ...emptyLocalized(), pl: 'Yeni ürün' },
+                    name: sameName('Yeni ürün'),
                     prices: [{ amount: 0 }],
                     image: '',
                   }
                   updateCategory(catIndex, { items: [...category.items, item] })
                 }}
               >
-                + Ürün ekle
+                <Plus size={16} /> Ürün ekle
               </button>
             </div>
 
@@ -374,7 +391,7 @@ export default function AdminPanel() {
                 <article key={item.id} className="product">
                   <div className="product__top">
                     <strong>
-                      {index + 1}. {item.name.pl || item.name.en || 'Ürün'}
+                      {index + 1}. {displayName(item.name) || 'Ürün'}
                     </strong>
                     <div className="toolbar">
                       <button
@@ -385,7 +402,7 @@ export default function AdminPanel() {
                           })
                         }
                       >
-                        ↑
+                        <ArrowUp size={16} />
                       </button>
                       <button
                         type="button"
@@ -395,7 +412,7 @@ export default function AdminPanel() {
                           })
                         }
                       >
-                        ↓
+                        <ArrowDown size={16} />
                       </button>
                       <button
                         type="button"
@@ -407,7 +424,7 @@ export default function AdminPanel() {
                           })
                         }}
                       >
-                        Sil
+                        <Trash2 size={16} />
                       </button>
                     </div>
                   </div>
@@ -415,7 +432,11 @@ export default function AdminPanel() {
                   <div className="product__body">
                     <label className="photo-card photo-card--small">
                       <span>Foto</span>
-                      {item.image ? <img src={item.image} alt="" /> : <div className="photo-empty">+</div>}
+                      {item.image ? (
+                        <img src={item.image} alt="" />
+                      ) : (
+                        <div className="photo-empty">+</div>
+                      )}
                       <input
                         type="file"
                         accept="image/*"
@@ -427,20 +448,20 @@ export default function AdminPanel() {
                       />
                     </label>
 
-                    <div className="form-grid">
-                      {languages.map((l) => (
-                        <label key={l.code} className="field">
-                          İsim ({l.label})
-                          <input
-                            value={item.name[l.code]}
-                            onChange={(e) =>
-                              updateItem(catIndex, index, {
-                                name: { ...item.name, [l.code]: e.target.value },
-                              })
-                            }
-                          />
-                        </label>
-                      ))}
+                    <div className="form-stack grow">
+                      <label className="field">
+                        Ürün adı
+                        <input
+                          value={displayName(item.name)}
+                          onChange={(e) =>
+                            updateItem(catIndex, index, { name: sameName(e.target.value) })
+                          }
+                          placeholder="Örn. Absolut"
+                        />
+                        <small className="field-note">
+                          Tek isim tüm dillere otomatik uygulanır.
+                        </small>
+                      </label>
                     </div>
                   </div>
 
@@ -486,7 +507,7 @@ export default function AdminPanel() {
                             })
                           }
                         >
-                          Sil
+                          <Trash2 size={16} />
                         </button>
                       </div>
                     ))}
@@ -498,7 +519,7 @@ export default function AdminPanel() {
                         })
                       }
                     >
-                      + Fiyat
+                      <Plus size={16} /> Fiyat
                     </button>
                   </div>
                 </article>

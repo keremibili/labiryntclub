@@ -71,11 +71,58 @@
   font: inherit;
   font-size: 0.95rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
 }
 
-.admin-nav button span {
+.admin-nav__num {
   color: #9ca3af;
-  margin-right: 0.25rem;
+  min-width: 1.1rem;
+}
+
+.admin-nav button.active .admin-nav__num {
+  color: #d1d5db;
+}
+
+.admin-nav__foot a,
+.admin-nav__foot button {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.btn-save,
+.toolbar button,
+.btn-dark,
+.list-head button,
+.prices > button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.admin-hint {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.field-note {
+  font-weight: 400;
+  color: #9ca3af;
+  font-size: 0.8rem;
+}
+
+.grow {
+  flex: 1;
+  min-width: 0;
+}
+
+.photo-card span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .admin-nav button:hover {

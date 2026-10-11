@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { LangDropdown } from '../components/LangDropdown'
 import { detectLang } from '../i18n/languages'
+import { legalNav, menuDisclaimer, trLegal } from '../i18n/legal'
 import { tr } from '../i18n/ui'
 import { fetchContent } from '../lib/api'
 import type { Lang, SiteContent } from '../types/content'
@@ -125,6 +127,11 @@ export default function HomePage() {
           <p>{tr(content.texts.currencyNote, lang)}</p>
         </div>
 
+        <aside className="menu-disclaimer">
+          <p>{trLegal(menuDisclaimer, lang)}</p>
+          <Link to="/rules">{trLegal(legalNav.rules, lang)}</Link>
+        </aside>
+
         {content.categories.map((cat, index) => (
           <section
             key={cat.id}
@@ -167,6 +174,11 @@ export default function HomePage() {
       <footer className="footer">
         <img src={content.logoImage} alt="" width={56} height={56} />
         <p>{tr(content.texts.footer, lang)}</p>
+        <div className="footer-links">
+          <Link to="/rules">{trLegal(legalNav.rules, lang)}</Link>
+          <Link to="/privacy">{trLegal(legalNav.privacy, lang)}</Link>
+          <Link to="/terms">{trLegal(legalNav.terms, lang)}</Link>
+        </div>
         <a href="https://www.instagram.com/labirynt_club/" target="_blank" rel="noreferrer">
           instagram.com/labirynt_club
         </a>
