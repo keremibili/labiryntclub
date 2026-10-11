@@ -1,0 +1,1123 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-11T23:43:18.300Z",
+  "heroImage": "/images/hero-entrance.png",
+  "logoImage": "/images/logo.png",
+  "texts": {
+    "tagline": {
+      "pl": "Club & Terrace · Warszawa",
+      "en": "Club & Terrace · Warsaw",
+      "ru": "Клуб и терраса · Варшава",
+      "es": "Club & Terraza · Varsovia",
+      "uk": "Клуб і тераса · Варшава"
+    },
+    "subtitle": {
+      "pl": "Muzyka · Koktajle · Shisha — od zachodu do świtu",
+      "en": "Music · Cocktails · Shisha — from dusk till dawn",
+      "ru": "Музыка · Коктейли · Кальян — от заката до рассвета",
+      "es": "Música · Cócteles · Shisha — del atardecer al amanecer",
+      "uk": "Музика · Коктейлі · Кальян — від заходу до світанку"
+    },
+    "cta": {
+      "pl": "Zobacz menu",
+      "en": "View menu",
+      "ru": "Смотреть меню",
+      "es": "Ver menú",
+      "uk": "Дивитись меню"
+    },
+    "menuTitle": {
+      "pl": "Menu",
+      "en": "Menu",
+      "ru": "Меню",
+      "es": "Carta",
+      "uk": "Меню"
+    },
+    "currencyNote": {
+      "pl": "Ceny w PLN",
+      "en": "Prices in PLN",
+      "ru": "Цены в PLN",
+      "es": "Precios en PLN",
+      "uk": "Ціни в PLN"
+    },
+    "location": {
+      "pl": "Warszawa",
+      "en": "Warsaw",
+      "ru": "Варшава",
+      "es": "Varsovia",
+      "uk": "Варшава"
+    },
+    "footer": {
+      "pl": "Labirynt Club · Club & Terrace",
+      "en": "Labirynt Club · Club & Terrace",
+      "ru": "Labirynt Club · Клуб и терраса",
+      "es": "Labirynt Club · Club & Terraza",
+      "uk": "Labirynt Club · Клуб і тераса"
+    }
+  },
+  "categories": [
+    {
+      "id": "soft-drinks",
+      "title": {
+        "pl": "Napoje bezalkoholowe",
+        "en": "Soft drinks",
+        "ru": "Безалкогольные напитки",
+        "es": "Bebidas sin alcohol",
+        "uk": "Безалкогольні напої"
+      },
+      "image": "/images/cat-soft-drinks.jpg",
+      "items": [
+        {
+          "id": "cola-zero",
+          "name": {
+            "pl": "Coca-Cola Zero Cukru 250 ml",
+            "en": "Coca-Cola Zero Cukru 250 ml",
+            "ru": "Coca-Cola Zero Cukru 250 ml",
+            "es": "Coca-Cola Zero Cukru 250 ml",
+            "uk": "Coca-Cola Zero Cukru 250 ml"
+          },
+          "prices": [
+            {
+              "amount": 12,
+              "size": "0.25 l"
+            }
+          ]
+        },
+        {
+          "id": "cola-zero-caffeine",
+          "name": {
+            "pl": "Coca-Cola Zero Cukru Zero Kofeiny 250 ml",
+            "en": "Coca-Cola Zero Cukru Zero Kofeiny 250 ml",
+            "ru": "Coca-Cola Zero Cukru Zero Kofeiny 250 ml",
+            "es": "Coca-Cola Zero Cukru Zero Kofeiny 250 ml",
+            "uk": "Coca-Cola Zero Cukru Zero Kofeiny 250 ml"
+          },
+          "prices": [
+            {
+              "amount": 12,
+              "size": "0.25 l"
+            }
+          ]
+        },
+        {
+          "id": "cola-original",
+          "name": {
+            "pl": "Coca-Cola Original Taste 250 ml",
+            "en": "Coca-Cola Original Taste 250 ml",
+            "ru": "Coca-Cola Original Taste 250 ml",
+            "es": "Coca-Cola Original Taste 250 ml",
+            "uk": "Coca-Cola Original Taste 250 ml"
+          },
+          "prices": [
+            {
+              "amount": 12,
+              "size": "0.25 l"
+            }
+          ]
+        },
+        {
+          "id": "fanta",
+          "name": {
+            "pl": "Fanta Orange 250 ml",
+            "en": "Fanta Orange 250 ml",
+            "ru": "Fanta Orange 250 ml",
+            "es": "Fanta Orange 250 ml",
+            "uk": "Fanta Orange 250 ml"
+          },
+          "prices": [
+            {
+              "amount": 12,
+              "size": "0.25 l"
+            }
+          ]
+        },
+        {
+          "id": "sprite",
+          "name": {
+            "pl": "Sprite 250 ml",
+            "en": "Sprite 250 ml",
+            "ru": "Sprite 250 ml",
+            "es": "Sprite 250 ml",
+            "uk": "Sprite 250 ml"
+          },
+          "prices": [
+            {
+              "amount": 12,
+              "size": "0.25 l"
+            }
+          ]
+        },
+        {
+          "id": "kinley-tonic",
+          "name": {
+            "pl": "Kinley Tonic Water 250 ml",
+            "en": "Kinley Tonic Water 250 ml",
+            "ru": "Kinley Tonic Water 250 ml",
+            "es": "Kinley Tonic Water 250 ml",
+            "uk": "Kinley Tonic Water 250 ml"
+          },
+          "prices": [
+            {
+              "amount": 12,
+              "size": "0.25 l"
+            }
+          ]
+        },
+        {
+          "id": "kinley-cherry",
+          "name": {
+            "pl": "Kinley Cherry Pepper 250 ml",
+            "en": "Kinley Cherry Pepper 250 ml",
+            "ru": "Kinley Cherry Pepper 250 ml",
+            "es": "Kinley Cherry Pepper 250 ml",
+            "uk": "Kinley Cherry Pepper 250 ml"
+          },
+          "prices": [
+            {
+              "amount": 12,
+              "size": "0.25 l"
+            }
+          ]
+        },
+        {
+          "id": "kinley-purple",
+          "name": {
+            "pl": "Kinley Purple 250 ml",
+            "en": "Kinley Purple 250 ml",
+            "ru": "Kinley Purple 250 ml",
+            "es": "Kinley Purple 250 ml",
+            "uk": "Kinley Purple 250 ml"
+          },
+          "prices": [
+            {
+              "amount": 12,
+              "size": "0.25 l"
+            }
+          ]
+        },
+        {
+          "id": "kropla-still",
+          "name": {
+            "pl": "Kropla Beskidu woda niegazowana 330 ml",
+            "en": "Kropla Beskidu still water 330 ml",
+            "ru": "Kropla Beskidu негазированная вода 330 ml",
+            "es": "Kropla Beskidu agua sin gas 330 ml",
+            "uk": "Kropla Beskidu негазована вода 330 ml"
+          },
+          "prices": [
+            {
+              "amount": 12,
+              "size": "0.33 l"
+            }
+          ]
+        },
+        {
+          "id": "kropla-sparkling",
+          "name": {
+            "pl": "Kropla Delice woda gazowana 330 ml",
+            "en": "Kropla Delice sparkling water 330 ml",
+            "ru": "Kropla Delice газированная вода 330 ml",
+            "es": "Kropla Delice agua con gas 330 ml",
+            "uk": "Kropla Delice газована вода 330 ml"
+          },
+          "prices": [
+            {
+              "amount": 12,
+              "size": "0.33 l"
+            }
+          ]
+        },
+        {
+          "id": "cappy-orange",
+          "name": {
+            "pl": "Cappy pomarańczowy 250 ml",
+            "en": "Cappy orange 250 ml",
+            "ru": "Cappy апельсин 250 ml",
+            "es": "Cappy naranja 250 ml",
+            "uk": "Cappy апельсин 250 ml"
+          },
+          "prices": [
+            {
+              "amount": 12,
+              "size": "0.25 l"
+            }
+          ]
+        },
+        {
+          "id": "cappy-apple",
+          "name": {
+            "pl": "Cappy jabłkowy 250 ml",
+            "en": "Cappy apple 250 ml",
+            "ru": "Cappy яблоко 250 ml",
+            "es": "Cappy manzana 250 ml",
+            "uk": "Cappy яблуко 250 ml"
+          },
+          "prices": [
+            {
+              "amount": 12,
+              "size": "0.25 l"
+            }
+          ]
+        },
+        {
+          "id": "cappy-multi",
+          "name": {
+            "pl": "Cappy multiwitamina 250 ml",
+            "en": "Cappy multivitamin 250 ml",
+            "ru": "Cappy мультивитамин 250 ml",
+            "es": "Cappy multivitamina 250 ml",
+            "uk": "Cappy мультивітамін 250 ml"
+          },
+          "prices": [
+            {
+              "amount": 12,
+              "size": "0.25 l"
+            }
+          ]
+        },
+        {
+          "id": "cappy-grapefruit",
+          "name": {
+            "pl": "Cappy grejpfrutowy 250 ml",
+            "en": "Cappy grapefruit 250 ml",
+            "ru": "Cappy грейпфрут 250 ml",
+            "es": "Cappy pomelo 250 ml",
+            "uk": "Cappy грейпфрут 250 ml"
+          },
+          "prices": [
+            {
+              "amount": 12,
+              "size": "0.25 l"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bottles",
+      "title": {
+        "pl": "Butelki",
+        "en": "Bottles",
+        "ru": "Бутылки",
+        "es": "Botellas",
+        "uk": "Пляшки"
+      },
+      "image": "/images/cat-spirits.jpg",
+      "items": [
+        {
+          "id": "b-finlandia",
+          "name": {
+            "pl": "Finlandia",
+            "en": "Finlandia",
+            "ru": "Finlandia",
+            "es": "Finlandia",
+            "uk": "Finlandia"
+          },
+          "prices": [
+            {
+              "amount": 200,
+              "size": "0.50 l"
+            }
+          ]
+        },
+        {
+          "id": "b-jd-fire",
+          "name": {
+            "pl": "Jack Daniel's Tennessee Fire",
+            "en": "Jack Daniel's Tennessee Fire",
+            "ru": "Jack Daniel's Tennessee Fire",
+            "es": "Jack Daniel's Tennessee Fire",
+            "uk": "Jack Daniel's Tennessee Fire"
+          },
+          "prices": [
+            {
+              "amount": 360,
+              "size": "0.70 l"
+            }
+          ]
+        },
+        {
+          "id": "b-jd-honey",
+          "name": {
+            "pl": "Jack Daniel's Tennessee Honey",
+            "en": "Jack Daniel's Tennessee Honey",
+            "ru": "Jack Daniel's Tennessee Honey",
+            "es": "Jack Daniel's Tennessee Honey",
+            "uk": "Jack Daniel's Tennessee Honey"
+          },
+          "prices": [
+            {
+              "amount": 360,
+              "size": "0.70 l"
+            }
+          ]
+        },
+        {
+          "id": "b-jd-apple",
+          "name": {
+            "pl": "Jack Daniel's Tennessee Apple",
+            "en": "Jack Daniel's Tennessee Apple",
+            "ru": "Jack Daniel's Tennessee Apple",
+            "es": "Jack Daniel's Tennessee Apple",
+            "uk": "Jack Daniel's Tennessee Apple"
+          },
+          "prices": [
+            {
+              "amount": 360,
+              "size": "0.70 l"
+            }
+          ]
+        },
+        {
+          "id": "b-zubrowka",
+          "name": {
+            "pl": "Żubrówka Bison Grass",
+            "en": "Żubrówka Bison Grass",
+            "ru": "Żubrówka Bison Grass",
+            "es": "Żubrówka Bison Grass",
+            "uk": "Żubrówka Bison Grass"
+          },
+          "prices": [
+            {
+              "amount": 160,
+              "size": "0.50 l"
+            }
+          ]
+        },
+        {
+          "id": "b-jim-beam",
+          "name": {
+            "pl": "Jim Beam",
+            "en": "Jim Beam",
+            "ru": "Jim Beam",
+            "es": "Jim Beam",
+            "uk": "Jim Beam"
+          },
+          "prices": [
+            {
+              "amount": 250,
+              "size": "0.70 l"
+            }
+          ]
+        },
+        {
+          "id": "b-chivas-12",
+          "name": {
+            "pl": "Chivas Regal 12 Y.O.",
+            "en": "Chivas Regal 12 Y.O.",
+            "ru": "Chivas Regal 12 Y.O.",
+            "es": "Chivas Regal 12 Y.O.",
+            "uk": "Chivas Regal 12 Y.O."
+          },
+          "prices": [
+            {
+              "amount": 380,
+              "size": "0.70 l"
+            }
+          ]
+        },
+        {
+          "id": "b-chivas-18",
+          "name": {
+            "pl": "Chivas Regal 18 Y.O.",
+            "en": "Chivas Regal 18 Y.O.",
+            "ru": "Chivas Regal 18 Y.O.",
+            "es": "Chivas Regal 18 Y.O.",
+            "uk": "Chivas Regal 18 Y.O."
+          },
+          "prices": [
+            {
+              "amount": 800,
+              "size": "0.70 l"
+            }
+          ]
+        },
+        {
+          "id": "b-gentleman",
+          "name": {
+            "pl": "Gentleman Jack",
+            "en": "Gentleman Jack",
+            "ru": "Gentleman Jack",
+            "es": "Gentleman Jack",
+            "uk": "Gentleman Jack"
+          },
+          "prices": [
+            {
+              "amount": 450,
+              "size": "0.70 l"
+            }
+          ]
+        },
+        {
+          "id": "b-jw-red",
+          "name": {
+            "pl": "Johnnie Walker Red Label",
+            "en": "Johnnie Walker Red Label",
+            "ru": "Johnnie Walker Red Label",
+            "es": "Johnnie Walker Red Label",
+            "uk": "Johnnie Walker Red Label"
+          },
+          "prices": [
+            {
+              "amount": 260,
+              "size": "0.70 l"
+            }
+          ]
+        },
+        {
+          "id": "b-ballantines",
+          "name": {
+            "pl": "Ballantine's",
+            "en": "Ballantine's",
+            "ru": "Ballantine's",
+            "es": "Ballantine's",
+            "uk": "Ballantine's"
+          },
+          "prices": [
+            {
+              "amount": 260,
+              "size": "0.70 l"
+            }
+          ]
+        },
+        {
+          "id": "b-grants",
+          "name": {
+            "pl": "Grant's",
+            "en": "Grant's",
+            "ru": "Grant's",
+            "es": "Grant's",
+            "uk": "Grant's"
+          },
+          "prices": [
+            {
+              "amount": 260,
+              "size": "0.70 l"
+            }
+          ]
+        },
+        {
+          "id": "b-don-diego",
+          "name": {
+            "pl": "Don Diego Silver",
+            "en": "Don Diego Silver",
+            "ru": "Don Diego Silver",
+            "es": "Don Diego Silver",
+            "uk": "Don Diego Silver"
+          },
+          "prices": [
+            {
+              "amount": 300,
+              "size": "0.70 l"
+            }
+          ]
+        },
+        {
+          "id": "b-absolut",
+          "name": {
+            "pl": "Absolut",
+            "en": "Absolut",
+            "ru": "Absolut",
+            "es": "Absolut",
+            "uk": "Absolut"
+          },
+          "prices": [
+            {
+              "amount": 180,
+              "size": "0.50 l"
+            }
+          ]
+        },
+        {
+          "id": "b-belvedere",
+          "name": {
+            "pl": "Belvedere",
+            "en": "Belvedere",
+            "ru": "Belvedere",
+            "es": "Belvedere",
+            "uk": "Belvedere"
+          },
+          "prices": [
+            {
+              "amount": 300,
+              "size": "0.50 l"
+            }
+          ]
+        },
+        {
+          "id": "b-jameson",
+          "name": {
+            "pl": "Jameson",
+            "en": "Jameson",
+            "ru": "Jameson",
+            "es": "Jameson",
+            "uk": "Jameson"
+          },
+          "prices": [
+            {
+              "amount": 360,
+              "size": "0.70 l"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vodka",
+      "title": {
+        "pl": "Wódka",
+        "en": "Vodka",
+        "ru": "Водка",
+        "es": "Vodka",
+        "uk": "Горілка"
+      },
+      "image": "/images/cat-spirits.jpg",
+      "items": [
+        {
+          "id": "v-finlandia",
+          "name": {
+            "pl": "Finlandia",
+            "en": "Finlandia",
+            "ru": "Finlandia",
+            "es": "Finlandia",
+            "uk": "Finlandia"
+          },
+          "prices": [
+            {
+              "amount": 10,
+              "size": "0.25 l"
+            }
+          ]
+        },
+        {
+          "id": "v-zubrowka-biala",
+          "name": {
+            "pl": "Żubrówka Biała",
+            "en": "Żubrówka Biała",
+            "ru": "Żubrówka Biała",
+            "es": "Żubrówka Biała",
+            "uk": "Żubrówka Biała"
+          },
+          "prices": [
+            {
+              "amount": 8,
+              "size": "0.25 l"
+            }
+          ]
+        },
+        {
+          "id": "v-soplica",
+          "name": {
+            "pl": "Soplica",
+            "en": "Soplica",
+            "ru": "Soplica",
+            "es": "Soplica",
+            "uk": "Soplica"
+          },
+          "prices": [
+            {
+              "amount": 8,
+              "size": "0.25 l"
+            }
+          ]
+        },
+        {
+          "id": "v-absolut",
+          "name": {
+            "pl": "Absolut",
+            "en": "Absolut",
+            "ru": "Absolut",
+            "es": "Absolut",
+            "uk": "Absolut"
+          },
+          "prices": [
+            {
+              "amount": 10,
+              "size": "0.25 l"
+            }
+          ]
+        },
+        {
+          "id": "v-belvedere",
+          "name": {
+            "pl": "Belvedere",
+            "en": "Belvedere",
+            "ru": "Belvedere",
+            "es": "Belvedere",
+            "uk": "Belvedere"
+          },
+          "prices": [
+            {
+              "amount": 18
+            }
+          ]
+        },
+        {
+          "id": "v-chivas-12",
+          "name": {
+            "pl": "Chivas Regal 12 Y.O.",
+            "en": "Chivas Regal 12 Y.O.",
+            "ru": "Chivas Regal 12 Y.O.",
+            "es": "Chivas Regal 12 Y.O.",
+            "uk": "Chivas Regal 12 Y.O."
+          },
+          "prices": [
+            {
+              "amount": 28,
+              "size": "0.04 l"
+            }
+          ]
+        },
+        {
+          "id": "v-jd",
+          "name": {
+            "pl": "Jack Daniel's Old No. 7",
+            "en": "Jack Daniel's Old No. 7",
+            "ru": "Jack Daniel's Old No. 7",
+            "es": "Jack Daniel's Old No. 7",
+            "uk": "Jack Daniel's Old No. 7"
+          },
+          "prices": [
+            {
+              "amount": 25,
+              "size": "0.04 l"
+            }
+          ]
+        },
+        {
+          "id": "v-grants",
+          "name": {
+            "pl": "Grant's",
+            "en": "Grant's",
+            "ru": "Grant's",
+            "es": "Grant's",
+            "uk": "Grant's"
+          },
+          "prices": [
+            {
+              "amount": 22,
+              "size": "0.04 l"
+            }
+          ]
+        },
+        {
+          "id": "v-gentleman",
+          "name": {
+            "pl": "Gentleman Jack",
+            "en": "Gentleman Jack",
+            "ru": "Gentleman Jack",
+            "es": "Gentleman Jack",
+            "uk": "Gentleman Jack"
+          },
+          "prices": [
+            {
+              "amount": 30,
+              "size": "0.04 l"
+            }
+          ]
+        },
+        {
+          "id": "v-jameson",
+          "name": {
+            "pl": "Jameson",
+            "en": "Jameson",
+            "ru": "Jameson",
+            "es": "Jameson",
+            "uk": "Jameson"
+          },
+          "prices": [
+            {
+              "amount": 27,
+              "size": "0.04 l"
+            }
+          ]
+        },
+        {
+          "id": "v-jim-beam",
+          "name": {
+            "pl": "Jim Beam",
+            "en": "Jim Beam",
+            "ru": "Jim Beam",
+            "es": "Jim Beam",
+            "uk": "Jim Beam"
+          },
+          "prices": [
+            {
+              "amount": 23,
+              "size": "0.04 l"
+            }
+          ]
+        },
+        {
+          "id": "v-ballantines",
+          "name": {
+            "pl": "Ballantine's",
+            "en": "Ballantine's",
+            "ru": "Ballantine's",
+            "es": "Ballantine's",
+            "uk": "Ballantine's"
+          },
+          "prices": [
+            {
+              "amount": 23,
+              "size": "0.04 l"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gin",
+      "title": {
+        "pl": "Gin",
+        "en": "Gin",
+        "ru": "Джин",
+        "es": "Ginebra",
+        "uk": "Джин"
+      },
+      "image": "/images/cat-spirits.jpg",
+      "items": [
+        {
+          "id": "g-bombay",
+          "name": {
+            "pl": "Bombay Sapphire",
+            "en": "Bombay Sapphire",
+            "ru": "Bombay Sapphire",
+            "es": "Bombay Sapphire",
+            "uk": "Bombay Sapphire"
+          },
+          "prices": [
+            {
+              "amount": 20,
+              "size": "0.25 l"
+            }
+          ]
+        },
+        {
+          "id": "g-gordons",
+          "name": {
+            "pl": "Gordon's Gin",
+            "en": "Gordon's Gin",
+            "ru": "Gordon's Gin",
+            "es": "Gordon's Gin",
+            "uk": "Gordon's Gin"
+          },
+          "prices": [
+            {
+              "amount": 18,
+              "size": "0.25 l"
+            }
+          ]
+        },
+        {
+          "id": "g-bialowieski",
+          "name": {
+            "pl": "Gin Białowieski Żubrówka",
+            "en": "Gin Białowieski Żubrówka",
+            "ru": "Gin Białowieski Żubrówka",
+            "es": "Gin Białowieski Żubrówka",
+            "uk": "Gin Białowieski Żubrówka"
+          },
+          "prices": [
+            {
+              "amount": 14,
+              "size": "0.25 l"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shots",
+      "title": {
+        "pl": "Shots",
+        "en": "Shots",
+        "ru": "Шоты",
+        "es": "Chupitos",
+        "uk": "Шоти"
+      },
+      "image": "/images/cat-spirits.jpg",
+      "items": [
+        {
+          "id": "s-jager",
+          "name": {
+            "pl": "Jägermeister",
+            "en": "Jägermeister",
+            "ru": "Jägermeister",
+            "es": "Jägermeister",
+            "uk": "Jägermeister"
+          },
+          "prices": [
+            {
+              "amount": 20,
+              "size": "0.04 l"
+            }
+          ]
+        },
+        {
+          "id": "s-tequila",
+          "name": {
+            "pl": "Tequila",
+            "en": "Tequila",
+            "ru": "Tequila",
+            "es": "Tequila",
+            "uk": "Tequila"
+          },
+          "prices": [
+            {
+              "amount": 15,
+              "size": "0.03 l"
+            }
+          ]
+        },
+        {
+          "id": "s-sambuca",
+          "name": {
+            "pl": "Sambuca",
+            "en": "Sambuca",
+            "ru": "Sambuca",
+            "es": "Sambuca",
+            "uk": "Sambuca"
+          },
+          "prices": [
+            {
+              "amount": 25,
+              "size": "0.04 l"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "beer-bottle",
+      "title": {
+        "pl": "Piwo w butelkach",
+        "en": "Bottled beer",
+        "ru": "Пиво в бутылках",
+        "es": "Cerveza en botella",
+        "uk": "Пиво в пляшках"
+      },
+      "image": "/images/cat-beer.jpg",
+      "items": [
+        {
+          "id": "bb-zywiec-00",
+          "name": {
+            "pl": "Żywiec 0.0",
+            "en": "Żywiec 0.0",
+            "ru": "Żywiec 0.0",
+            "es": "Żywiec 0.0",
+            "uk": "Żywiec 0.0"
+          },
+          "prices": [
+            {
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "id": "bb-desperados",
+          "name": {
+            "pl": "Desperados",
+            "en": "Desperados",
+            "ru": "Desperados",
+            "es": "Desperados",
+            "uk": "Desperados"
+          },
+          "prices": [
+            {
+              "amount": 19
+            }
+          ]
+        },
+        {
+          "id": "bb-porter",
+          "name": {
+            "pl": "Żywiec Porter",
+            "en": "Żywiec Porter",
+            "ru": "Żywiec Porter",
+            "es": "Żywiec Porter",
+            "uk": "Żywiec Porter"
+          },
+          "prices": [
+            {
+              "amount": 19
+            }
+          ]
+        },
+        {
+          "id": "bb-biale",
+          "name": {
+            "pl": "Żywiec Białe",
+            "en": "Żywiec Białe",
+            "ru": "Żywiec Białe",
+            "es": "Żywiec Białe",
+            "uk": "Żywiec Białe"
+          },
+          "prices": [
+            {
+              "amount": 19,
+              "size": "0.50 l"
+            }
+          ]
+        },
+        {
+          "id": "bb-ipa",
+          "name": {
+            "pl": "Żywiec IPA",
+            "en": "Żywiec IPA",
+            "ru": "Żywiec IPA",
+            "es": "Żywiec IPA",
+            "uk": "Żywiec IPA"
+          },
+          "prices": [
+            {
+              "amount": 19,
+              "size": "0.50 l"
+            }
+          ]
+        },
+        {
+          "id": "bb-apa",
+          "name": {
+            "pl": "Żywiec APA",
+            "en": "Żywiec APA",
+            "ru": "Żywiec APA",
+            "es": "Żywiec APA",
+            "uk": "Żywiec APA"
+          },
+          "prices": [
+            {
+              "amount": 19,
+              "size": "0.50 l"
+            }
+          ]
+        },
+        {
+          "id": "bb-corona",
+          "name": {
+            "pl": "Corona Extra",
+            "en": "Corona Extra",
+            "ru": "Corona Extra",
+            "es": "Corona Extra",
+            "uk": "Corona Extra"
+          },
+          "prices": [
+            {
+              "amount": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "beer-draft",
+      "title": {
+        "pl": "Piwo beczkowe",
+        "en": "Draft beer",
+        "ru": "Разливное пиво",
+        "es": "Cerveza de barril",
+        "uk": "Пиво розливне"
+      },
+      "image": "/images/cat-beer.jpg",
+      "items": [
+        {
+          "id": "bd-zywiec",
+          "name": {
+            "pl": "Żywiec",
+            "en": "Żywiec",
+            "ru": "Żywiec",
+            "es": "Żywiec",
+            "uk": "Żywiec"
+          },
+          "prices": [
+            {
+              "amount": 12,
+              "size": "0.30 l"
+            },
+            {
+              "amount": 16,
+              "size": "0.50 l"
+            }
+          ]
+        },
+        {
+          "id": "bd-biale",
+          "name": {
+            "pl": "Żywiec Białe",
+            "en": "Żywiec Białe",
+            "ru": "Żywiec Białe",
+            "es": "Żywiec Białe",
+            "uk": "Żywiec Białe"
+          },
+          "prices": [
+            {
+              "amount": 14,
+              "size": "0.30 l"
+            },
+            {
+              "amount": 18,
+              "size": "0.50 l"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shisha",
+      "title": {
+        "pl": "Shisha",
+        "en": "Shisha",
+        "ru": "Кальян",
+        "es": "Shisha",
+        "uk": "Кальян"
+      },
+      "image": "/images/cat-shisha.jpg",
+      "items": [
+        {
+          "id": "sh-classic",
+          "name": {
+            "pl": "Classic",
+            "en": "Classic",
+            "ru": "Классика",
+            "es": "Clásico",
+            "uk": "Класика"
+          },
+          "prices": [
+            {
+              "amount": 80
+            }
+          ]
+        },
+        {
+          "id": "sh-dark-classic",
+          "name": {
+            "pl": "Ciemny i klasyczny miks",
+            "en": "Dark & classic mix",
+            "ru": "Тёмный и классический микс",
+            "es": "Mezcla oscura y clásica",
+            "uk": "Темний і класичний мікс"
+          },
+          "prices": [
+            {
+              "amount": 100
+            }
+          ]
+        },
+        {
+          "id": "sh-dark",
+          "name": {
+            "pl": "Ciemny",
+            "en": "Dark",
+            "ru": "Тёмный",
+            "es": "Oscuro",
+            "uk": "Темний"
+          },
+          "prices": [
+            {
+              "amount": 120
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
