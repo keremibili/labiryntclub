@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { head, put } from '@vercel/blob'
-import type { SiteContent } from '../../src/types/content'
+import type { SiteContent } from '../../src/types/content.js'
 
 const CONTENT_PATH = 'cms/site-content.json'
 

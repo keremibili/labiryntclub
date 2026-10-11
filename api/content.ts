@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
-import { requireAdmin } from './_lib/auth'
-import { readContent, writeContent } from './_lib/store'
-import type { SiteContent } from '../src/types/content'
+import { requireAdmin } from './_lib/auth.js'
+import { readContent, writeContent } from './_lib/store.js'
+import type { SiteContent } from '../src/types/content.js'
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader('Access-Control-Allow-Origin', '*')
