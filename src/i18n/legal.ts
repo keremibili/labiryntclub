@@ -249,11 +249,11 @@ export const legalPages: Record<
 }
 
 export const menuDisclaimer = t(
-  'Wstęp = akceptacja regulaminu. Zakaz narkotyków. Za szkody i własne rzeczy odpowiadasz Ty. 18+ alkohol.',
-  'Entry = acceptance of the rules. No drugs. You are liable for damage and your belongings. 18+ alcohol.',
-  'Вход = согласие с правилами. Наркотики запрещены. Ущерб и вещи — ваша ответственность. 18+ алкоголь.',
-  'Entrada = aceptación de las normas. Prohibidas las drogas. Usted responde de daños y pertenencias. Alcohol 18+.',
-  'Вхід = прийняття правил. Наркотики заборонені. Шкода та речі — ваша відповідальність. 18+ алкоголь.',
+  'Wstęp na teren Labirynt Club oznacza akceptację regulaminu. Obowiązuje całkowity zakaz narkotyków i substancji nielegalnych. Gość ponosi odpowiedzialność za spożyty alkohol, własne rzeczy oraz wyrządzone szkody. Alkohol wyłącznie dla osób pełnoletnich (18+).',
+  'By entering Labirynt Club you accept our house rules. Illegal drugs and controlled substances are strictly prohibited. Guests are responsible for their alcohol consumption, personal belongings, and any damage caused. Alcohol is served only to adults (18+).',
+  'Вход на территорию Labirynt Club означает согласие с правилами. Наркотики и незаконные вещества строго запрещены. Гость отвечает за употребленный алкоголь, личные вещи и причиненный ущерб. Алкоголь только для совершеннолетних (18+).',
+  'Al entrar en Labirynt Club acepta el reglamento. Quedan estrictamente prohibidas las drogas y sustancias ilegales. El cliente responde de su consumo de alcohol, sus pertenencias y los daños causados. Alcohol solo para mayores de edad (18+).',
+  'Вхід на територію Labirynt Club означає прийняття правил. Наркотики та незаконні речовини суворо заборонені. Гість відповідає за вжитий алкоголь, особисті речі та завдану шкоду. Алкоголь лише для повнолітніх (18+).',
 )
 
 export function trLegal(dict: Localized, lang: Lang) {

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { LangDropdown } from '../components/LangDropdown'
 import { detectLang } from '../i18n/languages'
+import { getGreeting } from '../i18n/greeting'
 import { legalNav, menuDisclaimer, trLegal } from '../i18n/legal'
 import { tr } from '../i18n/ui'
 import { fetchContent } from '../lib/api'
@@ -17,14 +18,21 @@ export default function HomePage() {
   const [lang, setLang] = useState<Lang>('pl')
   const [content, setContent] = useState<SiteContent>(() => createDefaultContent())
   const [activeCategory, setActiveCategory] = useState('')
+  const [greeting, setGreeting] = useState('')
 
   useEffect(() => {
-    setLang(detectLang())
+    const nextLang = detectLang()
+    setLang(nextLang)
+    setGreeting(getGreeting(nextLang))
     fetchContent().then((data) => {
       setContent(data)
       if (data.categories[0]) setActiveCategory(data.categories[0].id)
     })
   }, [])
+
+  useEffect(() => {
+    setGreeting(getGreeting(lang))
+  }, [lang])
 
   useEffect(() => {
     localStorage.setItem('labirynt-lang', lang)
@@ -123,6 +131,7 @@ export default function HomePage() {
 
       <main className="menu" id="menu">
         <div className="menu-head">
+          {greeting ? <p className="menu-greeting">{greeting}</p> : null}
           <h2>{tr(content.texts.menuTitle, lang)}</h2>
           <p>{tr(content.texts.currencyNote, lang)}</p>
         </div>
