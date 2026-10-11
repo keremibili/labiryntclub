@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { languages } from '../../i18n/languages'
 import {
@@ -11,6 +11,8 @@ import {
 import type { Lang, Localized, MenuCategory, MenuItem, SiteContent } from '../../types/content'
 import { createDefaultContent } from '../../data/defaultContent'
 import './admin.css'
+
+type Section = 'home' | 'texts' | `cat:${number}`
 
 const emptyLocalized = (): Localized => ({ pl: '', en: '', ru: '', es: '', uk: '' })
 
@@ -25,8 +27,8 @@ function moveItem<T>(arr: T[], from: number, to: number) {
 export default function AdminPanel() {
   const navigate = useNavigate()
   const [content, setContent] = useState<SiteContent>(() => createDefaultContent())
+  const [section, setSection] = useState<Section>('home')
   const [langTab, setLangTab] = useState<Lang>('pl')
-  const [activeCat, setActiveCat] = useState(0)
   const [status, setStatus] = useState('')
   const [saving, setSaving] = useState(false)
   const [loading, setLoading] = useState(true)
@@ -37,53 +39,34 @@ export default function AdminPanel() {
       return
     }
     fetchContent()
-      .then((data) => {
-        setContent(data)
-        setActiveCat(0)
-      })
+      .then((data) => setContent(data))
       .finally(() => setLoading(false))
   }, [navigate])
 
-  const category = content.categories[activeCat]
-
-  const textFields = useMemo(
-    () =>
-      [
-        ['tagline', 'Üst başlık'],
-        ['subtitle', 'Alt yazı'],
-        ['cta', 'Buton'],
-        ['menuTitle', 'Menü başlığı'],
-        ['currencyNote', 'Fiyat notu'],
-        ['location', 'Konum'],
-        ['footer', 'Footer'],
-      ] as const,
-    [],
-  )
+  const catIndex = section.startsWith('cat:') ? Number(section.slice(4)) : -1
+  const category = catIndex >= 0 ? content.categories[catIndex] : null
 
   const updateText = (key: keyof SiteContent['texts'], value: string) => {
     setContent((prev) => ({
       ...prev,
-      texts: {
-        ...prev.texts,
-        [key]: { ...prev.texts[key], [langTab]: value },
-      },
+      texts: { ...prev.texts, [key]: { ...prev.texts[key], [langTab]: value } },
     }))
   }
 
-  const updateCategory = (patch: Partial<MenuCategory>) => {
+  const updateCategory = (index: number, patch: Partial<MenuCategory>) => {
     setContent((prev) => {
       const categories = [...prev.categories]
-      categories[activeCat] = { ...categories[activeCat], ...patch }
+      categories[index] = { ...categories[index], ...patch }
       return { ...prev, categories }
     })
   }
 
-  const updateItem = (index: number, patch: Partial<MenuItem>) => {
+  const updateItem = (catIdx: number, itemIdx: number, patch: Partial<MenuItem>) => {
     setContent((prev) => {
       const categories = [...prev.categories]
-      const items = [...categories[activeCat].items]
-      items[index] = { ...items[index], ...patch }
-      categories[activeCat] = { ...categories[activeCat], items }
+      const items = [...categories[catIdx].items]
+      items[itemIdx] = { ...items[itemIdx], ...patch }
+      categories[catIdx] = { ...categories[catIdx], items }
       return { ...prev, categories }
     })
   }
@@ -94,13 +77,12 @@ export default function AdminPanel() {
     apply: (url: string) => void,
   ) => {
     if (!file) return
-    setStatus('Fotoğraf yükleniyor...')
+    setStatus('Yükleniyor...')
     try {
-      const url = await uploadImage(file, folder)
-      apply(url)
+      apply(await uploadImage(file, folder))
       setStatus('Fotoğraf yüklendi')
     } catch {
-      setStatus('Fotoğraf yüklenemedi')
+      setStatus('Yükleme başarısız')
     }
   }
 
@@ -110,116 +92,65 @@ export default function AdminPanel() {
     try {
       const saved = await saveContent(content)
       setContent(saved)
-      setStatus(`Kaydedildi · ${new Date(saved.updatedAt).toLocaleString()}`)
+      setStatus('Kaydedildi')
     } catch {
-      setStatus('Kayıt başarısız — tekrar giriş yapmayı deneyin')
+      setStatus('Kayıt başarısız — tekrar giriş yapın')
       setAdminToken(null)
     } finally {
       setSaving(false)
     }
   }
 
-  const logout = () => {
-    setAdminToken(null)
-    navigate('/admin/login')
-  }
-
   if (loading) {
     return (
-      <div className="admin-shell">
-        <p className="admin-loading">Yükleniyor...</p>
+      <div className="admin">
+        <p className="admin-muted">Yükleniyor...</p>
       </div>
     )
   }
 
   return (
-    <div className="admin-shell">
-      <header className="admin-top">
-        <div>
-          <h1>Labirynt Admin</h1>
-          <p>Değişiklikler kayıttan sonra sitede anında görünür</p>
-        </div>
-        <div className="admin-top__actions">
-          <Link to="/" target="_blank">
-            Siteyi aç
-          </Link>
-          <button type="button" className="admin-primary" onClick={onSave} disabled={saving}>
-            {saving ? 'Kaydediliyor...' : 'Kaydet'}
-          </button>
-          <button type="button" onClick={logout}>
-            Çıkış
-          </button>
-        </div>
-      </header>
-
-      {status ? <p className="admin-status">{status}</p> : null}
-
-      <section className="admin-section">
-        <h2>Anasayfa görselleri</h2>
-        <div className="admin-grid-2">
-          <label className="admin-upload">
-            Hero arka plan
-            <img src={content.heroImage} alt="" />
-            <input
-              type="file"
-              accept="image/*"
-              onChange={(e) =>
-                onUpload(e.target.files?.[0], 'hero', (url) =>
-                  setContent((prev) => ({ ...prev, heroImage: url })),
-                )
-              }
-            />
-          </label>
-          <label className="admin-upload">
-            Logo
-            <img src={content.logoImage} alt="" />
-            <input
-              type="file"
-              accept="image/*"
-              onChange={(e) =>
-                onUpload(e.target.files?.[0], 'logo', (url) =>
-                  setContent((prev) => ({ ...prev, logoImage: url })),
-                )
-              }
-            />
-          </label>
-        </div>
-      </section>
-
-      <section className="admin-section">
-        <div className="admin-row">
-          <h2>Yazılar</h2>
-          <div className="admin-lang-tabs">
-            {languages.map((l) => (
-              <button
-                key={l.code}
-                type="button"
-                className={langTab === l.code ? 'active' : ''}
-                onClick={() => setLangTab(l.code)}
-              >
-                <img src={l.flag} alt="" width={16} height={11} /> {l.label}
-              </button>
-            ))}
+    <div className="admin">
+      <aside className="admin-nav">
+        <div className="admin-nav__brand">
+          <img src="/images/logo.png" alt="" width={40} height={40} />
+          <div>
+            <strong>Labirynt</strong>
+            <span>Admin</span>
           </div>
         </div>
-        <div className="admin-fields">
-          {textFields.map(([key, label]) => (
-            <label key={key}>
-              {label} ({langTab.toUpperCase()})
-              <input
-                value={content.texts[key][langTab]}
-                onChange={(e) => updateText(key, e.target.value)}
-              />
-            </label>
-          ))}
-        </div>
-      </section>
 
-      <section className="admin-section">
-        <div className="admin-row">
-          <h2>Menü kategorileri</h2>
+        <nav>
+          <p className="admin-nav__label">Site</p>
           <button
             type="button"
+            className={section === 'home' ? 'active' : ''}
+            onClick={() => setSection('home')}
+          >
+            Anasayfa
+          </button>
+          <button
+            type="button"
+            className={section === 'texts' ? 'active' : ''}
+            onClick={() => setSection('texts')}
+          >
+            Yazılar
+          </button>
+
+          <p className="admin-nav__label">Menü</p>
+          {content.categories.map((cat, index) => (
+            <button
+              key={cat.id}
+              type="button"
+              className={section === `cat:${index}` ? 'active' : ''}
+              onClick={() => setSection(`cat:${index}`)}
+            >
+              <span>{index + 1}.</span> {cat.title.pl || cat.title.en || cat.id}
+            </button>
+          ))}
+          <button
+            type="button"
+            className="admin-nav__add"
             onClick={() => {
               const id = `cat-${Date.now()}`
               setContent((prev) => ({
@@ -234,89 +165,183 @@ export default function AdminPanel() {
                   },
                 ],
               }))
-              setActiveCat(content.categories.length)
+              setSection(`cat:${content.categories.length}`)
             }}
           >
-            + Kategori
+            + Kategori ekle
+          </button>
+        </nav>
+
+        <div className="admin-nav__foot">
+          <Link to="/" target="_blank">
+            Siteyi aç
+          </Link>
+          <button
+            type="button"
+            onClick={() => {
+              setAdminToken(null)
+              navigate('/admin/login')
+            }}
+          >
+            Çıkış
           </button>
         </div>
+      </aside>
 
-        <div className="admin-cat-tabs">
-          {content.categories.map((cat, index) => (
-            <button
-              key={cat.id}
-              type="button"
-              className={activeCat === index ? 'active' : ''}
-              onClick={() => setActiveCat(index)}
-            >
-              {cat.title.pl || cat.title.en || cat.id}
-            </button>
-          ))}
-        </div>
+      <main className="admin-main">
+        <header className="admin-bar">
+          <div>
+            <h1>
+              {section === 'home' && 'Anasayfa'}
+              {section === 'texts' && 'Yazılar'}
+              {category && (category.title.pl || 'Kategori')}
+            </h1>
+            {status ? <p className="admin-status">{status}</p> : null}
+          </div>
+          <button type="button" className="btn-save" onClick={onSave} disabled={saving}>
+            {saving ? 'Kaydediliyor...' : 'Kaydet'}
+          </button>
+        </header>
 
-        {category ? (
-          <div className="admin-cat-editor">
-            <div className="admin-row wrap">
+        {section === 'home' && (
+          <section className="admin-panel">
+            <div className="admin-cards">
+              <label className="photo-card">
+                <span>Hero fotoğraf</span>
+                <img src={content.heroImage} alt="" />
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) =>
+                    onUpload(e.target.files?.[0], 'hero', (url) =>
+                      setContent((prev) => ({ ...prev, heroImage: url })),
+                    )
+                  }
+                />
+              </label>
+              <label className="photo-card photo-card--logo">
+                <span>Logo</span>
+                <img src={content.logoImage} alt="" />
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) =>
+                    onUpload(e.target.files?.[0], 'logo', (url) =>
+                      setContent((prev) => ({ ...prev, logoImage: url })),
+                    )
+                  }
+                />
+              </label>
+            </div>
+          </section>
+        )}
+
+        {section === 'texts' && (
+          <section className="admin-panel">
+            <div className="lang-row">
+              {languages.map((l) => (
+                <button
+                  key={l.code}
+                  type="button"
+                  className={langTab === l.code ? 'active' : ''}
+                  onClick={() => setLangTab(l.code)}
+                >
+                  <img src={l.flag} alt="" width={18} height={12} />
+                  {l.label}
+                </button>
+              ))}
+            </div>
+            <div className="form-stack">
+              {(
+                [
+                  ['tagline', 'Üst başlık'],
+                  ['subtitle', 'Alt yazı'],
+                  ['cta', 'Buton yazısı'],
+                  ['menuTitle', 'Menü başlığı'],
+                  ['currencyNote', 'Fiyat notu'],
+                  ['location', 'Konum'],
+                  ['footer', 'Footer'],
+                ] as const
+              ).map(([key, label]) => (
+                <label key={key} className="field">
+                  {label}
+                  <input
+                    value={content.texts[key][langTab]}
+                    onChange={(e) => updateText(key, e.target.value)}
+                  />
+                </label>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {category && catIndex >= 0 && (
+          <section className="admin-panel">
+            <div className="toolbar">
               <button
                 type="button"
                 onClick={() => {
                   setContent((prev) => ({
                     ...prev,
-                    categories: moveItem(prev.categories, activeCat, activeCat - 1),
+                    categories: moveItem(prev.categories, catIndex, catIndex - 1),
                   }))
-                  setActiveCat((i) => Math.max(0, i - 1))
+                  if (catIndex > 0) setSection(`cat:${catIndex - 1}`)
                 }}
               >
-                ↑ Yukarı
+                Yukarı
               </button>
               <button
                 type="button"
                 onClick={() => {
                   setContent((prev) => ({
                     ...prev,
-                    categories: moveItem(prev.categories, activeCat, activeCat + 1),
+                    categories: moveItem(prev.categories, catIndex, catIndex + 1),
                   }))
-                  setActiveCat((i) => Math.min(content.categories.length - 1, i + 1))
+                  if (catIndex < content.categories.length - 1) {
+                    setSection(`cat:${catIndex + 1}`)
+                  }
                 }}
               >
-                ↓ Aşağı
+                Aşağı
               </button>
               <button
                 type="button"
-                className="admin-danger"
+                className="btn-danger"
                 onClick={() => {
-                  if (!confirm('Bu kategoriyi sil?')) return
+                  if (!confirm('Kategoriyi sil?')) return
                   setContent((prev) => ({
                     ...prev,
-                    categories: prev.categories.filter((_, i) => i !== activeCat),
+                    categories: prev.categories.filter((_, i) => i !== catIndex),
                   }))
-                  setActiveCat(0)
+                  setSection('home')
                 }}
               >
-                Kategoriyi sil
+                Sil
               </button>
             </div>
 
-            <label className="admin-upload admin-upload--wide">
-              Kategori fotoğrafı
+            <label className="photo-card">
+              <span>Kategori fotoğrafı</span>
               <img src={category.image} alt="" />
               <input
                 type="file"
                 accept="image/*"
                 onChange={(e) =>
-                  onUpload(e.target.files?.[0], 'category', (url) => updateCategory({ image: url }))
+                  onUpload(e.target.files?.[0], 'category', (url) =>
+                    updateCategory(catIndex, { image: url }),
+                  )
                 }
               />
             </label>
 
-            <div className="admin-fields">
+            <div className="form-grid">
               {languages.map((l) => (
-                <label key={l.code}>
+                <label key={l.code} className="field">
                   Kategori adı ({l.label})
                   <input
                     value={category.title[l.code]}
                     onChange={(e) =>
-                      updateCategory({
+                      updateCategory(catIndex, {
                         title: { ...category.title, [l.code]: e.target.value },
                       })
                     }
@@ -325,10 +350,11 @@ export default function AdminPanel() {
               ))}
             </div>
 
-            <div className="admin-row">
-              <h3>İçecekler / ürünler</h3>
+            <div className="list-head">
+              <h2>Ürünler</h2>
               <button
                 type="button"
+                className="btn-dark"
                 onClick={() => {
                   const item: MenuItem = {
                     id: `item-${Date.now()}`,
@@ -336,25 +362,27 @@ export default function AdminPanel() {
                     prices: [{ amount: 0 }],
                     image: '',
                   }
-                  updateCategory({ items: [...category.items, item] })
+                  updateCategory(catIndex, { items: [...category.items, item] })
                 }}
               >
-                + Ürün
+                + Ürün ekle
               </button>
             </div>
 
-            <div className="admin-items">
+            <div className="product-list">
               {category.items.map((item, index) => (
-                <article key={item.id} className="admin-item">
-                  <div className="admin-item__head">
+                <article key={item.id} className="product">
+                  <div className="product__top">
                     <strong>
-                      #{index + 1} {item.name.pl || item.name.en}
+                      {index + 1}. {item.name.pl || item.name.en || 'Ürün'}
                     </strong>
-                    <div className="admin-row wrap">
+                    <div className="toolbar">
                       <button
                         type="button"
                         onClick={() =>
-                          updateCategory({ items: moveItem(category.items, index, index - 1) })
+                          updateCategory(catIndex, {
+                            items: moveItem(category.items, index, index - 1),
+                          })
                         }
                       >
                         ↑
@@ -362,17 +390,19 @@ export default function AdminPanel() {
                       <button
                         type="button"
                         onClick={() =>
-                          updateCategory({ items: moveItem(category.items, index, index + 1) })
+                          updateCategory(catIndex, {
+                            items: moveItem(category.items, index, index + 1),
+                          })
                         }
                       >
                         ↓
                       </button>
                       <button
                         type="button"
-                        className="admin-danger"
+                        className="btn-danger"
                         onClick={() => {
                           if (!confirm('Ürünü sil?')) return
-                          updateCategory({
+                          updateCategory(catIndex, {
                             items: category.items.filter((_, i) => i !== index),
                           })
                         }}
@@ -382,41 +412,42 @@ export default function AdminPanel() {
                     </div>
                   </div>
 
-                  <label className="admin-upload">
-                    Ürün fotoğrafı
-                    {item.image ? <img src={item.image} alt="" /> : <span>Foto seç</span>}
-                    <input
-                      type="file"
-                      accept="image/*"
-                      onChange={(e) =>
-                        onUpload(e.target.files?.[0], 'item', (url) =>
-                          updateItem(index, { image: url }),
-                        )
-                      }
-                    />
-                  </label>
+                  <div className="product__body">
+                    <label className="photo-card photo-card--small">
+                      <span>Foto</span>
+                      {item.image ? <img src={item.image} alt="" /> : <div className="photo-empty">+</div>}
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={(e) =>
+                          onUpload(e.target.files?.[0], 'item', (url) =>
+                            updateItem(catIndex, index, { image: url }),
+                          )
+                        }
+                      />
+                    </label>
 
-                  <div className="admin-fields">
-                    {languages.map((l) => (
-                      <label key={l.code}>
-                        İsim ({l.label})
-                        <input
-                          value={item.name[l.code]}
-                          onChange={(e) =>
-                            updateItem(index, {
-                              name: { ...item.name, [l.code]: e.target.value },
-                            })
-                          }
-                        />
-                      </label>
-                    ))}
+                    <div className="form-grid">
+                      {languages.map((l) => (
+                        <label key={l.code} className="field">
+                          İsim ({l.label})
+                          <input
+                            value={item.name[l.code]}
+                            onChange={(e) =>
+                              updateItem(catIndex, index, {
+                                name: { ...item.name, [l.code]: e.target.value },
+                              })
+                            }
+                          />
+                        </label>
+                      ))}
+                    </div>
                   </div>
 
-                  <div className="admin-prices">
-                    <h4>Fiyatlar</h4>
+                  <div className="prices">
                     {item.prices.map((price, pIndex) => (
-                      <div key={pIndex} className="admin-price-row">
-                        <label>
+                      <div key={pIndex} className="price-line">
+                        <label className="field">
                           Fiyat (zł)
                           <input
                             type="number"
@@ -428,11 +459,11 @@ export default function AdminPanel() {
                                 ...prices[pIndex],
                                 amount: Number(e.target.value),
                               }
-                              updateItem(index, { prices })
+                              updateItem(catIndex, index, { prices })
                             }}
                           />
                         </label>
-                        <label>
+                        <label className="field">
                           Ölçü
                           <input
                             value={price.size || ''}
@@ -443,26 +474,26 @@ export default function AdminPanel() {
                                 ...prices[pIndex],
                                 size: e.target.value || undefined,
                               }
-                              updateItem(index, { prices })
+                              updateItem(catIndex, index, { prices })
                             }}
                           />
                         </label>
                         <button
                           type="button"
                           onClick={() =>
-                            updateItem(index, {
+                            updateItem(catIndex, index, {
                               prices: item.prices.filter((_, i) => i !== pIndex),
                             })
                           }
                         >
-                          Fiyat sil
+                          Sil
                         </button>
                       </div>
                     ))}
                     <button
                       type="button"
                       onClick={() =>
-                        updateItem(index, {
+                        updateItem(catIndex, index, {
                           prices: [...item.prices, { amount: 0 }],
                         })
                       }
@@ -473,15 +504,9 @@ export default function AdminPanel() {
                 </article>
               ))}
             </div>
-          </div>
-        ) : null}
-      </section>
-
-      <div className="admin-sticky-save">
-        <button type="button" className="admin-primary" onClick={onSave} disabled={saving}>
-          {saving ? 'Kaydediliyor...' : 'Tüm değişiklikleri kaydet'}
-        </button>
-      </div>
+          </section>
+        )}
+      </main>
     </div>
   )
 }
