@@ -13,11 +13,11 @@ const t = (pl: string, en: string, ru: string, es: string, uk: string): Localize
 
 export const ui = {
   tagline: t(
-    'Club & Terrace · Warszawa',
-    'Club & Terrace · Warsaw',
-    'Клуб и терраса · Варшава',
-    'Club & Terraza · Varsovia',
-    'Клуб і тераса · Варшава',
+    'Night Club & Shisha Bar Warszawa',
+    'Night Club & Shisha Bar Warsaw',
+    'Night Club & Shisha Bar Warsaw',
+    'Night Club & Shisha Bar Warsaw',
+    'Night Club & Shisha Bar Warsaw',
   ),
   subtitle: t(
     'Muzyka · Koktajle · Shisha — od zachodu do świtu',
@@ -31,11 +31,11 @@ export const ui = {
   currencyNote: t('Ceny w PLN', 'Prices in PLN', 'Цены в PLN', 'Precios en PLN', 'Ціни в PLN'),
   location: t('Warszawa', 'Warsaw', 'Варшава', 'Varsovia', 'Варшава'),
   footer: t(
-    'Labirynt Club · Club & Terrace',
-    'Labirynt Club · Club & Terrace',
-    'Labirynt Club · Клуб и терраса',
-    'Labirynt Club · Club & Terraza',
-    'Labirynt Club · Клуб і тераса',
+    'Labirynt Club · Night Club & Shisha Bar',
+    'Labirynt Club · Night Club & Shisha Bar',
+    'Labirynt Club · Night Club & Shisha Bar',
+    'Labirynt Club · Night Club & Shisha Bar',
+    'Labirynt Club · Night Club & Shisha Bar',
   ),
 }
 

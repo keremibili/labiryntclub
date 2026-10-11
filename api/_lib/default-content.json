@@ -1,15 +1,15 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-11T23:44:22.450Z",
+  "updatedAt": "2026-10-11T23:50:36.348Z",
   "heroImage": "/images/hero-entrance.png",
   "logoImage": "/images/logo.png",
   "texts": {
     "tagline": {
-      "pl": "Club & Terrace · Warszawa",
-      "en": "Club & Terrace · Warsaw",
-      "ru": "Клуб и терраса · Варшава",
-      "es": "Club & Terraza · Varsovia",
-      "uk": "Клуб і тераса · Варшава"
+      "pl": "Night Club & Shisha Bar Warszawa",
+      "en": "Night Club & Shisha Bar Warsaw",
+      "ru": "Night Club & Shisha Bar Warsaw",
+      "es": "Night Club & Shisha Bar Warsaw",
+      "uk": "Night Club & Shisha Bar Warsaw"
     },
     "subtitle": {
       "pl": "Muzyka · Koktajle · Shisha — od zachodu do świtu",
@@ -47,11 +47,11 @@
       "uk": "Варшава"
     },
     "footer": {
-      "pl": "Labirynt Club · Club & Terrace",
-      "en": "Labirynt Club · Club & Terrace",
-      "ru": "Labirynt Club · Клуб и терраса",
-      "es": "Labirynt Club · Club & Terraza",
-      "uk": "Labirynt Club · Клуб і тераса"
+      "pl": "Labirynt Club · Night Club & Shisha Bar",
+      "en": "Labirynt Club · Night Club & Shisha Bar",
+      "ru": "Labirynt Club · Night Club & Shisha Bar",
+      "es": "Labirynt Club · Night Club & Shisha Bar",
+      "uk": "Labirynt Club · Night Club & Shisha Bar"
     }
   },
   "categories": [
