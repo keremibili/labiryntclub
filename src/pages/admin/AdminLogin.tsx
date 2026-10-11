@@ -5,7 +5,7 @@ import './admin.css'
 
 export default function AdminLogin() {
   const navigate = useNavigate()
-  const [email, setEmail] = useState('alparslanbuyukkinaci@gmail.com')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
