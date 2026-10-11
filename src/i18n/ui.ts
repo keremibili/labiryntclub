@@ -1,12 +1,7 @@
-import type { Lang, Localized } from '../data/menu'
+import type { Lang, Localized } from '../types/content'
+import { languages as languageList } from './languages'
 
-export const languages: { code: Lang; label: string }[] = [
-  { code: 'pl', label: 'PL' },
-  { code: 'en', label: 'EN' },
-  { code: 'ru', label: 'RU' },
-  { code: 'es', label: 'ES' },
-  { code: 'uk', label: 'UA' },
-]
+export const languages = languageList
 
 const t = (pl: string, en: string, ru: string, es: string, uk: string): Localized => ({
   pl,

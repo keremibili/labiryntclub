@@ -1,0 +1,253 @@
+.admin-shell {
+  min-height: 100vh;
+  background: #071018;
+  color: #e8f4ff;
+  padding: 1.25rem;
+  font-family: Figtree, system-ui, sans-serif;
+}
+
+.admin-shell--login {
+  display: grid;
+  place-items: center;
+}
+
+.admin-card {
+  width: min(420px, 100%);
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.admin-card img {
+  border-radius: 50%;
+  justify-self: center;
+}
+
+.admin-card h1 {
+  margin: 0;
+  text-align: center;
+  font-family: Syne, sans-serif;
+  color: #00e5ff;
+}
+
+.admin-card p {
+  margin: 0;
+  text-align: center;
+  color: rgba(232, 244, 255, 0.65);
+}
+
+.admin-card label,
+.admin-fields label,
+.admin-price-row label,
+.admin-upload {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: rgba(232, 244, 255, 0.8);
+}
+
+.admin-card input,
+.admin-fields input,
+.admin-price-row input {
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  background: rgba(0, 0, 0, 0.4);
+  color: #e8f4ff;
+  padding: 0.65rem 0.75rem;
+  font: inherit;
+}
+
+.admin-card button,
+.admin-top button,
+.admin-section button,
+.admin-sticky-save button {
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  background: transparent;
+  color: #e8f4ff;
+  padding: 0.55rem 0.85rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.admin-primary,
+.admin-card button[type='submit'] {
+  background: #00e5ff;
+  color: #031018;
+  border-color: #00e5ff;
+  font-weight: 700;
+}
+
+.admin-danger {
+  border-color: rgba(255, 90, 90, 0.5) !important;
+  color: #ff8d8d !important;
+}
+
+.admin-error {
+  color: #ff8d8d !important;
+}
+
+.admin-back {
+  color: #00e5ff;
+  text-align: center;
+  text-decoration: none;
+}
+
+.admin-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.admin-top h1 {
+  margin: 0;
+  font-family: Syne, sans-serif;
+  color: #00e5ff;
+}
+
+.admin-top p {
+  margin: 0.25rem 0 0;
+  color: rgba(232, 244, 255, 0.6);
+}
+
+.admin-top__actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.admin-top__actions a {
+  color: #00e5ff;
+}
+
+.admin-status,
+.admin-loading {
+  color: #7af5ff;
+}
+
+.admin-section {
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.admin-section h2,
+.admin-section h3,
+.admin-section h4 {
+  margin: 0 0 0.75rem;
+  font-family: Syne, sans-serif;
+}
+
+.admin-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.admin-row.wrap {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.admin-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.admin-upload {
+  border: 1px dashed rgba(0, 229, 255, 0.35);
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
+.admin-upload img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.admin-upload--wide img {
+  max-height: 220px;
+}
+
+.admin-upload input {
+  margin-top: 0.5rem;
+}
+
+.admin-fields {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.admin-lang-tabs,
+.admin-cat-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.admin-lang-tabs button,
+.admin-cat-tabs button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.admin-lang-tabs button.active,
+.admin-cat-tabs button.active {
+  background: #00e5ff;
+  color: #031018;
+  border-color: #00e5ff;
+}
+
+.admin-items {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-item {
+  border: 1px solid rgba(0, 229, 255, 0.18);
+  padding: 0.85rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.admin-item__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.admin-price-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 0.5rem;
+  align-items: end;
+  margin-bottom: 0.5rem;
+}
+
+.admin-sticky-save {
+  position: sticky;
+  bottom: 0.75rem;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+@media (max-width: 720px) {
+  .admin-grid-2,
+  .admin-price-row {
+    grid-template-columns: 1fr;
+  }
+}

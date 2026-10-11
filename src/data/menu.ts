@@ -1,25 +1,6 @@
-export type Lang = 'pl' | 'en' | 'ru' | 'es' | 'uk'
+import type { Localized, MenuCategory } from '../types/content'
 
-export type Localized = Record<Lang, string>
-
-export type PriceOption = {
-  amount: number
-  size?: string
-}
-
-export type MenuItem = {
-  id: string
-  name: Localized
-  prices: PriceOption[]
-  image?: string
-}
-
-export type MenuCategory = {
-  id: string
-  title: Localized
-  image: string
-  items: MenuItem[]
-}
+export type { Lang, Localized, PriceOption, MenuItem, MenuCategory } from '../types/content'
 
 const n = (pl: string, en: string, ru: string, es: string, uk: string): Localized => ({
   pl,
