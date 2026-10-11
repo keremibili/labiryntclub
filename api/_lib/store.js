@@ -1,28 +1,27 @@
-import { readFileSync } from 'node:fs'
-import { join } from 'node:path'
-import { head, put } from '@vercel/blob'
-import type { SiteContent } from '../../src/types/content.js'
+const { readFileSync } = require('node:fs')
+const { join } = require('node:path')
+const { head, put } = require('@vercel/blob')
 
 const CONTENT_PATH = 'cms/site-content.json'
 
-function fallbackContent(): SiteContent {
+function fallbackContent() {
   const raw = readFileSync(join(__dirname, 'default-content.json'), 'utf8')
-  return JSON.parse(raw) as SiteContent
+  return JSON.parse(raw)
 }
 
-export async function readContent(): Promise<SiteContent> {
+async function readContent() {
   try {
     const meta = await head(CONTENT_PATH)
     const res = await fetch(meta.url, { cache: 'no-store' })
     if (!res.ok) throw new Error('fetch failed')
-    return (await res.json()) as SiteContent
+    return await res.json()
   } catch {
     return fallbackContent()
   }
 }
 
-export async function writeContent(content: SiteContent) {
-  const next: SiteContent = {
+async function writeContent(content) {
+  const next = {
     ...content,
     version: (content.version || 0) + 1,
     updatedAt: new Date().toISOString(),
@@ -35,3 +34,5 @@ export async function writeContent(content: SiteContent) {
   })
   return { content: next, url: blob.url }
 }
+
+module.exports = { readContent, writeContent }
