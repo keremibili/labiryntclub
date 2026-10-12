@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { LangDropdown } from '../components/LangDropdown'
+import { MenuPickCheck, MenuPickList, type PickItem } from '../components/MenuPickList'
 import { ReviewButton } from '../components/ReviewButton'
 import { detectLang } from '../i18n/languages'
 import { getGreeting } from '../i18n/greeting'
@@ -8,12 +9,20 @@ import { legalNav, menuDisclaimer, trLegal } from '../i18n/legal'
 import { tr } from '../i18n/ui'
 import { fetchContent } from '../lib/api'
 import { localizeContent } from '../lib/localizeContent'
-import type { Lang, Localized, SiteContent } from '../types/content'
+import type { Lang, Localized, MenuItem, SiteContent } from '../types/content'
 import { createDefaultContent } from '../data/defaultContent'
 import '../App.css'
 
+const PICK_KEY = 'labirynt-menu-picks'
+
 function formatPrice(amount: number) {
   return `${amount.toFixed(2)} zł`
+}
+
+function itemPriceLabel(item: MenuItem) {
+  return item.prices
+    .map((p) => (p.size ? `${formatPrice(p.amount)} / ${p.size}` : formatPrice(p.amount)))
+    .join(' · ')
 }
 
 const homeNav: Localized = {
@@ -37,6 +46,16 @@ export default function MenuPage() {
   )
   const [activeCategory, setActiveCategory] = useState('')
   const [greeting, setGreeting] = useState(() => getGreeting(lang))
+  const [pickedIds, setPickedIds] = useState<string[]>(() => {
+    try {
+      const raw = sessionStorage.getItem(PICK_KEY)
+      const parsed = raw ? (JSON.parse(raw) as string[]) : []
+      return Array.isArray(parsed) ? parsed : []
+    } catch {
+      return []
+    }
+  })
+  const [cartOpen, setCartOpen] = useState(false)
 
   useEffect(() => {
     fetchContent().then((data) => {
@@ -51,7 +70,33 @@ export default function MenuPage() {
     document.documentElement.lang = lang
   }, [lang])
 
+  useEffect(() => {
+    sessionStorage.setItem(PICK_KEY, JSON.stringify(pickedIds))
+  }, [pickedIds])
+
   const categories = useMemo(() => content.categories, [content.categories])
+
+  const itemIndex = useMemo(() => {
+    const map = new Map<string, MenuItem>()
+    for (const cat of categories) {
+      for (const item of cat.items) map.set(item.id, item)
+    }
+    return map
+  }, [categories])
+
+  const pickedItems: PickItem[] = useMemo(
+    () =>
+      pickedIds
+        .map((id) => itemIndex.get(id))
+        .filter(Boolean)
+        .map((item) => ({
+          id: item!.id,
+          name: item!.name,
+          priceLabel: itemPriceLabel(item!),
+          image: item!.image,
+        })),
+    [pickedIds, itemIndex],
+  )
 
   useEffect(() => {
     if (!categories.length) return
@@ -86,6 +131,14 @@ export default function MenuPage() {
   const selectCategory = (id: string) => {
     setActiveCategory(id)
     document.getElementById(`cat-${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
+  const togglePick = (id: string) => {
+    setPickedIds((prev) => {
+      if (prev.includes(id)) return prev.filter((x) => x !== id)
+      setCartOpen(true)
+      return [...prev, id]
+    })
   }
 
   return (
@@ -181,25 +234,38 @@ export default function MenuPage() {
               </div>
 
               <ul className="item-list">
-                {cat.items.map((item) => (
-                  <li key={item.id} className="item">
-                    {item.image ? (
-                      <img className="item-photo" src={item.image} alt="" loading="lazy" />
-                    ) : null}
-                    <div className="item-main">
-                      <span className="item-name">{tr(item.name, lang)}</span>
-                      <span className="item-rule" aria-hidden="true" />
-                    </div>
-                    <div className="item-prices">
-                      {item.prices.map((price) => (
-                        <div key={`${item.id}-${price.size ?? price.amount}`} className="price">
-                          <strong>{formatPrice(price.amount)}</strong>
-                          {price.size ? <span>/{price.size}</span> : null}
+                {cat.items.map((item) => {
+                  const checked = pickedIds.includes(item.id)
+                  return (
+                    <li
+                      key={item.id}
+                      className={`item ${item.image ? 'item--photo' : ''} ${checked ? 'item--picked' : ''}`}
+                    >
+                      {item.image ? (
+                        <div className="item-photo-wrap">
+                          <img className="item-photo" src={item.image} alt="" loading="lazy" />
                         </div>
-                      ))}
-                    </div>
-                  </li>
-                ))}
+                      ) : null}
+                      <div className="item-main">
+                        <span className="item-name">{tr(item.name, lang)}</span>
+                        <span className="item-rule" aria-hidden="true" />
+                      </div>
+                      <div className="item-prices">
+                        {item.prices.map((price) => (
+                          <div key={`${item.id}-${price.size ?? price.amount}`} className="price">
+                            <strong>{formatPrice(price.amount)}</strong>
+                            {price.size ? <span>/{price.size}</span> : null}
+                          </div>
+                        ))}
+                      </div>
+                      <MenuPickCheck
+                        lang={lang}
+                        checked={checked}
+                        onToggle={() => togglePick(item.id)}
+                      />
+                    </li>
+                  )
+                })}
               </ul>
             </section>
           ))}
@@ -222,6 +288,15 @@ export default function MenuPage() {
           {tr(content.texts.location, lang)} · Google
         </a>
       </footer>
+
+      <MenuPickList
+        lang={lang}
+        items={pickedItems}
+        open={cartOpen}
+        onOpenChange={setCartOpen}
+        onRemove={(id) => setPickedIds((prev) => prev.filter((x) => x !== id))}
+        onClear={() => setPickedIds([])}
+      />
     </div>
   )
 }

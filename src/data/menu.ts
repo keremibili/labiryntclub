@@ -79,7 +79,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: 'cocktails-classic',
     title: n("Classic & long drinks", "Classic & long drinks", "Classic & long drinks", "Classic & long drinks", "Classic & long drinks"),
-    image: "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/classic-long-gin-tonic.webp",
+    image: "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/cat-cocktails-classic.webp",
     items: [
       {
         id: 'c-gin-tonic',
@@ -116,7 +116,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: 'cocktails-signature',
     title: n("Koktajle autorskie", "Signature cocktails", "\u0410\u0432\u0442\u043e\u0440\u0441\u043a\u0438\u0435 \u043a\u043e\u043a\u0442\u0435\u0439\u043b\u0438", "C\u00f3cteles de autor", "\u0410\u0432\u0442\u043e\u0440\u0441\u044c\u043a\u0456 \u043a\u043e\u043a\u0442\u0435\u0439\u043b\u0456"),
-    image: "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/signature-mojito.webp",
+    image: "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/cat-cocktails-signature.webp",
     items: [
       {
         id: 'c-mojito',
@@ -159,7 +159,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: 'cocktails-premium',
     title: n("Premium Cocktails", "Premium Cocktails", "Premium Cocktails", "Premium Cocktails", "Premium Cocktails"),
-    image: "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-lynchburg-lemonade.webp",
+    image: "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/cat-cocktails-premium.webp",
     items: [
       {
         id: 'c-lynchburg-lemonade',
@@ -208,7 +208,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: 'cocktails-sours',
     title: n("Soury", "Sours", "Sours", "Sours", "Sours"),
-    image: "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/sours-vodka-sour.webp",
+    image: "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/cat-cocktails-sours.webp",
     items: [
       {
         id: 'c-vodka-sour',
@@ -233,7 +233,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: 'cocktails-strong',
     title: n("Strong Cocktails", "Strong Cocktails", "Strong Cocktails", "Strong Cocktails", "Strong Cocktails"),
-    image: "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/strong-long-island-ice-tea.webp",
+    image: "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/cat-cocktails-strong.webp",
     items: [
       {
         id: 'c-long-island-ice-tea',
@@ -252,7 +252,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: 'cocktails-fresh',
     title: n("Fresh cocktails", "Fresh cocktails", "Fresh cocktails", "Fresh cocktails", "Fresh cocktails"),
-    image: "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-bob-marley.png",
+    image: "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/cat-cocktails-fresh.webp",
     items: [
       {
         id: 'c-bob-marley',
@@ -313,7 +313,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: 'cocktails-party-shots',
     title: n("Party shots", "Party shots", "Party shots", "Party shots", "Party shots"),
-    image: "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-kamikaze-x4.webp",
+    image: "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/cat-cocktails-party-shots.webp",
     items: [
       {
         id: 'c-kamikaze-x4',
