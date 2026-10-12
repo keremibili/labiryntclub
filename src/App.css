@@ -40,6 +40,19 @@
   backdrop-filter: blur(8px);
 }
 
+.menu-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.menu-home-link {
+  color: rgba(232, 244, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 650;
+}
+
 .brand-mini {
   display: inline-flex;
   align-items: center;

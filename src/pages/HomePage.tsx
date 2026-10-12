@@ -1,109 +1,82 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { LangDropdown } from '../components/LangDropdown'
+import { instagramMedia } from '../data/instagramMedia'
+import { homeCopy } from '../i18n/home'
 import { detectLang } from '../i18n/languages'
-import { getGreeting } from '../i18n/greeting'
-import { legalNav, menuDisclaimer, trLegal } from '../i18n/legal'
-import { tr } from '../i18n/ui'
+import { legalNav, trLegal } from '../i18n/legal'
+import { tr, ui } from '../i18n/ui'
 import { fetchContent } from '../lib/api'
 import type { Lang, SiteContent } from '../types/content'
 import { createDefaultContent } from '../data/defaultContent'
-import '../App.css'
-
-function formatPrice(amount: number) {
-  return `${amount.toFixed(2)} zł`
-}
+import './home.css'
 
 export default function HomePage() {
   const [lang, setLang] = useState<Lang>('pl')
   const [content, setContent] = useState<SiteContent>(() => createDefaultContent())
-  const [activeCategory, setActiveCategory] = useState('')
-  const [greeting, setGreeting] = useState('')
 
   useEffect(() => {
-    const nextLang = detectLang()
-    setLang(nextLang)
-    setGreeting(getGreeting(nextLang))
-    fetchContent().then((data) => {
-      setContent(data)
-      if (data.categories[0]) setActiveCategory(data.categories[0].id)
-    })
+    setLang(detectLang())
+    fetchContent().then(setContent)
   }, [])
-
-  useEffect(() => {
-    setGreeting(getGreeting(lang))
-  }, [lang])
 
   useEffect(() => {
     localStorage.setItem('labirynt-lang', lang)
     document.documentElement.lang = lang
   }, [lang])
 
-  useEffect(() => {
-    if (!content.categories.length) return
-    const sections = content.categories
-      .map((c) => document.getElementById(`cat-${c.id}`))
-      .filter(Boolean) as HTMLElement[]
-    if (!sections.length) return
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
-        if (visible?.target.id) {
-          setActiveCategory(visible.target.id.replace('cat-', ''))
-        }
-      },
-      { rootMargin: '-35% 0px -55% 0px', threshold: [0.1, 0.35, 0.6] },
-    )
-    sections.forEach((s) => observer.observe(s))
-    return () => observer.disconnect()
-  }, [content.categories])
-
-  const scrollToMenu = () => {
-    document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' })
-  }
-
-  const selectCategory = (id: string) => {
-    setActiveCategory(id)
-    document.getElementById(`cat-${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
+  const heroVideo = useMemo(
+    () => instagramMedia.find((m) => m.type === 'video'),
+    [],
+  )
+  const gallery = useMemo(() => instagramMedia.slice(0, 18), [])
 
   return (
-    <div className="page">
-      <div className="ambient" aria-hidden="true" />
-
-      <header className="topbar">
-        <a className="brand-mini" href="#top" aria-label="Labirynt Club">
-          <img src={content.logoImage} alt="" width={36} height={36} />
+    <div className="home">
+      <header className="home-nav">
+        <a className="home-brand" href="#top">
+          <img src={content.logoImage} alt="" width={40} height={40} />
           <span>LABIRYNT</span>
         </a>
+        <nav className="home-links">
+          <a href="#about">{tr(homeCopy.navAbout, lang)}</a>
+          <a href="#gallery">{tr(homeCopy.navGallery, lang)}</a>
+          <a href="#visit">{tr(homeCopy.navVisit, lang)}</a>
+          <Link to="/menu" className="home-nav-cta">
+            {tr(homeCopy.navMenu, lang)}
+          </Link>
+        </nav>
         <LangDropdown lang={lang} onChange={setLang} />
       </header>
 
-      <section className="hero" id="top">
-        <div className="hero-media" aria-hidden="true">
-          <img src={content.heroImage} alt="" className="hero-bg" />
-          <div className="hero-veil" />
+      <section className="home-hero" id="top">
+        <div className="home-hero__media" aria-hidden="true">
+          {heroVideo ? (
+            <video
+              className="home-hero__video"
+              src={heroVideo.src}
+              poster={heroVideo.poster || content.heroImage}
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+          ) : (
+            <img src={content.heroImage} alt="" />
+          )}
+          <div className="home-hero__veil" />
         </div>
-
-        <div className="hero-content">
-          <img
-            className="hero-logo"
-            src={content.logoImage}
-            alt="Labirynt Club"
-            width={168}
-            height={168}
-          />
-          <p className="hero-tag">{tr(content.texts.tagline, lang)}</p>
-          <p className="hero-sub">{tr(content.texts.subtitle, lang)}</p>
-          <div className="hero-actions">
-            <button type="button" className="btn-primary" onClick={scrollToMenu}>
-              {tr(content.texts.cta, lang)}
-            </button>
+        <div className="home-hero__copy">
+          <img src={content.logoImage} alt="Labirynt Club" className="home-hero__logo" />
+          <h1>LABIRYNT</h1>
+          <p className="home-hero__title">{tr(homeCopy.heroTitle, lang)}</p>
+          <p className="home-hero__text">{tr(homeCopy.heroText, lang)}</p>
+          <div className="home-hero__actions">
+            <Link to="/menu" className="home-btn home-btn--dark">
+              {tr(homeCopy.ctaMenu, lang)}
+            </Link>
             <a
-              className="btn-ghost"
+              className="home-btn home-btn--light"
               href="https://www.instagram.com/labirynt_club/"
               target="_blank"
               rel="noreferrer"
@@ -114,86 +87,84 @@ export default function HomePage() {
         </div>
       </section>
 
-      <nav className="cat-nav" aria-label="Menu categories">
-        <div className="cat-nav-track">
-          {content.categories.map((cat) => (
-            <button
-              key={cat.id}
-              type="button"
-              className={activeCategory === cat.id ? 'active' : ''}
-              onClick={() => selectCategory(cat.id)}
-            >
-              {tr(cat.title, lang)}
-            </button>
-          ))}
+      <section className="home-section" id="about">
+        <div className="home-section__inner home-about">
+          <div>
+            <h2>{tr(homeCopy.aboutTitle, lang)}</h2>
+            <p>{tr(homeCopy.aboutText, lang)}</p>
+            <Link to="/menu" className="home-btn home-btn--dark">
+              {tr(homeCopy.ctaMenu, lang)}
+            </Link>
+          </div>
+          <img src={content.heroImage} alt="Labirynt Club entrance" className="home-about__img" />
         </div>
-      </nav>
+      </section>
 
-      <main className="menu" id="menu">
-        <div className="menu-head">
-          {greeting ? <p className="menu-greeting">{greeting}</p> : null}
-          <h2>{tr(content.texts.menuTitle, lang)}</h2>
-          <p>{tr(content.texts.currencyNote, lang)}</p>
-        </div>
-
-        <aside className="menu-disclaimer">
-          <p>{trLegal(menuDisclaimer, lang)}</p>
-          <Link to="/rules">{trLegal(legalNav.rules, lang)}</Link>
-        </aside>
-
-        {content.categories.map((cat, index) => (
-          <section
-            key={cat.id}
-            id={`cat-${cat.id}`}
-            className="category"
-            style={{ animationDelay: `${index * 40}ms` }}
+      <section className="home-section home-section--gallery" id="gallery">
+        <div className="home-section__inner">
+          <div className="home-section__head">
+            <h2>{tr(homeCopy.galleryTitle, lang)}</h2>
+            <p>{tr(homeCopy.galleryText, lang)}</p>
+          </div>
+          <div className="home-gallery">
+            {gallery.map((item) =>
+              item.type === 'video' ? (
+                <article key={item.src} className="home-gallery__item home-gallery__item--video">
+                  <video
+                    src={item.src}
+                    poster={item.poster}
+                    controls
+                    playsInline
+                    preload="metadata"
+                  />
+                </article>
+              ) : (
+                <article key={item.src} className="home-gallery__item">
+                  <img src={item.src} alt="Labirynt Club" loading="lazy" />
+                </article>
+              ),
+            )}
+          </div>
+          <a
+            className="home-btn home-btn--light home-gallery__more"
+            href="https://www.instagram.com/labirynt_club/"
+            target="_blank"
+            rel="noreferrer"
           >
-            <div className="category-banner">
-              <img src={cat.image} alt="" loading="lazy" />
-              <div className="category-banner-copy">
-                <h3>{tr(cat.title, lang)}</h3>
-              </div>
-            </div>
+            Instagram · @labirynt_club
+          </a>
+        </div>
+      </section>
 
-            <ul className="item-list">
-              {cat.items.map((item) => (
-                <li key={item.id} className="item">
-                  {item.image ? (
-                    <img className="item-photo" src={item.image} alt="" loading="lazy" />
-                  ) : null}
-                  <div className="item-main">
-                    <span className="item-name">{tr(item.name, lang)}</span>
-                    <span className="item-rule" aria-hidden="true" />
-                  </div>
-                  <div className="item-prices">
-                    {item.prices.map((price) => (
-                      <div key={`${item.id}-${price.size ?? price.amount}`} className="price">
-                        <strong>{formatPrice(price.amount)}</strong>
-                        {price.size ? <span>/{price.size}</span> : null}
-                      </div>
-                    ))}
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))}
-      </main>
+      <section className="home-section" id="visit">
+        <div className="home-section__inner home-visit">
+          <h2>{tr(homeCopy.visitTitle, lang)}</h2>
+          <p>{tr(homeCopy.visitText, lang)}</p>
+          <div className="home-hero__actions">
+            <Link to="/menu" className="home-btn home-btn--dark">
+              {tr(homeCopy.ctaMenu, lang)}
+            </Link>
+            <a
+              className="home-btn home-btn--light"
+              href="https://g.co/kgs/tm8pZae"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {tr(ui.location, lang)} · Google
+            </a>
+          </div>
+        </div>
+      </section>
 
-      <footer className="footer">
-        <img src={content.logoImage} alt="" width={56} height={56} />
-        <p>{tr(content.texts.footer, lang)}</p>
-        <div className="footer-links">
+      <footer className="home-footer">
+        <img src={content.logoImage} alt="" width={52} height={52} />
+        <p>{tr(ui.footer, lang)}</p>
+        <div className="home-footer__links">
+          <Link to="/menu">{tr(homeCopy.navMenu, lang)}</Link>
           <Link to="/rules">{trLegal(legalNav.rules, lang)}</Link>
           <Link to="/privacy">{trLegal(legalNav.privacy, lang)}</Link>
           <Link to="/terms">{trLegal(legalNav.terms, lang)}</Link>
         </div>
-        <a href="https://www.instagram.com/labirynt_club/" target="_blank" rel="noreferrer">
-          instagram.com/labirynt_club
-        </a>
-        <a href="https://g.co/kgs/tm8pZae" target="_blank" rel="noreferrer">
-          {tr(content.texts.location, lang)} · Google
-        </a>
       </footer>
     </div>
   )
