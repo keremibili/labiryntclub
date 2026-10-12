@@ -14,6 +14,7 @@ export const homeCopy = {
   navNights: t('Noc', 'Nights', 'Ночь', 'Noches', 'Ніч'),
   navGallery: t('Galeria', 'Gallery', 'Галерея', 'Galería', 'Галерея'),
   navDj: t('DJ Alpa', 'DJ Alpa', 'DJ Alpa', 'DJ Alpa', 'DJ Alpa'),
+  navEvents: t('Events', 'Events', 'Events', 'Events', 'Events'),
   navReviews: t('Reviews', 'Reviews', 'Reviews', 'Reviews', 'Reviews'),
   navVisit: t('Lokalizacja', 'Visit', 'Локация', 'Visítanos', 'Локація'),
   heroTitle: t(
@@ -128,6 +129,20 @@ export const homeCopy = {
   djCtaIg: t('Instagram · @alpkinaci', 'Instagram · @alpkinaci', 'Instagram · @alpkinaci', 'Instagram · @alpkinaci', 'Instagram · @alpkinaci'),
   djCtaSc: t('SoundCloud · Alpa', 'SoundCloud · Alpa', 'SoundCloud · Alpa', 'SoundCloud · Alpa', 'SoundCloud · Alpa'),
   djPhotosTitle: t('Z bootha i releasów', 'From the booth & releases', 'С будки и релизов', 'Desde la cabina y releases', 'З будки та релізів'),
+  eventsTitle: t('Events', 'Events', 'Events', 'Events', 'Events'),
+  eventsText: t(
+    'Co już zagraliśmy i co nadchodzi w Labirynt — Afro, DnB, dancehall, Jersey, Baile Funk i więcej. Pełen update zawsze na Instagramie.',
+    'What we’ve already thrown and what’s next at Labirynt — Afro, DnB, dancehall, Jersey, Baile Funk and more. Full updates always on Instagram.',
+    'Что уже отыграли и что дальше в Labirynt — Afro, DnB, dancehall, Jersey, Baile Funk и больше. Актуальные анонсы — в Instagram.',
+    'Lo que ya hicimos y lo que viene en Labirynt — Afro, DnB, dancehall, Jersey, Baile Funk y más. Todo al día en Instagram.',
+    'Що вже відіграли і що далі в Labirynt — Afro, DnB, dancehall, Jersey, Baile Funk і більше. Повний апдейт завжди в Instagram.',
+  ),
+  eventsUpcoming: t('Nadchodzące', 'Upcoming', 'Скоро', 'Próximos', 'Незабаром'),
+  eventsPast: t('Z archiwum', 'From the archive', 'Из архива', 'Del archivo', 'З архіву'),
+  eventsLineup: t('Line-up', 'Line-up', 'Line-up', 'Line-up', 'Line-up'),
+  eventsGenres: t('Gatunki', 'Genres', 'Жанры', 'Géneros', 'Жанри'),
+  eventsEntry: t('Wjazd', 'Entry', 'Вход', 'Entrada', 'Вхід'),
+  eventsIgCta: t('Wszystkie eventy na Instagramie', 'All events on Instagram', 'Все ивенты в Instagram', 'Todos los eventos en Instagram', 'Усі івенти в Instagram'),
   reviewsTitle: t('Reviews', 'Reviews', 'Reviews', 'Reviews', 'Reviews'),
   reviewsText: t(
     'Prawdziwe opinie 5★ z Google Maps — od gości, którzy już tu byli.',

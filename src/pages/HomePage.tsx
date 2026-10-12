@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { LangDropdown } from '../components/LangDropdown'
 import { ReviewButton } from '../components/ReviewButton'
 import { djAlp } from '../data/djAlp'
+import { pastEvents, upcomingEvents, type ClubEvent } from '../data/events'
 import {
   GOOGLE_MAPS_URL,
   PLACE_ADDRESS,
@@ -48,6 +49,59 @@ export default function HomePage() {
     { title: homeCopy.featureTerraceTitle, text: homeCopy.featureTerraceText },
   ]
 
+  const renderEvent = (event: ClubEvent) => (
+    <article key={event.id} className="home-event" id={event.id}>
+      <div className="home-event__media">
+        <img className="home-event__cover" src={event.cover} alt="" loading="lazy" />
+        {event.video ? (
+          <video
+            className="home-event__video"
+            src={event.video.src}
+            poster={event.video.poster}
+            controls
+            playsInline
+            preload="metadata"
+          />
+        ) : null}
+      </div>
+      <div className="home-event__copy">
+        <p className={`home-event__status home-event__status--${event.status}`}>
+          {event.status === 'upcoming'
+            ? tr(homeCopy.eventsUpcoming, lang)
+            : tr(homeCopy.eventsPast, lang)}
+        </p>
+        <p className="home-event__date">{tr(event.dateLabel, lang)}</p>
+        <h3>{tr(event.title, lang)}</h3>
+        <p>{tr(event.text, lang)}</p>
+        <dl className="home-event__meta">
+          {event.lineup ? (
+            <div>
+              <dt>{tr(homeCopy.eventsLineup, lang)}</dt>
+              <dd>{event.lineup}</dd>
+            </div>
+          ) : null}
+          {event.genres ? (
+            <div>
+              <dt>{tr(homeCopy.eventsGenres, lang)}</dt>
+              <dd>{event.genres}</dd>
+            </div>
+          ) : null}
+          {event.entry ? (
+            <div>
+              <dt>{tr(homeCopy.eventsEntry, lang)}</dt>
+              <dd>{tr(event.entry, lang)}</dd>
+            </div>
+          ) : null}
+        </dl>
+        <div className="home-event__gallery">
+          {event.gallery.map((src) => (
+            <img key={src} src={src} alt="" loading="lazy" />
+          ))}
+        </div>
+      </div>
+    </article>
+  )
+
   return (
     <div className="home">
       <header className="home-nav">
@@ -59,6 +113,7 @@ export default function HomePage() {
           <a href="#about">{tr(homeCopy.navAbout, lang)}</a>
           <a href="#nights">{tr(homeCopy.navNights, lang)}</a>
           <a href="#dj">{tr(homeCopy.navDj, lang)}</a>
+          <a href="#events">{tr(homeCopy.navEvents, lang)}</a>
           <a href="#gallery">{tr(homeCopy.navGallery, lang)}</a>
           <a href="#reviews">{tr(homeCopy.navReviews, lang)}</a>
           <a href="#visit">{tr(homeCopy.navVisit, lang)}</a>
@@ -183,6 +238,36 @@ export default function HomePage() {
               </figure>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="home-section home-section--events" id="events">
+        <div className="home-section__inner">
+          <div className="home-section__head">
+            <h2>{tr(homeCopy.eventsTitle, lang)}</h2>
+            <p>{tr(homeCopy.eventsText, lang)}</p>
+          </div>
+
+          {upcomingEvents.length ? (
+            <div className="home-events-block">
+              <h3 className="home-events-block__title">{tr(homeCopy.eventsUpcoming, lang)}</h3>
+              <div className="home-events">{upcomingEvents.map(renderEvent)}</div>
+            </div>
+          ) : null}
+
+          <div className="home-events-block">
+            <h3 className="home-events-block__title">{tr(homeCopy.eventsPast, lang)}</h3>
+            <div className="home-events">{pastEvents.map(renderEvent)}</div>
+          </div>
+
+          <a
+            className="home-btn home-btn--ghost"
+            href="https://www.instagram.com/labirynt_club/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {tr(homeCopy.eventsIgCta, lang)}
+          </a>
         </div>
       </section>
 
