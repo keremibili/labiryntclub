@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "updatedAt": "2026-10-11T23:50:36.348Z",
+  "version": 5,
+  "updatedAt": "2026-10-12T00:26:56.793Z",
   "heroImage": "/images/hero-entrance.png",
   "logoImage": "/images/logo.png",
   "texts": {
@@ -289,6 +289,737 @@
               "size": "0.25 l"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "cocktails-classic",
+      "title": {
+        "pl": "Classic & long drinks",
+        "en": "Classic & long drinks",
+        "ru": "Classic & long drinks",
+        "es": "Classic & long drinks",
+        "uk": "Classic & long drinks"
+      },
+      "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/classic-long-gin-tonic.webp",
+      "items": [
+        {
+          "id": "c-gin-tonic",
+          "name": {
+            "pl": "Gin Tonic",
+            "en": "Gin Tonic",
+            "ru": "Gin Tonic",
+            "es": "Gin Tonic",
+            "uk": "Gin Tonic"
+          },
+          "prices": [
+            {
+              "amount": 26
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/classic-long-gin-tonic.webp"
+        },
+        {
+          "id": "c-cuba-libre",
+          "name": {
+            "pl": "Cuba Libre",
+            "en": "Cuba Libre",
+            "ru": "Cuba Libre",
+            "es": "Cuba Libre",
+            "uk": "Cuba Libre"
+          },
+          "prices": [
+            {
+              "amount": 25
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/classic-long-cuba-libre.webp"
+        },
+        {
+          "id": "c-tequila-sunrise",
+          "name": {
+            "pl": "Tequila Sunrise",
+            "en": "Tequila Sunrise",
+            "ru": "Tequila Sunrise",
+            "es": "Tequila Sunrise",
+            "uk": "Tequila Sunrise"
+          },
+          "prices": [
+            {
+              "amount": 28
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/classic-long-tequila-sunrise.webp"
+        },
+        {
+          "id": "c-blue-lagoon",
+          "name": {
+            "pl": "Blue Lagoon",
+            "en": "Blue Lagoon",
+            "ru": "Blue Lagoon",
+            "es": "Blue Lagoon",
+            "uk": "Blue Lagoon"
+          },
+          "prices": [
+            {
+              "amount": 28
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/classic-long-blue-lagoon.webp"
+        },
+        {
+          "id": "c-jagerbomb",
+          "name": {
+            "pl": "Jägerbomb",
+            "en": "Jägerbomb",
+            "ru": "Jägerbomb",
+            "es": "Jägerbomb",
+            "uk": "Jägerbomb"
+          },
+          "prices": [
+            {
+              "amount": 30
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/classic-long-jagerbomb.webp"
+        }
+      ]
+    },
+    {
+      "id": "cocktails-signature",
+      "title": {
+        "pl": "Koktajle autorskie",
+        "en": "Signature cocktails",
+        "ru": "Авторские коктейли",
+        "es": "Cócteles de autor",
+        "uk": "Авторські коктейлі"
+      },
+      "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/signature-mojito.webp",
+      "items": [
+        {
+          "id": "c-mojito",
+          "name": {
+            "pl": "Mojito",
+            "en": "Mojito",
+            "ru": "Mojito",
+            "es": "Mojito",
+            "uk": "Mojito"
+          },
+          "prices": [
+            {
+              "amount": 30
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/signature-mojito.webp"
+        },
+        {
+          "id": "c-pina-colada",
+          "name": {
+            "pl": "Piña Colada",
+            "en": "Piña Colada",
+            "ru": "Piña Colada",
+            "es": "Piña Colada",
+            "uk": "Piña Colada"
+          },
+          "prices": [
+            {
+              "amount": 30
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/signature-pina-colada.webp"
+        },
+        {
+          "id": "c-sex-on-the-beach",
+          "name": {
+            "pl": "Sex on the Beach",
+            "en": "Sex on the Beach",
+            "ru": "Sex on the Beach",
+            "es": "Sex on the Beach",
+            "uk": "Sex on the Beach"
+          },
+          "prices": [
+            {
+              "amount": 30
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/signature-sex-on-the-beach.webp"
+        },
+        {
+          "id": "c-jungle-juice",
+          "name": {
+            "pl": "Jungle Juice",
+            "en": "Jungle Juice",
+            "ru": "Jungle Juice",
+            "es": "Jungle Juice",
+            "uk": "Jungle Juice"
+          },
+          "prices": [
+            {
+              "amount": 25
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/signature-jungle-juice.webp"
+        },
+        {
+          "id": "c-zombie",
+          "name": {
+            "pl": "Zombie",
+            "en": "Zombie",
+            "ru": "Zombie",
+            "es": "Zombie",
+            "uk": "Zombie"
+          },
+          "prices": [
+            {
+              "amount": 30
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/signature-zombie.webp"
+        },
+        {
+          "id": "c-white-russian",
+          "name": {
+            "pl": "White Russian",
+            "en": "White Russian",
+            "ru": "White Russian",
+            "es": "White Russian",
+            "uk": "White Russian"
+          },
+          "prices": [
+            {
+              "amount": 32
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/signature-white-russian.webp"
+        }
+      ]
+    },
+    {
+      "id": "cocktails-premium",
+      "title": {
+        "pl": "Premium Cocktails",
+        "en": "Premium Cocktails",
+        "ru": "Premium Cocktails",
+        "es": "Premium Cocktails",
+        "uk": "Premium Cocktails"
+      },
+      "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-lynchburg-lemonade.webp",
+      "items": [
+        {
+          "id": "c-lynchburg-lemonade",
+          "name": {
+            "pl": "Lynchburg Lemonade",
+            "en": "Lynchburg Lemonade",
+            "ru": "Lynchburg Lemonade",
+            "es": "Lynchburg Lemonade",
+            "uk": "Lynchburg Lemonade"
+          },
+          "prices": [
+            {
+              "amount": 33
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-lynchburg-lemonade.webp"
+        },
+        {
+          "id": "c-cosmopolitan",
+          "name": {
+            "pl": "Cosmopolitan",
+            "en": "Cosmopolitan",
+            "ru": "Cosmopolitan",
+            "es": "Cosmopolitan",
+            "uk": "Cosmopolitan"
+          },
+          "prices": [
+            {
+              "amount": 30
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-cosmopolitan.webp"
+        },
+        {
+          "id": "c-margarita",
+          "name": {
+            "pl": "Margarita",
+            "en": "Margarita",
+            "ru": "Margarita",
+            "es": "Margarita",
+            "uk": "Margarita"
+          },
+          "prices": [
+            {
+              "amount": 30
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-margarita.webp"
+        },
+        {
+          "id": "c-aperol-spritz",
+          "name": {
+            "pl": "Aperol Spritz",
+            "en": "Aperol Spritz",
+            "ru": "Aperol Spritz",
+            "es": "Aperol Spritz",
+            "uk": "Aperol Spritz"
+          },
+          "prices": [
+            {
+              "amount": 35
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-aperol-spritz.webp"
+        },
+        {
+          "id": "c-jager-mojito",
+          "name": {
+            "pl": "Jäger Mojito",
+            "en": "Jäger Mojito",
+            "ru": "Jäger Mojito",
+            "es": "Jäger Mojito",
+            "uk": "Jäger Mojito"
+          },
+          "prices": [
+            {
+              "amount": 33
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-jager-mojito.webp"
+        },
+        {
+          "id": "c-caipirinha",
+          "name": {
+            "pl": "Caipirinha",
+            "en": "Caipirinha",
+            "ru": "Caipirinha",
+            "es": "Caipirinha",
+            "uk": "Caipirinha"
+          },
+          "prices": [
+            {
+              "amount": 30
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-caipirinha.webp"
+        },
+        {
+          "id": "c-bahama-mama",
+          "name": {
+            "pl": "Bahama Mama",
+            "en": "Bahama Mama",
+            "ru": "Bahama Mama",
+            "es": "Bahama Mama",
+            "uk": "Bahama Mama"
+          },
+          "prices": [
+            {
+              "amount": 35
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-bahama-mama.webp"
+        }
+      ]
+    },
+    {
+      "id": "cocktails-sours",
+      "title": {
+        "pl": "Soury",
+        "en": "Sours",
+        "ru": "Sours",
+        "es": "Sours",
+        "uk": "Sours"
+      },
+      "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/sours-vodka-sour.webp",
+      "items": [
+        {
+          "id": "c-vodka-sour",
+          "name": {
+            "pl": "Wódka Sour",
+            "en": "Vodka Sour",
+            "ru": "Vodka Sour",
+            "es": "Vodka Sour",
+            "uk": "Vodka Sour"
+          },
+          "prices": [
+            {
+              "amount": 26
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/sours-vodka-sour.webp"
+        },
+        {
+          "id": "c-whiskey-sour",
+          "name": {
+            "pl": "Whiskey Sour",
+            "en": "Whiskey Sour",
+            "ru": "Whiskey Sour",
+            "es": "Whiskey Sour",
+            "uk": "Whiskey Sour"
+          },
+          "prices": [
+            {
+              "amount": 32
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/sours-whiskey-sour.webp"
+        },
+        {
+          "id": "c-gin-sour",
+          "name": {
+            "pl": "Gin Sour",
+            "en": "Gin Sour",
+            "ru": "Gin Sour",
+            "es": "Gin Sour",
+            "uk": "Gin Sour"
+          },
+          "prices": [
+            {
+              "amount": 25
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/sours-gin-sour.webp"
+        }
+      ]
+    },
+    {
+      "id": "cocktails-strong",
+      "title": {
+        "pl": "Strong Cocktails",
+        "en": "Strong Cocktails",
+        "ru": "Strong Cocktails",
+        "es": "Strong Cocktails",
+        "uk": "Strong Cocktails"
+      },
+      "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/strong-long-island-ice-tea.webp",
+      "items": [
+        {
+          "id": "c-long-island-ice-tea",
+          "name": {
+            "pl": "Long Island Ice Tea",
+            "en": "Long Island Ice Tea",
+            "ru": "Long Island Ice Tea",
+            "es": "Long Island Ice Tea",
+            "uk": "Long Island Ice Tea"
+          },
+          "prices": [
+            {
+              "amount": 40
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/strong-long-island-ice-tea.webp"
+        },
+        {
+          "id": "c-brazilian-julep",
+          "name": {
+            "pl": "Brazilian Julep",
+            "en": "Brazilian Julep",
+            "ru": "Brazilian Julep",
+            "es": "Brazilian Julep",
+            "uk": "Brazilian Julep"
+          },
+          "prices": [
+            {
+              "amount": 40
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/strong-brazilian-julep.webp"
+        }
+      ]
+    },
+    {
+      "id": "cocktails-fresh",
+      "title": {
+        "pl": "Fresh cocktails",
+        "en": "Fresh cocktails",
+        "ru": "Fresh cocktails",
+        "es": "Fresh cocktails",
+        "uk": "Fresh cocktails"
+      },
+      "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-bob-marley.png",
+      "items": [
+        {
+          "id": "c-bob-marley",
+          "name": {
+            "pl": "Bob Marley",
+            "en": "Bob Marley",
+            "ru": "Bob Marley",
+            "es": "Bob Marley",
+            "uk": "Bob Marley"
+          },
+          "prices": [
+            {
+              "amount": 34
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-bob-marley.png"
+        },
+        {
+          "id": "c-spring-paradise",
+          "name": {
+            "pl": "Spring Paradise",
+            "en": "Spring Paradise",
+            "ru": "Spring Paradise",
+            "es": "Spring Paradise",
+            "uk": "Spring Paradise"
+          },
+          "prices": [
+            {
+              "amount": 35
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-spring-paradise.webp"
+        },
+        {
+          "id": "c-green-oasis",
+          "name": {
+            "pl": "Green Oasis",
+            "en": "Green Oasis",
+            "ru": "Green Oasis",
+            "es": "Green Oasis",
+            "uk": "Green Oasis"
+          },
+          "prices": [
+            {
+              "amount": 32
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-green-oasis.webp"
+        },
+        {
+          "id": "c-melon-sunset",
+          "name": {
+            "pl": "Melon Sunset",
+            "en": "Melon Sunset",
+            "ru": "Melon Sunset",
+            "es": "Melon Sunset",
+            "uk": "Melon Sunset"
+          },
+          "prices": [
+            {
+              "amount": 35
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-melon-sunset.webp"
+        },
+        {
+          "id": "c-screwdriver-blue",
+          "name": {
+            "pl": "Screwdriver Blue",
+            "en": "Screwdriver Blue",
+            "ru": "Screwdriver Blue",
+            "es": "Screwdriver Blue",
+            "uk": "Screwdriver Blue"
+          },
+          "prices": [
+            {
+              "amount": 32
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-screwdriver-blue.webp"
+        },
+        {
+          "id": "c-tropical-red-bull",
+          "name": {
+            "pl": "Tropical Red Bull",
+            "en": "Tropical Red Bull",
+            "ru": "Tropical Red Bull",
+            "es": "Tropical Red Bull",
+            "uk": "Tropical Red Bull"
+          },
+          "prices": [
+            {
+              "amount": 25
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-tropical-red-bull.webp"
+        },
+        {
+          "id": "c-red-bull-mojito",
+          "name": {
+            "pl": "Red Bull Mojito",
+            "en": "Red Bull Mojito",
+            "ru": "Red Bull Mojito",
+            "es": "Red Bull Mojito",
+            "uk": "Red Bull Mojito"
+          },
+          "prices": [
+            {
+              "amount": 30
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-red-bull-mojito.webp"
+        },
+        {
+          "id": "c-pineapple-mint-red-bull",
+          "name": {
+            "pl": "Pineapple Mint Red Bull",
+            "en": "Pineapple Mint Red Bull",
+            "ru": "Pineapple Mint Red Bull",
+            "es": "Pineapple Mint Red Bull",
+            "uk": "Pineapple Mint Red Bull"
+          },
+          "prices": [
+            {
+              "amount": 25
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-pineapple-mint-red-bull.webp"
+        },
+        {
+          "id": "c-apple-red-bull",
+          "name": {
+            "pl": "Apple Red Bull",
+            "en": "Apple Red Bull",
+            "ru": "Apple Red Bull",
+            "es": "Apple Red Bull",
+            "uk": "Apple Red Bull"
+          },
+          "prices": [
+            {
+              "amount": 24
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-apple-red-bull.webp"
+        }
+      ]
+    },
+    {
+      "id": "cocktails-party-shots",
+      "title": {
+        "pl": "Party shots",
+        "en": "Party shots",
+        "ru": "Party shots",
+        "es": "Party shots",
+        "uk": "Party shots"
+      },
+      "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-kamikaze-x4.webp",
+      "items": [
+        {
+          "id": "c-kamikaze-x4",
+          "name": {
+            "pl": "Kamikaze (x4)",
+            "en": "Kamikaze (x4)",
+            "ru": "Kamikaze (x4)",
+            "es": "Kamikaze (x4)",
+            "uk": "Kamikaze (x4)"
+          },
+          "prices": [
+            {
+              "amount": 25
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-kamikaze-x4.webp"
+        },
+        {
+          "id": "c-b-52",
+          "name": {
+            "pl": "B-52",
+            "en": "B-52",
+            "ru": "B-52",
+            "es": "B-52",
+            "uk": "B-52"
+          },
+          "prices": [
+            {
+              "amount": 18
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-b-52.webp"
+        },
+        {
+          "id": "c-baby-guinnes",
+          "name": {
+            "pl": "Baby Guinnes",
+            "en": "Baby Guinnes",
+            "ru": "Baby Guinnes",
+            "es": "Baby Guinnes",
+            "uk": "Baby Guinnes"
+          },
+          "prices": [
+            {
+              "amount": 18
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-baby-guinnes.webp"
+        },
+        {
+          "id": "c-slippery-nipple",
+          "name": {
+            "pl": "Slippery Nipple",
+            "en": "Slippery Nipple",
+            "ru": "Slippery Nipple",
+            "es": "Slippery Nipple",
+            "uk": "Slippery Nipple"
+          },
+          "prices": [
+            {
+              "amount": 18
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-slippery-nipple.webp"
+        },
+        {
+          "id": "c-malibu-shot",
+          "name": {
+            "pl": "Malibu shot",
+            "en": "Malibu shot",
+            "ru": "Malibu shot",
+            "es": "Malibu shot",
+            "uk": "Malibu shot"
+          },
+          "prices": [
+            {
+              "amount": 15
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-malibu-shot.webp"
+        },
+        {
+          "id": "c-absinthe-sugar-flame",
+          "name": {
+            "pl": "Absinthe Sugar Flame",
+            "en": "Absinthe Sugar Flame",
+            "ru": "Absinthe Sugar Flame",
+            "es": "Absinthe Sugar Flame",
+            "uk": "Absinthe Sugar Flame"
+          },
+          "prices": [
+            {
+              "amount": 20
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-absinthe-sugar-flame.webp"
+        },
+        {
+          "id": "c-hiroshima",
+          "name": {
+            "pl": "Hiroshima",
+            "en": "Hiroshima",
+            "ru": "Hiroshima",
+            "es": "Hiroshima",
+            "uk": "Hiroshima"
+          },
+          "prices": [
+            {
+              "amount": 25
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-hiroshima.webp"
+        },
+        {
+          "id": "c-redhead-slut",
+          "name": {
+            "pl": "Redhead Slut",
+            "en": "Redhead Slut",
+            "ru": "Redhead Slut",
+            "es": "Redhead Slut",
+            "uk": "Redhead Slut"
+          },
+          "prices": [
+            {
+              "amount": 15
+            }
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-redhead-slut.webp"
         }
       ]
     },

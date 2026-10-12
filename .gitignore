@@ -29,3 +29,4 @@ dist-ssr
 .env*
 
 public/instagram/
+public/images/cocktails/
