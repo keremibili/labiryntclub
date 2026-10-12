@@ -18,16 +18,24 @@ import { detectLang } from '../i18n/languages'
 import { legalNav, trLegal } from '../i18n/legal'
 import { tr, ui } from '../i18n/ui'
 import { fetchContent } from '../lib/api'
+import { localizeContent } from '../lib/localizeContent'
 import type { Lang, SiteContent } from '../types/content'
 import { createDefaultContent } from '../data/defaultContent'
 import './home.css'
 
 export default function HomePage() {
-  const [lang, setLang] = useState<Lang>('pl')
-  const [content, setContent] = useState<SiteContent>(() => createDefaultContent())
+  const [lang, setLang] = useState<Lang>(() => {
+    try {
+      return detectLang()
+    } catch {
+      return 'pl'
+    }
+  })
+  const [content, setContent] = useState<SiteContent>(() =>
+    localizeContent(createDefaultContent()),
+  )
 
   useEffect(() => {
-    setLang(detectLang())
     fetchContent().then(setContent)
   }, [])
 

@@ -44,6 +44,12 @@ export function LangDropdown({ lang, onChange }: Props) {
                 role="option"
                 aria-selected={l.code === lang}
                 className={l.code === lang ? 'active' : ''}
+                onMouseDown={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                  onChange(l.code)
+                  setOpen(false)
+                }}
                 onClick={() => {
                   onChange(l.code)
                   setOpen(false)

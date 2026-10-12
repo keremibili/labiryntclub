@@ -39,6 +39,7 @@ export const ui = {
   ),
 }
 
-export function tr(dict: Localized, lang: Lang): string {
-  return dict[lang]
+export function tr(dict: Localized | undefined | null, lang: Lang): string {
+  if (!dict) return ''
+  return dict[lang] || dict.en || dict.pl || dict.ru || dict.es || dict.uk || ''
 }

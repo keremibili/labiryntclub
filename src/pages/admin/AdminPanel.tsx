@@ -22,6 +22,7 @@ import {
   uploadImage,
 } from '../../lib/api'
 import { displayName, sameName } from '../../lib/localized'
+import { patchLocalized } from '../../lib/localizeContent'
 import type { Lang, MenuCategory, MenuItem, SiteContent } from '../../types/content'
 import { createDefaultContent } from '../../data/defaultContent'
 import './admin.css'
@@ -256,8 +257,8 @@ export default function AdminPanel() {
         {section === 'texts' && (
           <section className="admin-panel">
             <p className="admin-hint">
-              Site yazıları dil seçimine göre kaydedilir. Menü ürün isimleri tek alandan tüm dillere
-              otomatik uygulanır.
+              Site yazıları ve menü isimleri seçili dile göre kaydedilir. Dil sekmesini değiştirerek
+              her dil için ayrı metin girebilirsin.
             </p>
             <div className="lang-row">
               {languages.map((l) => (
@@ -357,14 +358,32 @@ export default function AdminPanel() {
               />
             </label>
 
+            <div className="lang-row">
+              {languages.map((l) => (
+                <button
+                  key={l.code}
+                  type="button"
+                  className={langTab === l.code ? 'active' : ''}
+                  onClick={() => setLangTab(l.code)}
+                >
+                  <img src={l.flag} alt="" width={18} height={12} />
+                  {l.label}
+                </button>
+              ))}
+            </div>
+
             <label className="field">
-              Kategori adı
+              Kategori adı ({langTab.toUpperCase()})
               <input
-                value={displayName(category.title)}
-                onChange={(e) => updateCategory(catIndex, { title: sameName(e.target.value) })}
+                value={category.title[langTab] || displayName(category.title)}
+                onChange={(e) =>
+                  updateCategory(catIndex, {
+                    title: patchLocalized(category.title, langTab, e.target.value),
+                  })
+                }
                 placeholder="Örn. Gin"
               />
-              <small className="field-note">Tek isim tüm dillere otomatik yazılır.</small>
+              <small className="field-note">Bu alan yalnızca seçili dile yazılır.</small>
             </label>
 
             <div className="list-head">
@@ -450,16 +469,18 @@ export default function AdminPanel() {
 
                     <div className="form-stack grow">
                       <label className="field">
-                        Ürün adı
+                        Ürün adı ({langTab.toUpperCase()})
                         <input
-                          value={displayName(item.name)}
+                          value={item.name[langTab] || displayName(item.name)}
                           onChange={(e) =>
-                            updateItem(catIndex, index, { name: sameName(e.target.value) })
+                            updateItem(catIndex, index, {
+                              name: patchLocalized(item.name, langTab, e.target.value),
+                            })
                           }
                           placeholder="Örn. Absolut"
                         />
                         <small className="field-note">
-                          Tek isim tüm dillere otomatik uygulanır.
+                          Marka isimleri aynı kalabilir; açıklamalı ürünlerde her dili ayrı yaz.
                         </small>
                       </label>
                     </div>

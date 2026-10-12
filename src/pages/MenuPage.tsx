@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { LangDropdown } from '../components/LangDropdown'
 import { ReviewButton } from '../components/ReviewButton'
@@ -7,6 +7,7 @@ import { getGreeting } from '../i18n/greeting'
 import { legalNav, menuDisclaimer, trLegal } from '../i18n/legal'
 import { tr } from '../i18n/ui'
 import { fetchContent } from '../lib/api'
+import { localizeContent } from '../lib/localizeContent'
 import type { Lang, Localized, SiteContent } from '../types/content'
 import { createDefaultContent } from '../data/defaultContent'
 import '../App.css'
@@ -24,33 +25,37 @@ const homeNav: Localized = {
 }
 
 export default function MenuPage() {
-  const [lang, setLang] = useState<Lang>('pl')
-  const [content, setContent] = useState<SiteContent>(() => createDefaultContent())
+  const [lang, setLang] = useState<Lang>(() => {
+    try {
+      return detectLang()
+    } catch {
+      return 'pl'
+    }
+  })
+  const [content, setContent] = useState<SiteContent>(() =>
+    localizeContent(createDefaultContent()),
+  )
   const [activeCategory, setActiveCategory] = useState('')
-  const [greeting, setGreeting] = useState('')
+  const [greeting, setGreeting] = useState(() => getGreeting(lang))
 
   useEffect(() => {
-    const nextLang = detectLang()
-    setLang(nextLang)
-    setGreeting(getGreeting(nextLang))
     fetchContent().then((data) => {
       setContent(data)
-      if (data.categories[0]) setActiveCategory(data.categories[0].id)
+      setActiveCategory((prev) => prev || data.categories[0]?.id || '')
     })
   }, [])
 
   useEffect(() => {
     setGreeting(getGreeting(lang))
-  }, [lang])
-
-  useEffect(() => {
     localStorage.setItem('labirynt-lang', lang)
     document.documentElement.lang = lang
   }, [lang])
 
+  const categories = useMemo(() => content.categories, [content.categories])
+
   useEffect(() => {
-    if (!content.categories.length) return
-    const sections = content.categories
+    if (!categories.length) return
+    const sections = categories
       .map((c) => document.getElementById(`cat-${c.id}`))
       .filter(Boolean) as HTMLElement[]
     if (!sections.length) return
@@ -68,7 +73,11 @@ export default function MenuPage() {
     )
     sections.forEach((s) => observer.observe(s))
     return () => observer.disconnect()
-  }, [content.categories])
+  }, [categories])
+
+  const changeLang = (next: Lang) => {
+    setLang(next)
+  }
 
   const scrollToMenu = () => {
     document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' })
@@ -92,108 +101,110 @@ export default function MenuPage() {
           <Link className="menu-home-link" to="/">
             {tr(homeNav, lang)}
           </Link>
-          <LangDropdown lang={lang} onChange={setLang} />
+          <LangDropdown lang={lang} onChange={changeLang} />
         </div>
       </header>
 
-      <section className="hero" id="top">
-        <div className="hero-media" aria-hidden="true">
-          <img src={content.heroImage} alt="" className="hero-bg" />
-          <div className="hero-veil" />
-        </div>
-
-        <div className="hero-content">
-          <img
-            className="hero-logo"
-            src={content.logoImage}
-            alt="Labirynt Club"
-            width={88}
-            height={88}
-          />
-          <h1 className="hero-brand">LABIRYNT</h1>
-          <p className="hero-tag">{tr(content.texts.tagline, lang)}</p>
-          <p className="hero-sub">{tr(content.texts.subtitle, lang)}</p>
-          <div className="hero-actions">
-            <button type="button" className="btn-primary" onClick={scrollToMenu}>
-              {tr(content.texts.cta, lang)}
-            </button>
-            <a
-              className="btn-ghost"
-              href="https://www.instagram.com/labirynt_club/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              @labirynt_club
-            </a>
+      <div key={lang} className="menu-lang-root" lang={lang}>
+        <section className="hero" id="top">
+          <div className="hero-media" aria-hidden="true">
+            <img src={content.heroImage} alt="" className="hero-bg" />
+            <div className="hero-veil" />
           </div>
-        </div>
-      </section>
 
-      <nav className="cat-nav" aria-label="Menu categories">
-        <div className="cat-nav-track">
-          {content.categories.map((cat) => (
-            <button
-              key={cat.id}
-              type="button"
-              className={activeCategory === cat.id ? 'active' : ''}
-              onClick={() => selectCategory(cat.id)}
-            >
-              {tr(cat.title, lang)}
-            </button>
-          ))}
-        </div>
-      </nav>
-
-      <main className="menu" id="menu">
-        <div className="menu-head">
-          {greeting ? <p className="menu-greeting">{greeting}</p> : null}
-          <h2>{tr(content.texts.menuTitle, lang)}</h2>
-          <p>{tr(content.texts.currencyNote, lang)}</p>
-        </div>
-
-        <aside className="menu-disclaimer">
-          <p>{trLegal(menuDisclaimer, lang)}</p>
-          <Link to="/rules">{trLegal(legalNav.rules, lang)}</Link>
-        </aside>
-
-        {content.categories.map((cat, index) => (
-          <section
-            key={cat.id}
-            id={`cat-${cat.id}`}
-            className="category"
-            style={{ animationDelay: `${index * 40}ms` }}
-          >
-            <div className="category-banner">
-              <img src={cat.image} alt="" loading="lazy" />
-              <div className="category-banner-copy">
-                <h3>{tr(cat.title, lang)}</h3>
-              </div>
+          <div className="hero-content">
+            <img
+              className="hero-logo"
+              src={content.logoImage}
+              alt="Labirynt Club"
+              width={88}
+              height={88}
+            />
+            <h1 className="hero-brand">LABIRYNT</h1>
+            <p className="hero-tag">{tr(content.texts.tagline, lang)}</p>
+            <p className="hero-sub">{tr(content.texts.subtitle, lang)}</p>
+            <div className="hero-actions">
+              <button type="button" className="btn-primary" onClick={scrollToMenu}>
+                {tr(content.texts.cta, lang)}
+              </button>
+              <a
+                className="btn-ghost"
+                href="https://www.instagram.com/labirynt_club/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                @labirynt_club
+              </a>
             </div>
+          </div>
+        </section>
 
-            <ul className="item-list">
-              {cat.items.map((item) => (
-                <li key={item.id} className="item">
-                  {item.image ? (
-                    <img className="item-photo" src={item.image} alt="" loading="lazy" />
-                  ) : null}
-                  <div className="item-main">
-                    <span className="item-name">{tr(item.name, lang)}</span>
-                    <span className="item-rule" aria-hidden="true" />
-                  </div>
-                  <div className="item-prices">
-                    {item.prices.map((price) => (
-                      <div key={`${item.id}-${price.size ?? price.amount}`} className="price">
-                        <strong>{formatPrice(price.amount)}</strong>
-                        {price.size ? <span>/{price.size}</span> : null}
-                      </div>
-                    ))}
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))}
-      </main>
+        <nav className="cat-nav" aria-label="Menu categories">
+          <div className="cat-nav-track">
+            {categories.map((cat) => (
+              <button
+                key={`${lang}-${cat.id}`}
+                type="button"
+                className={activeCategory === cat.id ? 'active' : ''}
+                onClick={() => selectCategory(cat.id)}
+              >
+                {tr(cat.title, lang)}
+              </button>
+            ))}
+          </div>
+        </nav>
+
+        <main className="menu" id="menu">
+          <div className="menu-head">
+            {greeting ? <p className="menu-greeting">{greeting}</p> : null}
+            <h2>{tr(content.texts.menuTitle, lang)}</h2>
+            <p>{tr(content.texts.currencyNote, lang)}</p>
+          </div>
+
+          <aside className="menu-disclaimer">
+            <p>{trLegal(menuDisclaimer, lang)}</p>
+            <Link to="/rules">{trLegal(legalNav.rules, lang)}</Link>
+          </aside>
+
+          {categories.map((cat, index) => (
+            <section
+              key={`${lang}-${cat.id}`}
+              id={`cat-${cat.id}`}
+              className="category"
+              style={{ animationDelay: `${index * 40}ms` }}
+            >
+              <div className="category-banner">
+                <img src={cat.image} alt="" loading="lazy" />
+                <div className="category-banner-copy">
+                  <h3>{tr(cat.title, lang)}</h3>
+                </div>
+              </div>
+
+              <ul className="item-list">
+                {cat.items.map((item) => (
+                  <li key={item.id} className="item">
+                    {item.image ? (
+                      <img className="item-photo" src={item.image} alt="" loading="lazy" />
+                    ) : null}
+                    <div className="item-main">
+                      <span className="item-name">{tr(item.name, lang)}</span>
+                      <span className="item-rule" aria-hidden="true" />
+                    </div>
+                    <div className="item-prices">
+                      {item.prices.map((price) => (
+                        <div key={`${item.id}-${price.size ?? price.amount}`} className="price">
+                          <strong>{formatPrice(price.amount)}</strong>
+                          {price.size ? <span>/{price.size}</span> : null}
+                        </div>
+                      ))}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </main>
+      </div>
 
       <footer className="footer">
         <img src={content.logoImage} alt="" width={56} height={56} />

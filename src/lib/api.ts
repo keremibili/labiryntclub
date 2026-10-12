@@ -1,5 +1,6 @@
 import type { SiteContent } from '../types/content'
 import { createDefaultContent } from '../data/defaultContent'
+import { localizeContent } from './localizeContent'
 
 const TOKEN_KEY = 'labirynt-admin-token'
 
@@ -16,9 +17,9 @@ export async function fetchContent(): Promise<SiteContent> {
   try {
     const res = await fetch('/api/content', { cache: 'no-store' })
     if (!res.ok) throw new Error('content fetch failed')
-    return (await res.json()) as SiteContent
+    return localizeContent((await res.json()) as SiteContent)
   } catch {
-    return createDefaultContent()
+    return localizeContent(createDefaultContent())
   }
 }
 
