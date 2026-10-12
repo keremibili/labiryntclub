@@ -1,4 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import ScrollToTop from './components/ScrollToTop'
 import HomePage from './pages/HomePage'
 import MenuPage from './pages/MenuPage'
 import LegalPage from './pages/LegalPage'
@@ -8,6 +9,7 @@ import AdminPanel from './pages/admin/AdminPanel'
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/menu" element={<MenuPage />} />
