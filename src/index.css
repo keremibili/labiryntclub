@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Figtree:wght@400;600;700&display=swap');
 
 :root {
-  --cyan: #00e5ff;
+  --cyan: #4ecbff;
   --text: #e8f4ff;
   --font-display: 'Syne', sans-serif;
   --font-body: 'Figtree', sans-serif;
   color: var(--text);
-  background: #05070b;
+  background: #050a12;
   font-family: var(--font-body);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -28,7 +28,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: #05070b;
+  background: #050a12;
 }
 
 button,

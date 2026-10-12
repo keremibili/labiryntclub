@@ -7,7 +7,7 @@ import { getGreeting } from '../i18n/greeting'
 import { legalNav, menuDisclaimer, trLegal } from '../i18n/legal'
 import { tr } from '../i18n/ui'
 import { fetchContent } from '../lib/api'
-import type { Lang, SiteContent } from '../types/content'
+import type { Lang, Localized, SiteContent } from '../types/content'
 import { createDefaultContent } from '../data/defaultContent'
 import '../App.css'
 
@@ -15,7 +15,15 @@ function formatPrice(amount: number) {
   return `${amount.toFixed(2)} zł`
 }
 
-export default function HomePage() {
+const homeNav: Localized = {
+  pl: 'Anasayfa',
+  en: 'Home',
+  ru: 'Главная',
+  es: 'Inicio',
+  uk: 'Головна',
+}
+
+export default function MenuPage() {
   const [lang, setLang] = useState<Lang>('pl')
   const [content, setContent] = useState<SiteContent>(() => createDefaultContent())
   const [activeCategory, setActiveCategory] = useState('')
@@ -82,7 +90,7 @@ export default function HomePage() {
         </Link>
         <div className="menu-top-actions">
           <Link className="menu-home-link" to="/">
-            Home
+            {tr(homeNav, lang)}
           </Link>
           <LangDropdown lang={lang} onChange={setLang} />
         </div>
@@ -99,9 +107,10 @@ export default function HomePage() {
             className="hero-logo"
             src={content.logoImage}
             alt="Labirynt Club"
-            width={168}
-            height={168}
+            width={88}
+            height={88}
           />
+          <h1 className="hero-brand">LABIRYNT</h1>
           <p className="hero-tag">{tr(content.texts.tagline, lang)}</p>
           <p className="hero-sub">{tr(content.texts.subtitle, lang)}</p>
           <div className="hero-actions">
