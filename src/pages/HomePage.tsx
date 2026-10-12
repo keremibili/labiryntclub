@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { LangDropdown } from '../components/LangDropdown'
 import { ReviewButton } from '../components/ReviewButton'
+import { djAlp } from '../data/djAlp'
 import {
   GOOGLE_MAPS_URL,
   PLACE_ADDRESS,
@@ -57,6 +58,7 @@ export default function HomePage() {
         <nav className="home-links">
           <a href="#about">{tr(homeCopy.navAbout, lang)}</a>
           <a href="#nights">{tr(homeCopy.navNights, lang)}</a>
+          <a href="#dj">{tr(homeCopy.navDj, lang)}</a>
           <a href="#gallery">{tr(homeCopy.navGallery, lang)}</a>
           <a href="#reviews">{tr(homeCopy.navReviews, lang)}</a>
           <a href="#visit">{tr(homeCopy.navVisit, lang)}</a>
@@ -132,6 +134,53 @@ export default function HomePage() {
                 <h3>{tr(item.title, lang)}</h3>
                 <p>{tr(item.text, lang)}</p>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="home-section home-section--dj" id="dj">
+        <div className="home-section__inner">
+          <div className="home-dj">
+            <div className="home-dj__copy">
+              <p className="home-dj__eyebrow">{tr(homeCopy.djEyebrow, lang)}</p>
+              <h2>{tr(homeCopy.djTitle, lang)}</h2>
+              <p className="home-lead">{tr(homeCopy.djLead, lang)}</p>
+              <p>{tr(homeCopy.djText, lang)}</p>
+              <p>{tr(homeCopy.djExtra, lang)}</p>
+              <div className="home-hero__actions">
+                <a
+                  className="home-btn home-btn--neon"
+                  href={djAlp.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {tr(homeCopy.djCtaIg, lang)}
+                </a>
+                <a
+                  className="home-btn home-btn--ghost"
+                  href={djAlp.soundcloud}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {tr(homeCopy.djCtaSc, lang)}
+                </a>
+              </div>
+            </div>
+            <img
+              className="home-dj__portrait"
+              src={djAlp.avatar}
+              alt="DJ Alpa · Alp Kınacı"
+            />
+          </div>
+          <div className="home-dj__photos-head">
+            <h3>{tr(homeCopy.djPhotosTitle, lang)}</h3>
+          </div>
+          <div className="home-dj__photos">
+            {djAlp.photos.map((photo) => (
+              <figure key={photo.src} className="home-dj__photo">
+                <img src={photo.src} alt={photo.alt} loading="lazy" />
+              </figure>
             ))}
           </div>
         </div>
