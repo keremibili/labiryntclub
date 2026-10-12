@@ -40,11 +40,15 @@ function mergeLocalized(cms: unknown, fallback: Localized): Localized {
 }
 
 function mergeItem(item: MenuItem, fallback?: MenuItem): MenuItem {
+  const descriptionSource = item.description ?? fallback?.description
   return {
     ...item,
     name: mergeLocalized(item.name, fallback?.name ?? asLocalized(item.name)),
     prices: item.prices ?? fallback?.prices ?? [],
     image: item.image || fallback?.image,
+    description: descriptionSource
+      ? mergeLocalized(item.description, fallback?.description ?? asLocalized(descriptionSource))
+      : undefined,
   }
 }
 

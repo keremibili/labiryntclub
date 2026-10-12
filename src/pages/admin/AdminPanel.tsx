@@ -483,6 +483,29 @@ export default function AdminPanel() {
                           Marka isimleri aynı kalabilir; açıklamalı ürünlerde her dili ayrı yaz.
                         </small>
                       </label>
+                      <label className="field">
+                        Açıklama / içerik ({langTab.toUpperCase()})
+                        <textarea
+                          rows={2}
+                          value={item.description?.[langTab] || ''}
+                          onChange={(e) =>
+                            updateItem(catIndex, index, {
+                              description: patchLocalized(
+                                item.description || {
+                                  pl: '',
+                                  en: '',
+                                  ru: '',
+                                  es: '',
+                                  uk: '',
+                                },
+                                langTab,
+                                e.target.value,
+                              ),
+                            })
+                          }
+                          placeholder="İçindekiler · tat profili (ekşi, tatlı, sert…)"
+                        />
+                      </label>
                     </div>
                   </div>
 

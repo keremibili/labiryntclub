@@ -248,6 +248,9 @@ export default function MenuPage() {
                       ) : null}
                       <div className="item-main">
                         <span className="item-name">{tr(item.name, lang)}</span>
+                        {item.description ? (
+                          <p className="item-desc">{tr(item.description, lang)}</p>
+                        ) : null}
                         <span className="item-rule" aria-hidden="true" />
                       </div>
                       <div className="item-prices">

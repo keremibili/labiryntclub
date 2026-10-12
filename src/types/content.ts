@@ -12,6 +12,7 @@ export type MenuItem = {
   name: Localized
   prices: PriceOption[]
   image?: string
+  description?: Localized
 }
 
 export type MenuCategory = {

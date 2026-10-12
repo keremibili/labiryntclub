@@ -1,6 +1,6 @@
 {
-  "version": 7,
-  "updatedAt": "2026-10-12T00:32:46.479Z",
+  "version": 9,
+  "updatedAt": "2026-10-12T00:42:38.854045+00:00",
   "heroImage": "/images/hero-entrance.png",
   "logoImage": "/images/logo.png",
   "texts": {
@@ -331,7 +331,14 @@
               "amount": 26
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/classic-long-gin-tonic.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/classic-long-gin-tonic.webp",
+          "description": {
+            "pl": "Gordon’s gin, Kinley tonic · orzeźwiający, wytrawny, lekko gorzki",
+            "en": "Gordon’s gin, Kinley tonic · crisp, dry, lightly bitter",
+            "ru": "Джин Gordon’s, тоник Kinley · освежающий, сухой, слегка горький",
+            "es": "Ginebra Gordon’s, tónica Kinley · fresco, seco, ligeramente amargo",
+            "uk": "Джин Gordon’s, тонік Kinley · освіжаючий, сухий, злегка гіркий"
+          }
         },
         {
           "id": "c-cuba-libre",
@@ -347,7 +354,14 @@
               "amount": 25
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/classic-long-cuba-libre.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/classic-long-cuba-libre.webp",
+          "description": {
+            "pl": "Biały rum, Coca-Cola, limonka · słodki, cytrusowy, lekki",
+            "en": "White rum, Coca-Cola, lime · sweet, citrusy, easy-drinking",
+            "ru": "Белый ром, Coca-Cola, лайм · сладкий, цитрусовый, лёгкий",
+            "es": "Ron blanco, Coca-Cola, lima · dulce, cítrico, fácil de beber",
+            "uk": "Білий ром, Coca-Cola, лайм · солодкий, цитрусовий, легкий"
+          }
         },
         {
           "id": "c-tequila-sunrise",
@@ -363,7 +377,14 @@
               "amount": 28
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/classic-long-tequila-sunrise.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/classic-long-tequila-sunrise.webp",
+          "description": {
+            "pl": "Tequila Don Diego, sok pomarańczowy, grenadyna · słodki, owocowy, klasyczny",
+            "en": "Don Diego tequila, orange juice, grenadine · sweet, fruity, classic",
+            "ru": "Текила Don Diego, апельсиновый сок, гренадин · сладкий, фруктовый, классика",
+            "es": "Tequila Don Diego, zumo de naranja, granadina · dulce, afrutado, clásico",
+            "uk": "Текіла Don Diego, апельсиновий сік, гренадин · солодкий, фруктовий, класика"
+          }
         },
         {
           "id": "c-blue-lagoon",
@@ -379,7 +400,14 @@
               "amount": 28
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/classic-long-blue-lagoon.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/classic-long-blue-lagoon.webp",
+          "description": {
+            "pl": "Wódka, Blue Curaçao, Sprite · słodki, cytrusowy, orzeźwiający",
+            "en": "Vodka, Blue Curaçao, Sprite · sweet, citrusy, refreshing",
+            "ru": "Водка, Blue Curaçao, Sprite · сладкий, цитрусовый, освежающий",
+            "es": "Vodka, Blue Curaçao, Sprite · dulce, cítrico, refrescante",
+            "uk": "Горілка, Blue Curaçao, Sprite · солодкий, цитрусовий, освіжаючий"
+          }
         },
         {
           "id": "c-jagerbomb",
@@ -395,7 +423,14 @@
               "amount": 30
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/classic-long-jagerbomb.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/classic-long-jagerbomb.webp",
+          "description": {
+            "pl": "Jägermeister, Burn energy · mocny ziołowy kick, energetyczny",
+            "en": "Jägermeister, Burn energy · bold herbal kick, high-energy",
+            "ru": "Jägermeister, Burn · мощный травяной удар, энергичный",
+            "es": "Jägermeister, Burn · golpe herbal intenso, energético",
+            "uk": "Jägermeister, Burn · потужний трав’яний удар, енергійний"
+          }
         }
       ]
     },
@@ -424,7 +459,14 @@
               "amount": 30
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/signature-mojito.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/signature-mojito.webp",
+          "description": {
+            "pl": "Biały rum, Sprite, mięta, limonka, syrop · świeży, miętowy, cytrusowy",
+            "en": "White rum, Sprite, mint, lime, syrup · fresh, minty, citrus",
+            "ru": "Белый ром, Sprite, мята, лайм, сироп · свежий, мятный, цитрусовый",
+            "es": "Ron blanco, Sprite, menta, lima, jarabe · fresco, mentolado, cítrico",
+            "uk": "Білий ром, Sprite, м’ята, лайм, сироп · свіжий, м’ятний, цитрусовий"
+          }
         },
         {
           "id": "c-pina-colada",
@@ -440,7 +482,14 @@
               "amount": 30
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/signature-pina-colada.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/signature-pina-colada.webp",
+          "description": {
+            "pl": "Biały rum, Malibu, ananas, mleko · kremowy, tropikalny, słodki",
+            "en": "White rum, Malibu, pineapple, milk · creamy, tropical, sweet",
+            "ru": "Белый ром, Malibu, ананас, молоко · кремовый, тропический, сладкий",
+            "es": "Ron blanco, Malibu, piña, leche · cremoso, tropical, dulce",
+            "uk": "Білий ром, Malibu, ананас, молоко · кремовий, тропічний, солодкий"
+          }
         },
         {
           "id": "c-sex-on-the-beach",
@@ -456,7 +505,14 @@
               "amount": 30
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/signature-sex-on-the-beach.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/signature-sex-on-the-beach.webp",
+          "description": {
+            "pl": "Wódka, likier brzoskwiniowy, pomarańcza, żurawina · słodki, owocowy",
+            "en": "Vodka, peach liqueur, orange, cranberry · sweet, fruity",
+            "ru": "Водка, персиковый ликёр, апельсин, клюква · сладкий, фруктовый",
+            "es": "Vodka, licor de melocotón, naranja, arándano · dulce, afrutado",
+            "uk": "Горілка, персиковий лікер, апельсин, журавлина · солодкий, фруктовий"
+          }
         },
         {
           "id": "c-jungle-juice",
@@ -472,7 +528,14 @@
               "amount": 25
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/signature-jungle-juice.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/signature-jungle-juice.webp",
+          "description": {
+            "pl": "Rum, wódka, mix soków · owocowy, łatwy w piciu, partyowy",
+            "en": "Rum, vodka, mixed juices · fruity, easy-drinking, party vibe",
+            "ru": "Ром, водка, микс соков · фруктовый, лёгкий, вечериночный",
+            "es": "Ron, vodka, mix de zumos · afrutado, fácil, estilo fiesta",
+            "uk": "Ром, горілка, мікс соків · фруктовий, легкий, вечіркова атмосфера"
+          }
         },
         {
           "id": "c-zombie",
@@ -488,7 +551,14 @@
               "amount": 30
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/signature-zombie.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/signature-zombie.webp",
+          "description": {
+            "pl": "Biały i ciemny rum, mix soków, grenadyna · mocniejszy, tropikalny, słodko-owocowy",
+            "en": "Light & dark rum, mixed juices, grenadine · stronger, tropical, sweet-fruity",
+            "ru": "Светлый и тёмный ром, микс соков, гренадин · крепче, тропический, сладко-фруктовый",
+            "es": "Ron claro y oscuro, zumos, granadina · más fuerte, tropical, dulce-afrutado",
+            "uk": "Світлий і темний ром, мікс соків, гренадин · міцніший, тропічний, солодко-фруктовий"
+          }
         },
         {
           "id": "c-white-russian",
@@ -504,7 +574,14 @@
               "amount": 32
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/signature-white-russian.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/signature-white-russian.webp",
+          "description": {
+            "pl": "Wódka, Kahlúa, mleko · kremowy, kawowy, aksamitny",
+            "en": "Vodka, Kahlúa, milk · creamy, coffee-forward, smooth",
+            "ru": "Водка, Kahlúa, молоко · кремовый, кофейный, бархатный",
+            "es": "Vodka, Kahlúa, leche · cremoso, a café, suave",
+            "uk": "Горілка, Kahlúa, молоко · кремовий, кавовий, оксамитовий"
+          }
         }
       ]
     },
@@ -533,7 +610,14 @@
               "amount": 33
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-lynchburg-lemonade.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-lynchburg-lemonade.webp",
+          "description": {
+            "pl": "Jameson, likier pomarańczowy, cytryna, Sprite · cytrusowy, lekko słodki, orzeźwiający",
+            "en": "Jameson, orange liqueur, lemon, Sprite · citrusy, lightly sweet, refreshing",
+            "ru": "Jameson, апельсиновый ликёр, лимон, Sprite · цитрусовый, слегка сладкий, освежающий",
+            "es": "Jameson, licor de naranja, limón, Sprite · cítrico, ligeramente dulce, refrescante",
+            "uk": "Jameson, апельсиновий лікер, лимон, Sprite · цитрусовий, злегка солодкий, освіжаючий"
+          }
         },
         {
           "id": "c-cosmopolitan",
@@ -549,7 +633,14 @@
               "amount": 30
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-cosmopolitan.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-cosmopolitan.webp",
+          "description": {
+            "pl": "Wódka, Triple Sec, żurawina, limonka · wytrawno-owocowy, elegancki, lekko kwaśny",
+            "en": "Vodka, Triple Sec, cranberry, lime · dry-fruity, elegant, lightly tart",
+            "ru": "Водка, Triple Sec, клюква, лайм · сухо-фруктовый, элегантный, слегка кислый",
+            "es": "Vodka, Triple Sec, arándano, lima · seco-afrutado, elegante, ligeramente ácido",
+            "uk": "Горілка, Triple Sec, журавлина, лайм · сухо-фруктовий, елегантний, злегка кислий"
+          }
         },
         {
           "id": "c-margarita",
@@ -565,7 +656,14 @@
               "amount": 30
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-margarita.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-margarita.webp",
+          "description": {
+            "pl": "Tequila Don Diego, Triple Sec, limonka · kwaśny, wytrawny, intensywny",
+            "en": "Don Diego tequila, Triple Sec, lime · sour, dry, bold",
+            "ru": "Текила Don Diego, Triple Sec, лайм · кислый, сухой, яркий",
+            "es": "Tequila Don Diego, Triple Sec, lima · ácido, seco, intenso",
+            "uk": "Текіла Don Diego, Triple Sec, лайм · кислий, сухий, насичений"
+          }
         },
         {
           "id": "c-aperol-spritz",
@@ -581,7 +679,14 @@
               "amount": 35
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-aperol-spritz.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-aperol-spritz.webp",
+          "description": {
+            "pl": "Aperol, Prosecco, woda gazowana, pomarańcza · gorzko-słodki, musujący, lekki",
+            "en": "Aperol, Prosecco, soda, orange · bitter-sweet, sparkling, light",
+            "ru": "Aperol, Prosecco, газировка, апельсин · горько-сладкий, игристый, лёгкий",
+            "es": "Aperol, Prosecco, soda, naranja · agridulce, espumoso, ligero",
+            "uk": "Aperol, Prosecco, газована вода, апельсин · гірко-солодкий, ігристий, легкий"
+          }
         },
         {
           "id": "c-jager-mojito",
@@ -597,7 +702,14 @@
               "amount": 33
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-jager-mojito.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-jager-mojito.webp",
+          "description": {
+            "pl": "Jägermeister, Sprite, mięta, limonka · ziołowy, miętowy, świeży z mocą",
+            "en": "Jägermeister, Sprite, mint, lime · herbal, minty, fresh with a kick",
+            "ru": "Jägermeister, Sprite, мята, лайм · травяной, мятный, свежий с силой",
+            "es": "Jägermeister, Sprite, menta, lima · herbal, mentolado, fresco con fuerza",
+            "uk": "Jägermeister, Sprite, м’ята, лайм · трав’яний, м’ятний, свіжий з силою"
+          }
         },
         {
           "id": "c-caipirinha",
@@ -613,7 +725,14 @@
               "amount": 30
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-caipirinha.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-caipirinha.webp",
+          "description": {
+            "pl": "Cachaça, limonka, cukier · kwaśno-słodki, surowy, brazylijski klasyk",
+            "en": "Cachaça, lime, sugar · sweet-sour, rustic, Brazilian classic",
+            "ru": "Кашаса, лайм, сахар · кисло-сладкий, грубоватый, бразильская классика",
+            "es": "Cachaça, lima, azúcar · agridulce, rústico, clásico brasileño",
+            "uk": "Кашаса, лайм, цукор · кисло-солодкий, брутальний, бразильська класика"
+          }
         },
         {
           "id": "c-bahama-mama",
@@ -629,7 +748,14 @@
               "amount": 35
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-bahama-mama.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/premium-bahama-mama.webp",
+          "description": {
+            "pl": "Ciemny rum, Malibu, pomarańcza, ananas, grenadyna · tropikalny, słodki, bogaty",
+            "en": "Dark rum, Malibu, orange, pineapple, grenadine · tropical, sweet, rich",
+            "ru": "Тёмный ром, Malibu, апельсин, ананас, гренадин · тропический, сладкий, насыщенный",
+            "es": "Ron oscuro, Malibu, naranja, piña, granadina · tropical, dulce, intenso",
+            "uk": "Темний ром, Malibu, апельсин, ананас, гренадин · тропічний, солодкий, насичений"
+          }
         }
       ]
     },
@@ -658,7 +784,14 @@
               "amount": 26
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/sours-vodka-sour.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/sours-vodka-sour.webp",
+          "description": {
+            "pl": "Wódka Żubrówka, sok z cytryny, syrop · kwaśny, czysty, zrównoważony",
+            "en": "Żubrówka vodka, lemon juice, syrup · sour, clean, balanced",
+            "ru": "Водка Żubrówka, лимонный сок, сироп · кислый, чистый, сбалансированный",
+            "es": "Vodka Żubrówka, limón, jarabe · ácido, limpio, equilibrado",
+            "uk": "Горілка Żubrówka, лимонний сік, сироп · кислий, чистий, збалансований"
+          }
         },
         {
           "id": "c-whiskey-sour",
@@ -674,7 +807,14 @@
               "amount": 32
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/sours-whiskey-sour.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/sours-whiskey-sour.webp",
+          "description": {
+            "pl": "Grant’s whiskey, cytryna, syrop · kwaśny, whiskey-forward, klasyczny",
+            "en": "Grant’s whiskey, lemon, syrup · sour, whiskey-forward, classic",
+            "ru": "Виски Grant’s, лимон, сироп · кислый, с характером виски, классика",
+            "es": "Whisky Grant’s, limón, jarabe · ácido, con carácter de whisky, clásico",
+            "uk": "Віскі Grant’s, лимон, сироп · кислий, з характером віскі, класика"
+          }
         },
         {
           "id": "c-gin-sour",
@@ -690,7 +830,14 @@
               "amount": 25
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/sours-gin-sour.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/sours-gin-sour.webp",
+          "description": {
+            "pl": "Gordon’s gin, cytryna, syrop · kwaśny, botaniczny, orzeźwiający",
+            "en": "Gordon’s gin, lemon, syrup · sour, botanical, refreshing",
+            "ru": "Джин Gordon’s, лимон, сироп · кислый, ботанический, освежающий",
+            "es": "Ginebra Gordon’s, limón, jarabe · ácido, botánico, refrescante",
+            "uk": "Джин Gordon’s, лимон, сироп · кислий, ботанічний, освіжаючий"
+          }
         }
       ]
     },
@@ -719,7 +866,14 @@
               "amount": 40
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/strong-long-island-ice-tea.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/strong-long-island-ice-tea.webp",
+          "description": {
+            "pl": "Wódka, gin, rum, tequila, Coca-Cola · bardzo mocny, klasyczny party bomb",
+            "en": "Vodka, gin, rum, tequila, Coca-Cola · very strong, classic party bomb",
+            "ru": "Водка, джин, ром, текила, Coca-Cola · очень крепкий, классическая бомба",
+            "es": "Vodka, ginebra, ron, tequila, Coca-Cola · muy fuerte, bomba clásica",
+            "uk": "Горілка, джин, ром, текіла, Coca-Cola · дуже міцний, класична бомба"
+          }
         },
         {
           "id": "c-brazilian-julep",
@@ -735,7 +889,14 @@
               "amount": 40
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/strong-brazilian-julep.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/strong-brazilian-julep.webp",
+          "description": {
+            "pl": "Cachaça, Jim Beam, mięta, cytryna · mocny, miętowy, intensywny",
+            "en": "Cachaça, Jim Beam, mint, lemon · strong, minty, intense",
+            "ru": "Кашаса, Jim Beam, мята, лимон · крепкий, мятный, интенсивный",
+            "es": "Cachaça, Jim Beam, menta, limón · fuerte, mentolado, intenso",
+            "uk": "Кашаса, Jim Beam, м’ята, лимон · міцний, м’ятний, інтенсивний"
+          }
         }
       ]
     },
@@ -764,7 +925,14 @@
               "amount": 34
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-bob-marley.png"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-bob-marley.png",
+          "description": {
+            "pl": "Malibu, ananas, grenadyna, Blue Curaçao · kolorowy, tropikalny, słodki",
+            "en": "Malibu, pineapple, grenadine, Blue Curaçao · colourful, tropical, sweet",
+            "ru": "Malibu, ананас, гренадин, Blue Curaçao · яркий, тропический, сладкий",
+            "es": "Malibu, piña, granadina, Blue Curaçao · colorido, tropical, dulce",
+            "uk": "Malibu, ананас, гренадин, Blue Curaçao · яскравий, тропічний, солодкий"
+          }
         },
         {
           "id": "c-spring-paradise",
@@ -780,7 +948,14 @@
               "amount": 35
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-spring-paradise.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-spring-paradise.webp",
+          "description": {
+            "pl": "Ciemny rum Barceló, Amaretto, cytryna, Blue Curaçao · owocowo-migdałowy, świeży",
+            "en": "Barceló dark rum, Amaretto, lemon, Blue Curaçao · fruity-almond, fresh",
+            "ru": "Тёмный ром Barceló, Amaretto, лимон, Blue Curaçao · фруктово-миндальный, свежий",
+            "es": "Ron oscuro Barceló, Amaretto, limón, Blue Curaçao · afrutado-almendra, fresco",
+            "uk": "Темний ром Barceló, Amaretto, лимон, Blue Curaçao · фруктово-мигдальний, свіжий"
+          }
         },
         {
           "id": "c-green-oasis",
@@ -796,7 +971,14 @@
               "amount": 32
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-green-oasis.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-green-oasis.webp",
+          "description": {
+            "pl": "Finlandia vodka, ananas, Blue Curaçao, cytryna · tropikalny, cytrusowy, orzeźwiający",
+            "en": "Finlandia vodka, pineapple, Blue Curaçao, lemon · tropical, citrusy, refreshing",
+            "ru": "Водка Finlandia, ананас, Blue Curaçao, лимон · тропический, цитрусовый, освежающий",
+            "es": "Vodka Finlandia, piña, Blue Curaçao, limón · tropical, cítrico, refrescante",
+            "uk": "Горілка Finlandia, ананас, Blue Curaçao, лимон · тропічний, цитрусовий, освіжаючий"
+          }
         },
         {
           "id": "c-melon-sunset",
@@ -812,7 +994,14 @@
               "amount": 35
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-melon-sunset.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-melon-sunset.webp",
+          "description": {
+            "pl": "Biały rum, likier melonowy, pomarańcza, ananas, grenadyna · słodki, melonowy, tropikalny",
+            "en": "White rum, melon liqueur, orange, pineapple, grenadine · sweet, melon, tropical",
+            "ru": "Белый ром, дынный ликёр, апельсин, ананас, гренадин · сладкий, дынный, тропический",
+            "es": "Ron blanco, licor de melón, naranja, piña, granadina · dulce, melón, tropical",
+            "uk": "Білий ром, динний лікер, апельсин, ананас, гренадин · солодкий, динний, тропічний"
+          }
         },
         {
           "id": "c-screwdriver-blue",
@@ -828,7 +1017,14 @@
               "amount": 32
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-screwdriver-blue.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-screwdriver-blue.webp",
+          "description": {
+            "pl": "Finlandia vodka, pomarańcza, Blue Curaçao, Sprite · owocowy, lekko słodki, orzeźwiający",
+            "en": "Finlandia vodka, orange, Blue Curaçao, Sprite · fruity, lightly sweet, refreshing",
+            "ru": "Водка Finlandia, апельсин, Blue Curaçao, Sprite · фруктовый, слегка сладкий, освежающий",
+            "es": "Vodka Finlandia, naranja, Blue Curaçao, Sprite · afrutado, ligeramente dulce, refrescante",
+            "uk": "Горілка Finlandia, апельсин, Blue Curaçao, Sprite · фруктовий, злегка солодкий, освіжаючий"
+          }
         },
         {
           "id": "c-tropical-red-bull",
@@ -844,7 +1040,14 @@
               "amount": 25
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-tropical-red-bull.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-tropical-red-bull.webp",
+          "description": {
+            "pl": "Sok pomarańczowy, Red Bull, ananas · bezalkoholowy, energetyczny, tropikalny",
+            "en": "Orange juice, Red Bull, pineapple · non-alcoholic, energetic, tropical",
+            "ru": "Апельсиновый сок, Red Bull, ананас · безалкогольный, энергичный, тропический",
+            "es": "Zumo de naranja, Red Bull, piña · sin alcohol, energético, tropical",
+            "uk": "Апельсиновий сік, Red Bull, ананас · безалкогольний, енергійний, тропічний"
+          }
         },
         {
           "id": "c-red-bull-mojito",
@@ -860,7 +1063,14 @@
               "amount": 30
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-red-bull-mojito.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-red-bull-mojito.webp",
+          "description": {
+            "pl": "Red Bull, woda gazowana, mięta, limonka, syrop · energetyczny, miętowy, świeży",
+            "en": "Red Bull, soda, mint, lime, syrup · energetic, minty, fresh",
+            "ru": "Red Bull, газировка, мята, лайм, сироп · энергичный, мятный, свежий",
+            "es": "Red Bull, soda, menta, lima, jarabe · energético, mentolado, fresco",
+            "uk": "Red Bull, газована вода, м’ята, лайм, сироп · енергійний, м’ятний, свіжий"
+          }
         },
         {
           "id": "c-pineapple-mint-red-bull",
@@ -876,7 +1086,14 @@
               "amount": 25
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-pineapple-mint-red-bull.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-pineapple-mint-red-bull.webp",
+          "description": {
+            "pl": "Red Bull, ananas, mięta · energetyczny, tropikalny, miętowy",
+            "en": "Red Bull, pineapple, mint · energetic, tropical, minty",
+            "ru": "Red Bull, ананас, мята · энергичный, тропический, мятный",
+            "es": "Red Bull, piña, menta · energético, tropical, mentolado",
+            "uk": "Red Bull, ананас, м’ята · енергійний, тропічний, м’ятний"
+          }
         },
         {
           "id": "c-apple-red-bull",
@@ -892,7 +1109,14 @@
               "amount": 24
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-apple-red-bull.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/fresh-apple-red-bull.webp",
+          "description": {
+            "pl": "Sok jabłkowy Cappy, Red Bull, cytryna · energetyczny, jabłkowy, lekko kwaśny",
+            "en": "Cappy apple juice, Red Bull, lemon · energetic, apple-forward, lightly tart",
+            "ru": "Яблочный сок Cappy, Red Bull, лимон · энергичный, яблочный, слегка кислый",
+            "es": "Zumo de manzana Cappy, Red Bull, limón · energético, a manzana, ligeramente ácido",
+            "uk": "Яблучний сік Cappy, Red Bull, лимон · енергійний, яблучний, злегка кислий"
+          }
         }
       ]
     },
@@ -921,7 +1145,14 @@
               "amount": 25
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-kamikaze-x4.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-kamikaze-x4.webp",
+          "description": {
+            "pl": "Wódka, Triple Sec, Blue Curaçao, limonka · kwaśny shot, cytrusowy, mocny (x4)",
+            "en": "Vodka, Triple Sec, Blue Curaçao, lime · sour shot, citrusy, strong (x4)",
+            "ru": "Водка, Triple Sec, Blue Curaçao, лайм · кислый шот, цитрусовый, крепкий (x4)",
+            "es": "Vodka, Triple Sec, Blue Curaçao, lima · chupito ácido, cítrico, fuerte (x4)",
+            "uk": "Горілка, Triple Sec, Blue Curaçao, лайм · кислий шот, цитрусовий, міцний (x4)"
+          }
         },
         {
           "id": "c-b-52",
@@ -937,7 +1168,14 @@
               "amount": 18
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-b-52.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-b-52.webp",
+          "description": {
+            "pl": "Likier kawowy, Irish cream, likier pomarańczowy · słodki warstwowy shot, kremowy",
+            "en": "Coffee liqueur, Irish cream, orange liqueur · sweet layered shot, creamy",
+            "ru": "Кофейный ликёр, Irish cream, апельсиновый ликёр · сладкий слоёный шот, кремовый",
+            "es": "Licor de café, Irish cream, licor de naranja · chupito dulce en capas, cremoso",
+            "uk": "Кавовий лікер, Irish cream, апельсиновий лікер · солодкий шаруватий шот, кремовий"
+          }
         },
         {
           "id": "c-baby-guinnes",
@@ -953,7 +1191,14 @@
               "amount": 18
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-baby-guinnes.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-baby-guinnes.webp",
+          "description": {
+            "pl": "Likier kawowy, Irish cream · słodki, kawowo-kremowy mini Guinness",
+            "en": "Coffee liqueur, Irish cream · sweet, coffee-cream mini Guinness",
+            "ru": "Кофейный ликёр, Irish cream · сладкий, кофейно-сливочный мини Guinness",
+            "es": "Licor de café, Irish cream · dulce, café-crema estilo mini Guinness",
+            "uk": "Кавовий лікер, Irish cream · солодкий, кавово-вершковий міні Guinness"
+          }
         },
         {
           "id": "c-slippery-nipple",
@@ -969,7 +1214,14 @@
               "amount": 18
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-slippery-nipple.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-slippery-nipple.webp",
+          "description": {
+            "pl": "Sambuca, Irish cream · anyżowo-kremowy, słodki shot",
+            "en": "Sambuca, Irish cream · anise-cream, sweet shot",
+            "ru": "Самбука, Irish cream · анисово-сливочный, сладкий шот",
+            "es": "Sambuca, Irish cream · anís-crema, chupito dulce",
+            "uk": "Самбука, Irish cream · анісово-вершковий, солодкий шот"
+          }
         },
         {
           "id": "c-malibu-shot",
@@ -985,7 +1237,14 @@
               "amount": 15
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-malibu-shot.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-malibu-shot.webp",
+          "description": {
+            "pl": "Malibu, sok ananasowy · kokosowo-ananasowy, słodki, lekki",
+            "en": "Malibu, pineapple juice · coconut-pineapple, sweet, light",
+            "ru": "Malibu, ананасовый сок · кокосово-ананасовый, сладкий, лёгкий",
+            "es": "Malibu, zumo de piña · coco-piña, dulce, ligero",
+            "uk": "Malibu, ананасовий сік · кокосово-ананасовий, солодкий, легкий"
+          }
         },
         {
           "id": "c-absinthe-sugar-flame",
@@ -1001,7 +1260,14 @@
               "amount": 20
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-absinthe-sugar-flame.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-absinthe-sugar-flame.webp",
+          "description": {
+            "pl": "Absynt, kostka cukru · bardzo mocny, anyżowy, flambé",
+            "en": "Absinthe, sugar cube · very strong, anise, flambé",
+            "ru": "Абсент, кубик сахара · очень крепкий, анисовый, flambé",
+            "es": "Absenta, terrón de azúcar · muy fuerte, anís, flambé",
+            "uk": "Абсент, кубик цукру · дуже міцний, анісовий, flambé"
+          }
         },
         {
           "id": "c-hiroshima",
@@ -1017,7 +1283,14 @@
               "amount": 25
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-hiroshima.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-hiroshima.webp",
+          "description": {
+            "pl": "Sambuca, Baileys, absynt, grenadyna · mocny warstwowy shot, intensywny",
+            "en": "Sambuca, Baileys, absinthe, grenadine · strong layered shot, intense",
+            "ru": "Самбука, Baileys, абсент, гренадин · крепкий слоёный шот, интенсивный",
+            "es": "Sambuca, Baileys, absenta, granadina · chupito fuerte en capas, intenso",
+            "uk": "Самбука, Baileys, абсент, гренадин · міцний шаруватий шот, інтенсивний"
+          }
         },
         {
           "id": "c-redhead-slut",
@@ -1033,7 +1306,14 @@
               "amount": 15
             }
           ],
-          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-redhead-slut.webp"
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/cocktails/party-shots-redhead-slut.webp",
+          "description": {
+            "pl": "Jägermeister, likier brzoskwiniowy, żurawina · ziołowo-owocowy, słodko-gorzki shot",
+            "en": "Jägermeister, peach liqueur, cranberry · herbal-fruity, bittersweet shot",
+            "ru": "Jägermeister, персиковый ликёр, клюква · травяно-фруктовый, горько-сладкий шот",
+            "es": "Jägermeister, licor de melocotón, arándano · herbal-afrutado, agridulce",
+            "uk": "Jägermeister, персиковий лікер, журавлина · трав’яно-фруктовий, гірко-солодкий шот"
+          }
         }
       ]
     },
