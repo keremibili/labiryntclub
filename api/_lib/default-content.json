@@ -1,6 +1,6 @@
 {
-  "version": 9,
-  "updatedAt": "2026-10-12T00:42:38.854045+00:00",
+  "version": 10,
+  "updatedAt": "2026-10-12T00:46:31.275Z",
   "heroImage": "/images/hero-entrance.png",
   "logoImage": "/images/logo.png",
   "texts": {
@@ -2138,7 +2138,7 @@
         "es": "Shisha",
         "uk": "Кальян"
       },
-      "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/cat-shisha.webp",
+      "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/cat-shisha-lounge.jpg",
       "items": [
         {
           "id": "sh-classic",

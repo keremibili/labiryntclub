@@ -462,6 +462,17 @@
   filter: saturate(0.95) contrast(1.05);
 }
 
+.category-banner--shisha {
+  min-height: 240px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.55), 0 0 28px rgba(78, 203, 255, 0.1);
+}
+
+.category-banner--shisha img {
+  height: 260px;
+  object-position: center 45%;
+  filter: saturate(1.05) contrast(1.08) brightness(0.92);
+}
+
 .category-banner-copy {
   position: absolute;
   inset: 0;
@@ -975,6 +986,10 @@
 
   .category-banner img {
     height: 170px;
+  }
+
+  .category-banner--shisha img {
+    height: 200px;
   }
 }
 

@@ -226,7 +226,9 @@ export default function MenuPage() {
               className="category"
               style={{ animationDelay: `${index * 40}ms` }}
             >
-              <div className="category-banner">
+              <div
+                className={`category-banner${cat.id === 'shisha' ? ' category-banner--shisha' : ''}`}
+              >
                 <img src={cat.image} alt="" loading="lazy" />
                 <div className="category-banner-copy">
                   <h3>{tr(cat.title, lang)}</h3>

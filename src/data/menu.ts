@@ -736,7 +736,7 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "shisha",
     title: n("Shisha", "Shisha", "Кальян", "Shisha", "Кальян"),
-    image: "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/cat-shisha.webp",
+    image: "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/cat-shisha-lounge.jpg",
     items: [
       {
         id: "sh-classic",
