@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { LangDropdown } from '../components/LangDropdown'
+import { ReviewButton } from '../components/ReviewButton'
 import { instagramMedia } from '../data/instagramMedia'
 import { homeCopy } from '../i18n/home'
 import { detectLang } from '../i18n/languages'
@@ -146,19 +147,21 @@ export default function HomePage() {
             </Link>
             <a
               className="home-btn home-btn--light"
-              href="https://g.co/kgs/tm8pZae"
+              href="https://maps.app.goo.gl/jhq4CrpFruEYXS18A"
               target="_blank"
               rel="noreferrer"
             >
               {tr(ui.location, lang)} · Google
             </a>
           </div>
+          <ReviewButton lang={lang} className="review-btn--home" />
         </div>
       </section>
 
       <footer className="home-footer">
         <img src={content.logoImage} alt="" width={52} height={52} />
         <p>{tr(ui.footer, lang)}</p>
+        <ReviewButton lang={lang} className="review-btn--home" />
         <div className="home-footer__links">
           <Link to="/menu">{tr(homeCopy.navMenu, lang)}</Link>
           <Link to="/rules">{trLegal(legalNav.rules, lang)}</Link>

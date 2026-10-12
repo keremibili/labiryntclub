@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { LangDropdown } from '../components/LangDropdown'
+import { ReviewButton } from '../components/ReviewButton'
 import { detectLang } from '../i18n/languages'
 import { getGreeting } from '../i18n/greeting'
 import { legalNav, menuDisclaimer, trLegal } from '../i18n/legal'
@@ -188,6 +189,7 @@ export default function HomePage() {
       <footer className="footer">
         <img src={content.logoImage} alt="" width={56} height={56} />
         <p>{tr(content.texts.footer, lang)}</p>
+        <ReviewButton lang={lang} className="review-btn--menu" />
         <div className="footer-links">
           <Link to="/rules">{trLegal(legalNav.rules, lang)}</Link>
           <Link to="/privacy">{trLegal(legalNav.privacy, lang)}</Link>
@@ -196,7 +198,7 @@ export default function HomePage() {
         <a href="https://www.instagram.com/labirynt_club/" target="_blank" rel="noreferrer">
           instagram.com/labirynt_club
         </a>
-        <a href="https://g.co/kgs/tm8pZae" target="_blank" rel="noreferrer">
+        <a href="https://maps.app.goo.gl/jhq4CrpFruEYXS18A" target="_blank" rel="noreferrer">
           {tr(content.texts.location, lang)} · Google
         </a>
       </footer>

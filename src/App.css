@@ -521,6 +521,27 @@
   text-decoration: underline;
 }
 
+.review-btn--menu {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  margin: 0.35rem 0 0.25rem;
+  min-height: 48px;
+  padding: 0.7rem 1.15rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid rgba(245, 197, 66, 0.65);
+  background: linear-gradient(180deg, #ffe08a, #f5c542);
+  color: #171513;
+}
+
+.review-btn--menu .review-btn__stars {
+  letter-spacing: 0.08em;
+  color: #b45309;
+}
+
 @keyframes riseIn {
   from {
     opacity: 0;

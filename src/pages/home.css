@@ -272,6 +272,33 @@
   justify-content: center;
 }
 
+.review-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 1rem;
+  min-height: 50px;
+  padding: 0.75rem 1.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid #f0c14b;
+  background: linear-gradient(180deg, #ffe08a, #f5c542);
+  color: #171513;
+  box-shadow: 0 8px 22px rgba(245, 197, 66, 0.28);
+}
+
+.review-btn__stars {
+  letter-spacing: 0.08em;
+  color: #b45309;
+  font-size: 1.05rem;
+}
+
+.home-footer .review-btn {
+  margin-top: 0.35rem;
+}
+
 .home-footer {
   display: grid;
   justify-items: center;
