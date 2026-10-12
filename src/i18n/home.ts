@@ -13,7 +13,7 @@ export const homeCopy = {
   navAbout: t('O nas', 'About', 'О нас', 'Nosotros', 'Про нас'),
   navNights: t('Noc', 'Nights', 'Ночь', 'Noches', 'Ніч'),
   navGallery: t('Galeria', 'Gallery', 'Галерея', 'Galería', 'Галерея'),
-  navDj: t('DJ Alpa', 'DJ Alpa', 'DJ Alpa', 'DJ Alpa', 'DJ Alpa'),
+  navDj: t('DJ Alp', 'DJ Alp', 'DJ Alp', 'DJ Alp', 'DJ Alp'),
   navEvents: t('Events', 'Events', 'Events', 'Events', 'Events'),
   navReviews: t('Reviews', 'Reviews', 'Reviews', 'Reviews', 'Reviews'),
   navVisit: t('Lokalizacja', 'Visit', 'Локация', 'Visítanos', 'Локація'),
@@ -104,7 +104,7 @@ export const homeCopy = {
     'Кадри з @labirynt_club — танцпол, світло, кальян і ночі на Chmielna.',
   ),
   djEyebrow: t('Resident DJ', 'Resident DJ', 'Resident DJ', 'Resident DJ', 'Resident DJ'),
-  djTitle: t('DJ Alpa · Alp Kınacı', 'DJ Alpa · Alp Kınacı', 'DJ Alpa · Alp Kınacı', 'DJ Alpa · Alp Kınacı', 'DJ Alpa · Alp Kınacı'),
+  djTitle: t('DJ Alp · Alp Kınacı', 'DJ Alp · Alp Kınacı', 'DJ Alp · Alp Kınacı', 'DJ Alp · Alp Kınacı', 'DJ Alp · Alp Kınacı'),
   djLead: t(
     'Za konsolą Labirynt — dark & hypnotic techno, club sety i własne produkcje.',
     'Behind the Labirynt decks — dark & hypnotic techno, club sets and original productions.',
@@ -113,11 +113,11 @@ export const homeCopy = {
     'За пультом Labirynt — dark & hypnotic techno, клубні сети та власний продакшн.',
   ),
   djText: t(
-    'Alp Kınacı (DJ Alpa) od 2022 gra w undergroundowych klubach w Turcji i Polsce. Tworzy mroczne, hipnotyczne atmosfery — od techno po energiczne club sety: dancehall, reggaeton, baile funk i brazilian funk. W Labirynt Club na Chmielnej prowadzi noce przy neonie i na parkiecie. Śledź @alpkinaci i słuchaj na SoundCloud.',
-    'Alp Kınacı (DJ Alpa) has been performing in underground venues across Turkey and Poland since 2022. He builds dark, hypnotic atmospheres — from techno to high-energy club sets spanning dancehall, reggaeton, baile funk and brazilian funk. At Labirynt Club on Chmielna he runs nights at the neon booth and on the floor. Follow @alpkinaci and listen on SoundCloud.',
-    'Alp Kınacı (DJ Alpa) с 2022 выступает в андеграундных клубах Турции и Польши. Создаёт тёмные, гипнотические атмосферы — от techno до энергичных клубных сетов: dancehall, reggaeton, baile funk и brazilian funk. В Labirynt Club на Chmielna он ведёт ночи у неона и на танцполе. Подписывайтесь на @alpkinaci и слушайте на SoundCloud.',
-    'Alp Kınacı (DJ Alpa) actúa desde 2022 en clubs underground de Turquía y Polonia. Crea atmósferas oscuras e hipnóticas — del techno a sets de club con dancehall, reggaeton, baile funk y brazilian funk. En Labirynt Club (Chmielna) lleva las noches en la cabina neón y en la pista. Sigue @alpkinaci y escucha en SoundCloud.',
-    'Alp Kınacı (DJ Alpa) з 2022 грає в андеграундних клубах Туреччини та Польщі. Створює темні, гіпнотичні атмосфери — від techno до енергійних клубних сетів: dancehall, reggaeton, baile funk і brazilian funk. У Labirynt Club на Chmielna веде ночі біля неону та на танцполі. Стеж за @alpkinaci і слухай на SoundCloud.',
+    'Alp Kınacı (DJ Alp) od 2022 gra w undergroundowych klubach w Turcji i Polsce. Tworzy mroczne, hipnotyczne atmosfery — od techno po energiczne club sety: dancehall, reggaeton, baile funk i brazilian funk. W Labirynt Club na Chmielnej prowadzi noce przy neonie i na parkiecie. Śledź @alpkinaci i słuchaj na SoundCloud.',
+    'Alp Kınacı (DJ Alp) has been performing in underground venues across Turkey and Poland since 2022. He builds dark, hypnotic atmospheres — from techno to high-energy club sets spanning dancehall, reggaeton, baile funk and brazilian funk. At Labirynt Club on Chmielna he runs nights at the neon booth and on the floor. Follow @alpkinaci and listen on SoundCloud.',
+    'Alp Kınacı (DJ Alp) с 2022 выступает в андеграундных клубах Турции и Польши. Создаёт тёмные, гипнотические атмосферы — от techno до энергичных клубных сетов: dancehall, reggaeton, baile funk и brazilian funk. В Labirynt Club на Chmielna он ведёт ночи у неона и на танцполе. Подписывайтесь на @alpkinaci и слушайте на SoundCloud.',
+    'Alp Kınacı (DJ Alp) actúa desde 2022 en clubs underground de Turquía y Polonia. Crea atmósferas oscuras e hipnóticas — del techno a sets de club con dancehall, reggaeton, baile funk y brazilian funk. En Labirynt Club (Chmielna) lleva las noches en la cabina neón y en la pista. Sigue @alpkinaci y escucha en SoundCloud.',
+    'Alp Kınacı (DJ Alp) з 2022 грає в андеграундних клубах Туреччини та Польщі. Створює темні, гіпнотичні атмосфери — від techno до енергійних клубних сетів: dancehall, reggaeton, baile funk і brazilian funk. У Labirynt Club на Chmielna веде ночі біля неону та на танцполі. Стеж за @alpkinaci і слухай на SoundCloud.',
   ),
   djExtra: t(
     'Na SoundCloud znajdziesz live sety (m.in. Dancehall x Reggaeton x Shatta, Bailey Nights) oraz remiksy — w tym Baile Funk chart breaker na Hypeddit Top 100 Funk.',
@@ -127,7 +127,7 @@ export const homeCopy = {
     'На SoundCloud — live-сети (Dancehall x Reggaeton x Shatta, Bailey Nights) та ремікси, зокрема Baile Funk chart breaker у Hypeddit Top 100 Funk.',
   ),
   djCtaIg: t('Instagram · @alpkinaci', 'Instagram · @alpkinaci', 'Instagram · @alpkinaci', 'Instagram · @alpkinaci', 'Instagram · @alpkinaci'),
-  djCtaSc: t('SoundCloud · Alpa', 'SoundCloud · Alpa', 'SoundCloud · Alpa', 'SoundCloud · Alpa', 'SoundCloud · Alpa'),
+  djCtaSc: t('SoundCloud · Alp', 'SoundCloud · Alp', 'SoundCloud · Alp', 'SoundCloud · Alp', 'SoundCloud · Alp'),
   djPhotosTitle: t('Z bootha i releasów', 'From the booth & releases', 'С будки и релизов', 'Desde la cabina y releases', 'З будки та релізів'),
   eventsTitle: t('Events', 'Events', 'Events', 'Events', 'Events'),
   eventsText: t(

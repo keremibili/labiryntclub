@@ -233,7 +233,7 @@ export default function HomePage() {
             <img
               className="home-dj__portrait"
               src={djAlp.avatar}
-              alt="DJ Alpa · Alp Kınacı"
+              alt="DJ Alp · Alp Kınacı"
             />
           </div>
           <div className="home-dj__photos-head">
