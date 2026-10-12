@@ -1,6 +1,6 @@
 {
-  "version": 6,
-  "updatedAt": "2026-10-12T00:30:56.513Z",
+  "version": 7,
+  "updatedAt": "2026-10-12T00:32:46.479Z",
   "heroImage": "/images/hero-entrance.png",
   "logoImage": "/images/logo.png",
   "texts": {
@@ -64,7 +64,7 @@
         "es": "Bebidas sin alcohol",
         "uk": "Безалкогольні напої"
       },
-      "image": "/images/cat-soft-drinks.jpg",
+      "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/cat-soft-drinks.jpg",
       "items": [
         {
           "id": "cola-zero",
@@ -80,7 +80,8 @@
               "amount": 12,
               "size": "0.25 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/soft-drinks-cola-zero.webp"
         },
         {
           "id": "cola-zero-caffeine",
@@ -96,7 +97,8 @@
               "amount": 12,
               "size": "0.25 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/soft-drinks-cola-zero-caffeine.png"
         },
         {
           "id": "cola-original",
@@ -112,7 +114,8 @@
               "amount": 12,
               "size": "0.25 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/soft-drinks-cola-original.webp"
         },
         {
           "id": "fanta",
@@ -128,7 +131,8 @@
               "amount": 12,
               "size": "0.25 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/soft-drinks-fanta.webp"
         },
         {
           "id": "sprite",
@@ -144,7 +148,8 @@
               "amount": 12,
               "size": "0.25 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/soft-drinks-sprite.webp"
         },
         {
           "id": "kinley-tonic",
@@ -160,7 +165,8 @@
               "amount": 12,
               "size": "0.25 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/soft-drinks-kinley-tonic.webp"
         },
         {
           "id": "kinley-cherry",
@@ -176,7 +182,8 @@
               "amount": 12,
               "size": "0.25 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/soft-drinks-kinley-cherry.png"
         },
         {
           "id": "kinley-purple",
@@ -192,7 +199,8 @@
               "amount": 12,
               "size": "0.25 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/soft-drinks-kinley-purple.webp"
         },
         {
           "id": "kropla-still",
@@ -208,7 +216,8 @@
               "amount": 12,
               "size": "0.33 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/soft-drinks-kropla-still.webp"
         },
         {
           "id": "kropla-sparkling",
@@ -224,7 +233,8 @@
               "amount": 12,
               "size": "0.33 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/soft-drinks-kropla-sparkling.webp"
         },
         {
           "id": "cappy-orange",
@@ -240,7 +250,8 @@
               "amount": 12,
               "size": "0.25 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/soft-drinks-cappy-orange.webp"
         },
         {
           "id": "cappy-apple",
@@ -256,7 +267,8 @@
               "amount": 12,
               "size": "0.25 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/soft-drinks-cappy-apple.webp"
         },
         {
           "id": "cappy-multi",
@@ -272,7 +284,8 @@
               "amount": 12,
               "size": "0.25 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/soft-drinks-cappy-multi.webp"
         },
         {
           "id": "cappy-grapefruit",
@@ -288,7 +301,8 @@
               "amount": 12,
               "size": "0.25 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/soft-drinks-cappy-grapefruit.webp"
         }
       ]
     },
@@ -1032,7 +1046,7 @@
         "es": "Botellas",
         "uk": "Пляшки"
       },
-      "image": "/images/cat-spirits.jpg",
+      "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/cat-bottles.webp",
       "items": [
         {
           "id": "b-finlandia",
@@ -1048,7 +1062,8 @@
               "amount": 200,
               "size": "0.50 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-finlandia.webp"
         },
         {
           "id": "b-jd-fire",
@@ -1064,7 +1079,8 @@
               "amount": 360,
               "size": "0.70 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-jd-fire.webp"
         },
         {
           "id": "b-jd-honey",
@@ -1080,7 +1096,8 @@
               "amount": 360,
               "size": "0.70 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-jd-honey.webp"
         },
         {
           "id": "b-jd-apple",
@@ -1096,7 +1113,8 @@
               "amount": 360,
               "size": "0.70 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-jd-apple.webp"
         },
         {
           "id": "b-zubrowka",
@@ -1112,7 +1130,8 @@
               "amount": 160,
               "size": "0.50 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-zubrowka.webp"
         },
         {
           "id": "b-jim-beam",
@@ -1128,7 +1147,8 @@
               "amount": 250,
               "size": "0.70 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-jim-beam.webp"
         },
         {
           "id": "b-chivas-12",
@@ -1144,7 +1164,8 @@
               "amount": 380,
               "size": "0.70 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-chivas-12.webp"
         },
         {
           "id": "b-chivas-18",
@@ -1160,7 +1181,8 @@
               "amount": 800,
               "size": "0.70 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-chivas-18.webp"
         },
         {
           "id": "b-gentleman",
@@ -1176,7 +1198,8 @@
               "amount": 450,
               "size": "0.70 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-gentleman.webp"
         },
         {
           "id": "b-jw-red",
@@ -1192,7 +1215,8 @@
               "amount": 260,
               "size": "0.70 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-jw-red.webp"
         },
         {
           "id": "b-ballantines",
@@ -1208,7 +1232,8 @@
               "amount": 260,
               "size": "0.70 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-ballantines.webp"
         },
         {
           "id": "b-grants",
@@ -1224,7 +1249,8 @@
               "amount": 260,
               "size": "0.70 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-grants.webp"
         },
         {
           "id": "b-don-diego",
@@ -1240,7 +1266,8 @@
               "amount": 300,
               "size": "0.70 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-don-diego.webp"
         },
         {
           "id": "b-absolut",
@@ -1256,7 +1283,8 @@
               "amount": 180,
               "size": "0.50 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-absolut.webp"
         },
         {
           "id": "b-belvedere",
@@ -1272,7 +1300,8 @@
               "amount": 300,
               "size": "0.50 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-belvedere.webp"
         },
         {
           "id": "b-jameson",
@@ -1288,7 +1317,8 @@
               "amount": 360,
               "size": "0.70 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-jameson.webp"
         }
       ]
     },
@@ -1301,7 +1331,7 @@
         "es": "Vodka",
         "uk": "Горілка"
       },
-      "image": "/images/cat-spirits.jpg",
+      "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/cat-bottles.webp",
       "items": [
         {
           "id": "v-finlandia",
@@ -1317,7 +1347,8 @@
               "amount": 10,
               "size": "0.25 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-finlandia.webp"
         },
         {
           "id": "v-zubrowka-biala",
@@ -1333,7 +1364,8 @@
               "amount": 8,
               "size": "0.25 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/vodka-v-zubrowka-biala.webp"
         },
         {
           "id": "v-soplica",
@@ -1349,7 +1381,8 @@
               "amount": 8,
               "size": "0.25 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/vodka-v-soplica.webp"
         },
         {
           "id": "v-absolut",
@@ -1365,7 +1398,8 @@
               "amount": 10,
               "size": "0.25 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-absolut.webp"
         },
         {
           "id": "v-belvedere",
@@ -1380,7 +1414,8 @@
             {
               "amount": 18
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-belvedere.webp"
         },
         {
           "id": "v-chivas-12",
@@ -1396,7 +1431,8 @@
               "amount": 28,
               "size": "0.04 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-chivas-12.webp"
         },
         {
           "id": "v-jd",
@@ -1412,7 +1448,8 @@
               "amount": 25,
               "size": "0.04 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/vodka-v-jd.webp"
         },
         {
           "id": "v-grants",
@@ -1428,7 +1465,8 @@
               "amount": 22,
               "size": "0.04 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-grants.webp"
         },
         {
           "id": "v-gentleman",
@@ -1444,7 +1482,8 @@
               "amount": 30,
               "size": "0.04 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-gentleman.webp"
         },
         {
           "id": "v-jameson",
@@ -1460,7 +1499,8 @@
               "amount": 27,
               "size": "0.04 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-jameson.webp"
         },
         {
           "id": "v-jim-beam",
@@ -1476,7 +1516,8 @@
               "amount": 23,
               "size": "0.04 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-jim-beam.webp"
         },
         {
           "id": "v-ballantines",
@@ -1492,7 +1533,8 @@
               "amount": 23,
               "size": "0.04 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/bottles-b-ballantines.webp"
         }
       ]
     },
@@ -1505,7 +1547,7 @@
         "es": "Ginebra",
         "uk": "Джин"
       },
-      "image": "/images/cat-spirits.jpg",
+      "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/cat-gin.webp",
       "items": [
         {
           "id": "g-bombay",
@@ -1521,7 +1563,8 @@
               "amount": 20,
               "size": "0.25 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/gin-g-bombay.webp"
         },
         {
           "id": "g-gordons",
@@ -1537,7 +1580,8 @@
               "amount": 18,
               "size": "0.25 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/gin-g-gordons.webp"
         },
         {
           "id": "g-bialowieski",
@@ -1553,7 +1597,8 @@
               "amount": 14,
               "size": "0.25 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/gin-g-bialowieski.webp"
         }
       ]
     },
@@ -1566,7 +1611,7 @@
         "es": "Chupitos",
         "uk": "Шоти"
       },
-      "image": "/images/cat-spirits.jpg",
+      "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/cat-shots.webp",
       "items": [
         {
           "id": "s-jager",
@@ -1582,7 +1627,8 @@
               "amount": 20,
               "size": "0.04 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/shots-s-jager.webp"
         },
         {
           "id": "s-tequila",
@@ -1598,7 +1644,8 @@
               "amount": 15,
               "size": "0.03 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/shots-s-tequila.webp"
         },
         {
           "id": "s-sambuca",
@@ -1614,7 +1661,8 @@
               "amount": 25,
               "size": "0.04 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/shots-s-sambuca.webp"
         }
       ]
     },
@@ -1627,7 +1675,7 @@
         "es": "Cerveza en botella",
         "uk": "Пиво в пляшках"
       },
-      "image": "/images/cat-beer.jpg",
+      "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/cat-beer-bottle.jpg",
       "items": [
         {
           "id": "bb-zywiec-00",
@@ -1642,7 +1690,8 @@
             {
               "amount": 16
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/beer-bottle-bb-zywiec-00.webp"
         },
         {
           "id": "bb-desperados",
@@ -1657,7 +1706,8 @@
             {
               "amount": 19
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/beer-bottle-bb-desperados.webp"
         },
         {
           "id": "bb-porter",
@@ -1672,7 +1722,8 @@
             {
               "amount": 19
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/beer-bottle-bb-porter.webp"
         },
         {
           "id": "bb-biale",
@@ -1688,7 +1739,8 @@
               "amount": 19,
               "size": "0.50 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/beer-bottle-bb-biale.webp"
         },
         {
           "id": "bb-ipa",
@@ -1704,7 +1756,8 @@
               "amount": 19,
               "size": "0.50 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/beer-bottle-bb-ipa.webp"
         },
         {
           "id": "bb-apa",
@@ -1720,7 +1773,8 @@
               "amount": 19,
               "size": "0.50 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/beer-bottle-bb-apa.webp"
         },
         {
           "id": "bb-corona",
@@ -1735,7 +1789,8 @@
             {
               "amount": 20
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/beer-bottle-bb-corona.webp"
         }
       ]
     },
@@ -1748,7 +1803,7 @@
         "es": "Cerveza de barril",
         "uk": "Пиво розливне"
       },
-      "image": "/images/cat-beer.jpg",
+      "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/cat-beer-draft.jpg",
       "items": [
         {
           "id": "bd-zywiec",
@@ -1768,7 +1823,8 @@
               "amount": 16,
               "size": "0.50 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/beer-draft-bd-zywiec.webp"
         },
         {
           "id": "bd-biale",
@@ -1788,7 +1844,8 @@
               "amount": 18,
               "size": "0.50 l"
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/beer-bottle-bb-biale.webp"
         }
       ]
     },
@@ -1801,7 +1858,7 @@
         "es": "Shisha",
         "uk": "Кальян"
       },
-      "image": "/images/cat-shisha.jpg",
+      "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/cat-shisha.webp",
       "items": [
         {
           "id": "sh-classic",
@@ -1816,7 +1873,8 @@
             {
               "amount": 80
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/shisha-sh-classic.png"
         },
         {
           "id": "sh-dark-classic",
@@ -1831,7 +1889,8 @@
             {
               "amount": 100
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/shisha-sh-classic.png"
         },
         {
           "id": "sh-dark",
@@ -1846,7 +1905,8 @@
             {
               "amount": 120
             }
-          ]
+          ],
+          "image": "https://cdpfbnthap6gtj3h.public.blob.vercel-storage.com/menu/products/shisha-sh-classic.png"
         }
       ]
     }
