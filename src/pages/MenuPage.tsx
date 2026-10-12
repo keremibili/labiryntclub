@@ -1,13 +1,27 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { CurrencySwitcher } from '../components/CurrencySwitcher'
 import { LangDropdown } from '../components/LangDropdown'
 import { MenuPickCheck, MenuPickList, type PickItem } from '../components/MenuPickList'
 import { ReviewButton } from '../components/ReviewButton'
+import {
+  currencyCopy,
+  fillRateLine,
+  trCurrency,
+} from '../i18n/currency'
 import { detectLang } from '../i18n/languages'
 import { getGreeting } from '../i18n/greeting'
 import { legalNav, menuDisclaimer, trLegal } from '../i18n/legal'
 import { tr } from '../i18n/ui'
 import { fetchContent } from '../lib/api'
+import {
+  fetchFxRates,
+  formatMoney,
+  loadSavedCurrency,
+  saveCurrency,
+  type CurrencyCode,
+  type FxRates,
+} from '../lib/fxRates'
 import { localizeContent } from '../lib/localizeContent'
 import type { Lang, Localized, MenuItem, SiteContent } from '../types/content'
 import { createDefaultContent } from '../data/defaultContent'
@@ -15,13 +29,17 @@ import '../App.css'
 
 const PICK_KEY = 'labirynt-menu-picks'
 
-function formatPrice(amount: number) {
-  return `${amount.toFixed(2)} zł`
-}
-
-function itemPriceLabel(item: MenuItem) {
+function itemPriceLabel(
+  item: MenuItem,
+  currency: CurrencyCode,
+  rates: FxRates | null,
+  lang: Lang,
+) {
   return item.prices
-    .map((p) => (p.size ? `${formatPrice(p.amount)} / ${p.size}` : formatPrice(p.amount)))
+    .map((p) => {
+      const money = formatMoney(p.amount, currency, rates, lang)
+      return p.size ? `${money} / ${p.size}` : money
+    })
     .join(' · ')
 }
 
@@ -56,12 +74,41 @@ export default function MenuPage() {
     }
   })
   const [cartOpen, setCartOpen] = useState(false)
+  const [currency, setCurrency] = useState<CurrencyCode>(() => {
+    try {
+      return loadSavedCurrency()
+    } catch {
+      return 'PLN'
+    }
+  })
+  const [fxRates, setFxRates] = useState<FxRates | null>(null)
+  const [fxStatus, setFxStatus] = useState<'idle' | 'loading' | 'ready' | 'error'>('idle')
 
   useEffect(() => {
     fetchContent().then((data) => {
       setContent(data)
       setActiveCategory((prev) => prev || data.categories[0]?.id || '')
     })
+  }, [])
+
+  useEffect(() => {
+    let cancelled = false
+    setFxStatus('loading')
+    fetchFxRates()
+      .then((rates) => {
+        if (cancelled) return
+        setFxRates(rates)
+        setFxStatus('ready')
+      })
+      .catch(() => {
+        if (cancelled) return
+        setFxRates(null)
+        setFxStatus('error')
+        setCurrency((prev) => (prev === 'PLN' ? prev : 'PLN'))
+      })
+    return () => {
+      cancelled = true
+    }
   }, [])
 
   useEffect(() => {
@@ -92,11 +139,36 @@ export default function MenuPage() {
         .map((item) => ({
           id: item!.id,
           name: item!.name,
-          priceLabel: itemPriceLabel(item!),
+          priceLabel: itemPriceLabel(item!, currency, fxRates, lang),
           image: item!.image,
         })),
-    [pickedIds, itemIndex],
+    [pickedIds, itemIndex, currency, fxRates, lang],
   )
+
+  const changeCurrency = (next: CurrencyCode) => {
+    if (next !== 'PLN' && !fxRates) return
+    setCurrency(next)
+    saveCurrency(next)
+  }
+
+  const priceNote =
+    currency === 'PLN'
+      ? trCurrency(currencyCopy.plnNote, lang)
+      : trCurrency(currencyCopy.convertedNote, lang)
+
+  const rateNote =
+    fxStatus === 'loading'
+      ? trCurrency(currencyCopy.loading, lang)
+      : fxStatus === 'error'
+        ? trCurrency(currencyCopy.error, lang)
+        : fxRates
+          ? fillRateLine(
+              trCurrency(currencyCopy.rateLine, lang),
+              fxRates.date,
+              fxRates.eur,
+              fxRates.usd,
+            )
+          : ''
 
   useEffect(() => {
     if (!categories.length) return
@@ -151,6 +223,12 @@ export default function MenuPage() {
           <span>LABIRYNT</span>
         </Link>
         <div className="menu-top-actions">
+          <CurrencySwitcher
+            lang={lang}
+            value={currency}
+            onChange={changeCurrency}
+            disabled={fxStatus !== 'ready'}
+          />
           <Link className="menu-home-link" to="/">
             {tr(homeNav, lang)}
           </Link>
@@ -211,7 +289,11 @@ export default function MenuPage() {
           <div className="menu-head">
             {greeting ? <p className="menu-greeting">{greeting}</p> : null}
             <h2>{tr(content.texts.menuTitle, lang)}</h2>
-            <p>{tr(content.texts.currencyNote, lang)}</p>
+            <p>{priceNote}</p>
+            {rateNote ? <p className="menu-fx-note">{rateNote}</p> : null}
+            {currency !== 'PLN' ? (
+              <p className="menu-fx-note">{trCurrency(currencyCopy.payHint, lang)}</p>
+            ) : null}
           </div>
 
           <aside className="menu-disclaimer">
@@ -258,7 +340,7 @@ export default function MenuPage() {
                       <div className="item-prices">
                         {item.prices.map((price) => (
                           <div key={`${item.id}-${price.size ?? price.amount}`} className="price">
-                            <strong>{formatPrice(price.amount)}</strong>
+                            <strong>{formatMoney(price.amount, currency, fxRates, lang)}</strong>
                             {price.size ? <span>/{price.size}</span> : null}
                           </div>
                         ))}

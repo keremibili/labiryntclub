@@ -54,6 +54,52 @@
   display: flex;
   align-items: center;
   gap: 0.65rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.currency-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid rgba(78, 203, 255, 0.35);
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(4, 10, 18, 0.85);
+}
+
+.currency-switch button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: rgba(210, 228, 245, 0.75);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.45rem 0.65rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.currency-switch button + button {
+  border-left: 1px solid rgba(78, 203, 255, 0.22);
+}
+
+.currency-switch button.is-active {
+  background: var(--menu-neon);
+  color: #041018;
+}
+
+.currency-switch button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.menu-fx-note {
+  margin: 0.25rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: rgba(210, 228, 245, 0.62);
 }
 
 .menu-home-link {
