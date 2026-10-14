@@ -937,6 +937,324 @@
   font-weight: 700;
 }
 
+.drink-guide-launch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 1rem;
+  min-height: 44px;
+  padding: 0.65rem 1rem;
+  border: 1px solid rgba(78, 203, 255, 0.45);
+  border-radius: 999px;
+  background: linear-gradient(120deg, rgba(78, 203, 255, 0.16), rgba(8, 16, 28, 0.9));
+  color: var(--menu-ink);
+  font-family: Figtree, system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 22px rgba(78, 203, 255, 0.12);
+}
+
+.drink-guide-launch:hover,
+.drink-guide-launch.is-open {
+  border-color: var(--menu-neon);
+  box-shadow: 0 0 26px rgba(78, 203, 255, 0.22);
+}
+
+.drink-guide-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  background: rgba(2, 6, 12, 0.62);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.drink-guide-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drink-guide-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 60;
+  width: min(440px, 100vw);
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background: linear-gradient(180deg, #07101a 0%, #04080f 100%);
+  border-left: 1px solid rgba(78, 203, 255, 0.28);
+  box-shadow: -18px 0 40px rgba(0, 0, 0, 0.45);
+  transform: translateX(105%);
+  transition: transform 0.28s ease;
+}
+
+.drink-guide-panel.is-open {
+  transform: translateX(0);
+}
+
+.drink-guide-panel__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.05rem 0.75rem;
+  border-bottom: 1px solid rgba(78, 203, 255, 0.18);
+}
+
+.drink-guide-panel__eyebrow {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--menu-neon);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.drink-guide-panel__progress {
+  margin: 0.35rem 0 0;
+  color: rgba(210, 228, 245, 0.65);
+  font-size: 0.82rem;
+}
+
+.drink-guide-panel__close {
+  appearance: none;
+  border: 1px solid rgba(78, 203, 255, 0.28);
+  background: transparent;
+  color: var(--menu-ink);
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.drink-guide-panel__body {
+  overflow: auto;
+  padding: 1rem 1.05rem 1.4rem;
+}
+
+.drink-guide-intro h2,
+.drink-guide-quiz h2,
+.drink-guide-result h2 {
+  margin: 0.35rem 0 0.7rem;
+  font-family: Syne, sans-serif;
+  font-size: clamp(1.35rem, 4vw, 1.7rem);
+  line-height: 1.2;
+  color: var(--menu-ink);
+}
+
+.drink-guide-intro p,
+.drink-guide-result__blurb,
+.drink-guide-result__for,
+.drink-guide-result__hint {
+  margin: 0;
+  color: rgba(210, 228, 245, 0.72);
+  line-height: 1.45;
+  font-size: 0.92rem;
+}
+
+.drink-guide-intro {
+  display: grid;
+  gap: 1rem;
+  padding-top: 0.5rem;
+}
+
+.drink-guide-quiz__bar {
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(78, 203, 255, 0.12);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.drink-guide-quiz__bar span {
+  display: block;
+  height: 100%;
+  background: var(--menu-neon);
+  box-shadow: 0 0 12px var(--menu-neon-soft);
+  transition: width 0.25s ease;
+}
+
+.drink-guide-answers {
+  display: grid;
+  gap: 0.55rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.drink-guide-answers button {
+  appearance: none;
+  text-align: left;
+  border: 1px solid rgba(78, 203, 255, 0.22);
+  border-radius: 12px;
+  background: rgba(78, 203, 255, 0.04);
+  color: var(--menu-ink);
+  padding: 0.85rem 0.95rem;
+  font-size: 0.92rem;
+  line-height: 1.35;
+  cursor: pointer;
+}
+
+.drink-guide-answers button.is-active {
+  border-color: var(--menu-neon);
+  background: rgba(78, 203, 255, 0.16);
+  box-shadow: 0 0 18px rgba(78, 203, 255, 0.14);
+}
+
+.drink-guide-nav {
+  display: flex;
+  gap: 0.65rem;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.drink-guide-primary,
+.drink-guide-ghost {
+  appearance: none;
+  min-height: 44px;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.drink-guide-primary {
+  border: 0;
+  background: var(--menu-neon);
+  color: #041018;
+  box-shadow: 0 0 18px var(--menu-neon-soft);
+}
+
+.drink-guide-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.drink-guide-ghost {
+  border: 1px solid rgba(78, 203, 255, 0.28);
+  background: transparent;
+  color: var(--menu-ink);
+}
+
+.drink-guide-result__label {
+  margin: 0;
+  color: var(--menu-neon);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.drink-guide-result__for {
+  margin-top: 1.1rem !important;
+  margin-bottom: 0.7rem !important;
+  color: var(--menu-ink) !important;
+  font-weight: 600;
+}
+
+.drink-guide-recs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.drink-guide-recs li {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 0.65rem 0.75rem;
+  padding: 0.7rem;
+  border: 1px solid rgba(78, 203, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(78, 203, 255, 0.04);
+}
+
+.drink-guide-recs__img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background: #04080f;
+  border: 1px solid var(--menu-line);
+}
+
+.drink-guide-recs__img--empty {
+  display: block;
+}
+
+.drink-guide-recs__meta {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.drink-guide-recs__meta strong {
+  font-size: 0.95rem;
+  line-height: 1.25;
+}
+
+.drink-guide-recs__meta span {
+  font-size: 0.76rem;
+  line-height: 1.35;
+  color: rgba(210, 228, 245, 0.68);
+}
+
+.drink-guide-recs__meta em {
+  font-style: normal;
+  color: var(--menu-neon);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.drink-guide-recs__actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.drink-guide-recs__actions button {
+  appearance: none;
+  min-height: 36px;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(34, 197, 94, 0.45);
+  background: rgba(34, 197, 94, 0.12);
+  color: #d8ffe8;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.drink-guide-recs__actions button.is-on {
+  background: #22c55e;
+  color: #041018;
+  border-color: #22c55e;
+}
+
+.drink-guide-recs__actions button.is-ghost {
+  border-color: rgba(78, 203, 255, 0.35);
+  background: transparent;
+  color: var(--menu-ink);
+}
+
+.drink-guide-result__hint {
+  margin-top: 1rem !important;
+  font-size: 0.8rem !important;
+}
+
 .pick-drawer__remove {
   width: 30px;
   height: 30px;

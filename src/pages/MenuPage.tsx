@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CurrencySwitcher } from '../components/CurrencySwitcher'
+import { DrinkGuide } from '../components/DrinkGuide'
 import { LangDropdown } from '../components/LangDropdown'
 import { MenuPickCheck, MenuPickList, type PickItem } from '../components/MenuPickList'
 import { ReviewButton } from '../components/ReviewButton'
@@ -83,6 +84,7 @@ export default function MenuPage() {
   })
   const [fxRates, setFxRates] = useState<FxRates | null>(null)
   const [fxStatus, setFxStatus] = useState<'idle' | 'loading' | 'ready' | 'error'>('idle')
+  const [guideOpen, setGuideOpen] = useState(false)
 
   useEffect(() => {
     fetchContent().then((data) => {
@@ -213,6 +215,16 @@ export default function MenuPage() {
     })
   }
 
+  const showItemInMenu = (id: string) => {
+    const cat = categories.find((c) => c.items.some((item) => item.id === id))
+    if (cat) {
+      setActiveCategory(cat.id)
+      requestAnimationFrame(() => {
+        document.getElementById(`cat-${cat.id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      })
+    }
+  }
+
   return (
     <div className="page">
       <div className="ambient" aria-hidden="true" />
@@ -294,6 +306,17 @@ export default function MenuPage() {
             {currency !== 'PLN' ? (
               <p className="menu-fx-note">{trCurrency(currencyCopy.payHint, lang)}</p>
             ) : null}
+            <DrinkGuide
+              lang={lang}
+              open={guideOpen}
+              onOpenChange={setGuideOpen}
+              itemIndex={itemIndex}
+              pickedIds={pickedIds}
+              onTogglePick={togglePick}
+              onShowInMenu={showItemInMenu}
+              currency={currency}
+              fxRates={fxRates}
+            />
           </div>
 
           <aside className="menu-disclaimer">
