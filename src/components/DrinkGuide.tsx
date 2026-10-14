@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { HelpCircle, Sparkles, X } from 'lucide-react'
 import {
   guideQuestions,
@@ -40,6 +40,9 @@ export function DrinkGuide({
   const [step, setStep] = useState(0)
   const [answers, setAnswers] = useState<string[]>([])
   const [result, setResult] = useState<GuideResult | null>(null)
+  const [locked, setLocked] = useState(false)
+  const bodyRef = useRef<HTMLDivElement>(null)
+  const advanceTimer = useRef<number | null>(null)
 
   const total = guideQuestions.length
   const question = guideQuestions[step]
@@ -56,11 +59,30 @@ export function DrinkGuide({
       .filter(Boolean) as Array<{ id: string; score: number; alcohol: boolean; item: MenuItem }>
   }, [result, itemIndex])
 
+  useEffect(() => {
+    return () => {
+      if (advanceTimer.current) window.clearTimeout(advanceTimer.current)
+    }
+  }, [])
+
+  useEffect(() => {
+    bodyRef.current?.scrollTo({ top: 0 })
+  }, [step, phase])
+
+  const clearAdvanceTimer = () => {
+    if (advanceTimer.current) {
+      window.clearTimeout(advanceTimer.current)
+      advanceTimer.current = null
+    }
+  }
+
   const reset = () => {
+    clearAdvanceTimer()
     setPhase('intro')
     setStep(0)
     setAnswers([])
     setResult(null)
+    setLocked(false)
   }
 
   const close = () => {
@@ -68,27 +90,33 @@ export function DrinkGuide({
     reset()
   }
 
-  const pickAnswer = (answerId: string) => {
-    setAnswers((prev) => {
-      const next = [...prev]
-      next[step] = answerId
-      return next
-    })
-  }
-
-  const goNext = () => {
-    if (!selected) return
-    if (step < total - 1) {
-      setStep((s) => s + 1)
+  const advanceFrom = (currentStep: number, nextAnswers: string[]) => {
+    if (currentStep < total - 1) {
+      setStep(currentStep + 1)
+      setLocked(false)
       return
     }
-    const finalAnswers = [...answers]
-    finalAnswers[step] = selected
-    setResult(scoreGuide(finalAnswers.filter(Boolean)))
+    setResult(scoreGuide(nextAnswers.filter(Boolean)))
     setPhase('result')
+    setLocked(false)
+  }
+
+  const pickAnswer = (answerId: string) => {
+    if (locked || phase !== 'quiz') return
+    const currentStep = step
+    const nextAnswers = [...answers]
+    nextAnswers[currentStep] = answerId
+    setAnswers(nextAnswers)
+    setLocked(true)
+    clearAdvanceTimer()
+    advanceTimer.current = window.setTimeout(() => {
+      advanceFrom(currentStep, nextAnswers)
+    }, 220)
   }
 
   const goBack = () => {
+    clearAdvanceTimer()
+    setLocked(false)
     if (phase === 'result') {
       setPhase('quiz')
       setStep(total - 1)
@@ -154,7 +182,7 @@ export function DrinkGuide({
           </button>
         </header>
 
-        <div className="drink-guide-panel__body">
+        <div className="drink-guide-panel__body" ref={bodyRef}>
           {phase === 'intro' ? (
             <div className="drink-guide-intro">
               <h2>{trGuide(drinkGuideUi.open, lang)}</h2>
@@ -184,25 +212,16 @@ export function DrinkGuide({
                     key={answer.id}
                     type="button"
                     className={selected === answer.id ? 'is-active' : ''}
+                    disabled={locked}
                     onClick={() => pickAnswer(answer.id)}
                   >
                     {tr(answer.label, lang)}
                   </button>
                 ))}
               </div>
-              <div className="drink-guide-nav">
+              <div className="drink-guide-nav drink-guide-nav--solo">
                 <button type="button" className="drink-guide-ghost" onClick={goBack}>
                   {trGuide(drinkGuideUi.back, lang)}
-                </button>
-                <button
-                  type="button"
-                  className="drink-guide-primary"
-                  disabled={!selected}
-                  onClick={goNext}
-                >
-                  {step === total - 1
-                    ? trGuide(drinkGuideUi.seeResults, lang)
-                    : trGuide(drinkGuideUi.next, lang)}
                 </button>
               </div>
             </div>

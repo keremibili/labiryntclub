@@ -1115,6 +1115,18 @@
   margin-top: 0.5rem;
 }
 
+.drink-guide-nav--solo {
+  justify-content: flex-start;
+  position: sticky;
+  bottom: 0;
+  padding-top: 0.75rem;
+  background: linear-gradient(180deg, transparent, #04080f 35%);
+}
+
+.drink-guide-answers button:disabled {
+  cursor: wait;
+}
+
 .drink-guide-primary,
 .drink-guide-ghost {
   appearance: none;
