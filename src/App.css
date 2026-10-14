@@ -962,10 +962,19 @@
 }
 
 .drink-guide-layer {
+  --menu-bg: #050a12;
+  --menu-bg-2: #0a1422;
+  --menu-ink: #e8f4ff;
+  --menu-muted: #8aa3b8;
+  --menu-line: rgba(78, 203, 255, 0.16);
+  --menu-neon: #4ecbff;
+  --menu-neon-soft: rgba(78, 203, 255, 0.35);
   position: fixed;
   inset: 0;
   z-index: 10000;
   pointer-events: none;
+  color: #e8f4ff;
+  font-family: Figtree, system-ui, sans-serif;
 }
 
 .drink-guide-backdrop {
@@ -1069,6 +1078,8 @@
 .drink-guide-panel__body {
   overflow: auto;
   padding: 1rem 1.05rem 1.4rem;
+  min-height: 0;
+  color: #e8f4ff;
 }
 
 .drink-guide-intro h2,
@@ -1170,9 +1181,9 @@
 
 .drink-guide-primary {
   border: 0;
-  background: var(--menu-neon);
+  background: #4ecbff;
   color: #041018;
-  box-shadow: 0 0 18px var(--menu-neon-soft);
+  box-shadow: 0 0 18px rgba(78, 203, 255, 0.35);
 }
 
 .drink-guide-primary:disabled {
